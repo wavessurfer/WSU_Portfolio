@@ -1,0 +1,99 @@
+
+
+/* Style 2 */
+
+/* template.css */
+a { color: #EB6D1F; }
+a:hover, a:active, a:focus { color: #EB6D1F; }
+h1, h2, h3, h4, h5 { color:#202025;font-family:Arial, sans-serif;}
+h1.logo a { background:transparent url('../images/style3/logo.png') no-repeat 0 0; }
+div.logo h1 a { color:#EB6D1F!important; }
+#navMain{
+height:37px; display:block; padding:0; margin:20px auto;  border:1px #E36C20 solid; border-radius:5px;
+background:#EA8821; background:-moz-linear-gradient(top,  #EA8821 0%, #E36C20 100%); background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#EA8821), color-stop(100%,#E36C20)); background:-webkit-linear-gradient(top,  #EA8821 0%,#E36C20 100%); background:-o-linear-gradient(top, #EA8821 0%,#E36C20 100%); background:-ms-linear-gradient(top, #EA8821 0%,#E36C20 100%); background:linear-gradient(top,  #EA8821 0%,#E36C20 100%); filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#EA8821', endColorstr='#E36C20',GradientType=0 );
+}
+#navMain > li{
+list-style:inside none; padding:0; margin:0; float:left; display:block; position:relative;
+border-right:1px solid #B8631E; color:#fff;
+}
+#navMain > li > a{
+outline:none; display:block; position:relative; padding:12px 20px; font:bold 13px/100% Arial, Helvetica, sans-serif; text-align:center; text-decoration:none;
+color:#FFFFFF;
+text-shadow:1px 1px 0 rgba(0,0,0, 0.5);
+}
+#navMain > li > a:hover{
+	background:#F09F4E;
+}
+#navMain .currentPage a{
+}
+#navMain ul {
+display:none;
+position:absolute;
+list-style:none;
+left:0;
+padding:0;
+margin:0;
+background:#EA8821; background:-moz-linear-gradient(top,  #EA8821 0%, #E36C20 100%); background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#EA8821), color-stop(100%,#E36C20)); background:-webkit-linear-gradient(top,  #EA8821 0%,#E36C20 100%); background:-o-linear-gradient(top, #EA8821 0%,#E36C20 100%); background:-ms-linear-gradient(top, #EA8821 0%,#E36C20 100%); background:linear-gradient(top,  #EA8821 0%,#E36C20 100%); filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#EA8821', endColorstr='#E36C20',GradientType=0 );
+width:200px;
+}
+#navMain ul li a{
+color:#FFFFFF;
+text-decoration:none;
+display:block;
+padding:6px 7px;
+border-bottom:1px solid #FFFFFF;
+border-left:1px solid #FFFFFF;
+border-right:1px solid #FFFFFF;
+font-size:13px;
+}
+#navMain li:hover ul {
+display:block;
+top:38px;
+min-width:200px;
+}
+#featured-content {
+	border: #D0D0D0 1px solid;
+	background: #FFFFFF;
+	-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 1);
+	-moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 1);
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 1);
+	margin-bottom:10px;
+	border-radius: 4px;
+	
+}
+.widget_slider .flexslider { margin: 19px 18px 7px; text-align: center; }
+.widget_slider .flex-control-nav { position: static; }
+.flex-control-nav { 
+    bottom: 0;
+    position: absolute;
+    right: 0;
+	z-index:2;
+    }
+.flexslider ol{ 
+	position: absolute;right:-10px;bottom:-10px;
+	padding-left:200px;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#a6000000',GradientType=1 );
+background-color: rgba(0, 0, 0, 0.35);
+background: -webkit-gradient(linear, 100% 50%, 0% 50%, color-stop(0%, rgba(0, 0, 0, 0.7)), color-stop(100%, rgba(0, 0, 0, 0)));
+background: -webkit-linear-gradient(right, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
+background: -moz-linear-gradient(right, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
+background: -o-linear-gradient(right, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
+    }
+
+.flex-control-nav a, .flex-control-nav li { display: inline-block; }
+.flex-control-nav a {
+	background-color: #AAAAAA;
+    border: 1px solid #FFFFFF;
+    box-shadow: 0 0 6px 1px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    height: 14px;
+	margin: 10px 10px 5px 10px;
+    width: 42px;
+
+	text-indent: -999px;
+	overflow: hidden;
+	cursor: pointer;
+}
+.flex-control-nav li a.flex-active { background: #555555; }
+.widget_slider .flex-control-nav a { border: #c1c1c1 2px solid; }
+.widget_slider .flex-control-nav a.flex-active { background: #c1c1c1; }

@@ -1,0 +1,585 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- PgP 6/15/2019 update page, added integral check web db submissions, split constants into two files, one for students, one for course -->
+	<!-- Bootstrap -->
+	<link href="../../ReadOnly/bootstrap.css" rel="stylesheet">
+
+	<!-- constant file for student firstname, lastname, starid on students' pages -->
+	<script src="../constants.js"></script>
+
+	<!-- course constant file that contains semester, class, section pages -->
+	<script src="../../ReadOnly/CourseConstants.js"></script>
+	<!-- model assignment file, version 1 released 2018/02/18 PgP -->
+
+	<title>MIS452Summative02</title>
+</head>
+
+<body onload="setVariables()">
+
+	<form class="container-fluid" action="https://eprofessor.azurewebsites.net/code/ProcessFormData.asp" method="post" name="frmAssignment" id="frmAssignment">
+		<input name="InstID" id="InstID" value="00617282" type="hidden">
+
+		<h1 class=" text-center">&nbsp;Network Hardware Essentials</h1>
+
+		<!-- -start-Student, class and assignment information. Assignment hard-coded, other values from constants.js file-start -->
+		<div class="row col-lg-12">
+			<div class="col-lg-3">
+				<label class="text-primary" for="FirstName">First Name:</label>
+				<input class="form-control" name="FirstName" id="FirstName" type="text" value="default first name" readonly="readonly">
+			</div>
+			<div class="col-lg-3">
+				<label class="text-primary" for="LastName">Last Name:</label>
+				<input class="form-control" name="LastName" id="LastName" type="text" value="default last name" readonly="readonly">
+			</div>
+			<div class="col-lg-3">
+				<label class="text-primary" for="pin">StarID:</label>
+				<input class="form-control" name="pin" id="pin" type="text" value="default StarID" readonly="readonly">
+			</div>
+			<div class="col-lg-3">
+				<label class="text-primary" for="email">Email:</label>
+				<input class="form-control" name="email" id="email" type="email" value="default email address" readonly="readonly">
+			</div>
+		</div>
+
+		<div class="row col-lg-12">
+			<div class="col-lg-3">
+				<label class="text-primary" for="semester">Semester:</label>
+				<input class="form-control" name="semester" id="semester" type="text" value="default" readonly="readonly">
+			</div>
+			<div class="col-lg-3">
+				<label class="text-primary" for="class">Class:</label>
+				<input class="form-control" name="class" id="class" value="xClass" type="text" readonly="readonly">
+			</div>
+			<div class="col-lg-3">
+				<label class="text-primary" for="section">Section:</label>
+				<input class="form-control" name="section" id="section" value="default" type="text" readonly="readonly">
+			</div>
+			<div class="col-lg-3">
+				<label class="text-primary" for="assignment">Assignment:</label>
+				<input class="form-control" name="assignment" id="assignment" value="Summative02" type="text" readonly="readonly">
+			</div>
+		</div>
+		<!-- -end-Student, class and assignment information-end -->
+
+		<!-- Calculate the correct path for saving the files -->
+		<script>Path = "&#92;OneDrive - MNSCU&#92;" + xClass + "&#92;" + document.getElementById("assignment").value + "&#92;"; </script>
+
+
+		<div class="col-lg-12">
+			<br />
+			<input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit">
+			<br />
+		</div>
+
+		<div class="col-lg-12 h3 text-danger">
+			1200 Points
+            <hr />
+		</div>
+
+		<!-- -start-objectives-start -->
+		<div class="col-lg-12"><a href="#Objectives" class="btn btn-info" data-toggle="collapse">Learning Objectives</a></div>
+		<div id="Objectives" class=" collapse in col-lg-12">
+
+			<!--Above this line similar except for Assignment number and title   -->
+			<ul>
+				<li>Describe the basic operations of network repeaters and hubs</li>
+				<li>Explain the purpose of network switches</li>
+				<li>Summarize the operation of wireless access points</li>
+				<li>Describe the basic operation of network interface cards</li>
+				<li>Explain the function of routers</li>
+			</ul>
+
+
+			<hr />
+		</div>
+		<!-- -end-objectives-end -->
+
+
+		<div class=" col-lg-12"><a href="#Exercise01" class="btn btn-info" data-toggle="collapse">Questions</a></div>
+
+		<div id="Exercise01" class="collapse in  col-lg-12">
+			<p>
+				Of what value is a basic knowledge of Network Hardware? 
+                <br />
+				Note: do not only rely on the book for an answer.<br />
+				Consult LinkedIn Learning and Wikipedia, among other available resources.
+			</p>
+
+			<p>
+				(50) 1. Briefly state the value of a basic knowledge of network hardware.
+                <br />
+			</p>
+
+			<!-- Enter your answer in the VALUE field below   GROK -->
+			<input name="q1" id="q1" size="120" maxlength="120" class="form-control" value="network hardware: " type="text">
+			<br />
+		</div>
+
+		<hr />
+
+
+		<div class=" col-lg-12"><a href="#Exercise02" class="btn btn-info" data-toggle="collapse">Hands-On Project 2-2</a></div>
+
+		<div id="Exercise02" class="collapse in  col-lg-12">
+
+			<p>
+				Do Hands-On Project 2-2<br />
+				Install WireShark 64-bit on of your laptop.<br />
+				Accept all default settings.<br />
+				After you install WireShark, start it up.<br />
+				Do this exercise in Somsen 301, preferably during classtime when there are other students around to work with.<br />
+				In step 2, enter the IPv4 address of your laptop's wired connection, and up to two other students laptops wired connection, in the spaces below.<br />
+				Wired IPv4 addresses are preferred, but you can use wireless.<br />
+			</p>
+
+
+			<p>
+				(25) 2. Your laptop IPv4 address:<br />
+
+				<!-- Enter your answer in the VALUE field below   GROK -->
+				<input name="q2" id="q2" size="120" maxlength="120" class="form-control" value="ip address:" type="text">
+				<br />
+
+				(25) 3. Other laptop IPv4 address:<br />
+
+				<!-- Enter your answer in the VALUE field below   GROK -->
+				<input name="q3" id="q3" size="120" maxlength="120" class="form-control" value="ip address:" type="text">
+				<br />
+
+				(25) 4. Another laptop IPv4 address:<br />
+
+				<!-- Enter your answer in the VALUE field below   GROK -->
+				<input name="q4" id="q4" size="120" maxlength="120" class="form-control" value="ip address:" type="text">
+				<br />
+
+				(50) 5. Perform steps 3 through 10.  In step 10 answer the question, what do you think the purpose of the ARP protocol is?:<br />
+
+				<!-- Enter your answer in the VALUE field below   GROK -->
+				<input name="q5" id="q5" size="120" maxlength="120" class="form-control" value="ARP purpose:" type="text">
+				<br />
+
+
+				<p>
+					(100) 6. Use the Snipping Tool to make a screen shot of your WireShark application, showing the ARP capture packets and IP addresses, similar to the screen shot below.<br />
+					Note that your IP addresses will be different.<br />
+					<a href="images/ArpSwitch.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/ArpSwitch.PNG', 'popup'); return false;">
+						<img src="images/ArpSwitch.PNG" width="300" alt="ARP on a switch" class="img-responsive img-responsive" /></a><br />
+
+
+					<!--  PgP 2/4/2018 create path using constants and current document assignment -->
+					Save the screen shot  as &quot;Ex1&quot; in your ' 
+                <code><span id="aPath"></span></code>
+					<script>document.getElementById("aPath").innerHTML = Path; </script>
+					' folder.<br />
+
+					You will be combining screen shots from several exercises at the end of this assignment, just as you did in 
+                  <a href="../Formative00/Formative00.html#PDFfileCreation" class="bg-info text-white" target="_blank">Formative00</a>-PDF File Creation. 
+				</p>
+			<hr />
+
+
+			<div class="col-lg-12 text-danger">
+				<h2>Screen Shot Ex1</h2>
+				<hr />
+			</div>
+
+
+		</div>
+
+		<hr />
+
+
+		<div class=" col-lg-12"><a href="#Exercise03" class="btn btn-info" data-toggle="collapse">Hands-On Project 2-4</a></div>
+
+		<div id="Exercise03" class="collapse in  col-lg-12">
+
+			<p>
+				Do Hands-On Project 2-4 to connect to a wireless access point, preferably in Somsen 301 during class.<br />
+				But you are free to attempt this in another location.<br />
+				Make sure to use your WSU laptop because you have administrator access.<br />
+				Enter your answers to the questions in the spaces below.<br />
+				In follow the steps, in step 3 connect to the &#39;Warrior&#39; wireless network, or another one if you prefer.<br />
+				Examine the Wireless Network properties, they will appear in a dialog box accessible from the Wireless network icon in the Task Tray.<br />
+				<a href="images/NicProperties.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/NicProperties.PNG', 'popup'); return false;">
+					<img src="images/NicProperties.PNG" width="300" alt="ARP on a switch" class="img-responsive img-responsive" /></a><br />
+				Your values will be different.<br />
+			</p>
+
+			<p>
+				(25) 7. In step 5 examine the Properties of the wireless network and enter the values for the SSID below:<br />
+
+				<!-- Enter your answer in the VALUE field below   GROK -->
+				<input name="q7" id="q7" size="120" maxlength="120" class="form-control" value="SSID:  " type="text">
+				<br />
+
+				(25) 8. Enter the protocol:<br />
+
+				<!-- Enter your answer in the VALUE field below   GROK -->
+				<input name="q8" id="q8" size="120" maxlength="120" class="form-control" value="protocol:" type="text">
+				<br />
+
+				(25) 9. Enter the Security type:<br />
+
+				<!-- Enter your answer in the VALUE field below   GROK -->
+				<input name="q9" id="q9" size="120" maxlength="120" class="form-control" value="security:" type="text">
+				<br />
+
+				<p>
+					In step 5 ping the router, which is probably not at 192.168.1.1<br />
+					Hint, open a command window and type <code>ipconfig /all</code>, then press Enter.<br />
+					Look at the Default Gateway.<br />
+
+					(50) 10. What was the TTL value returned?:<br />
+
+					<!-- Enter your answer in the VALUE field below   GROK -->
+					<input name="q10" id="q10" size="120" maxlength="120" class="form-control" value="TTL:" type="text">
+					<br />
+
+					(50) 11. What would Lost Packets, or round trip times above 250ms indicate?:<br />
+
+					<!-- Enter your answer in the VALUE field below   GROK -->
+					<input name="q11" id="q11" size="120" maxlength="120" class="form-control" value="lost packets?:" type="text">
+					<br />
+
+				</p>
+
+			<hr />
+		</div>
+
+		<div class=" col-lg-12"><a href="#Exercise04" class="btn btn-info" data-toggle="collapse">Hands-On Project 2-6</a></div>
+
+		<div id="Exercise04" class="collapse in  col-lg-12">
+
+			<p>
+				Do Hands-On Project 2-6 and use Traceroute to see how packets travel through the Internet.<br />
+				Complete all the steps as described.<br />
+
+
+				(50) 12. Examine the tracert results and note any anomalies, such as long response times, in the space below.  Make sure to include the website:<br />
+
+				<!-- Enter your answer in the VALUE field below   GROK -->
+				<input name="q12" id="q12" size="120" maxlength="120" class="form-control" value="anomaly:" type="text">
+				<br />
+
+				Now try <code>tracert www.bbc.com</code> or <code>tracert -d www.bbc.com</code> which is the website for BBC news in London, England.<br />
+				<a href="images/Tracert.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/Tracert.PNG', 'popup'); return false;">
+					<img src="images/Tracert.PNG" width="300" alt="ARP on a switch" class="img-responsive img-responsive" /></a><br />
+				Your results may be slightly different.
+				<br />
+
+				Use the website <a href="https://whatismyipaddress.com" target="_blank" class="bg-info">whatismyipaddress.com</a> and find out why the last router is not located in the United Kingdom.<br />
+				When I did this exercise, the BBC IP address came from Kansas, which is a long way from London.
+				<br />
+				<a href="images/IpLocation.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/IpLocation.PNG', 'popup'); return false;">
+					<img src="images/IpLocation.PNG" width="300" alt="ARP on a switch" class="img-responsive img-responsive" /></a><br />
+				Your results may be slightly different.<br />
+				<br />
+
+
+				(100) 13. Briefly explain why/how the BBC IP address came from a different continent?<br />
+
+				<!-- Enter your answer in the VALUE field below   GROK -->
+				<input name="q13" id="q13" size="120" maxlength="120" class="form-control" value="IP location confusion:" type="text">
+				<br />
+			</p>
+
+			<hr />
+
+		</div>
+
+
+
+		<div class=" col-lg-12"><a href="#Exercise05" class="btn btn-info" data-toggle="collapse">Packet Tracer Lab 2-2</a></div>
+
+		<div id="Exercise05" class="collapse in  col-lg-12">
+
+			<p>The Packet Tracer Labs are accessible from MindTap in two ways:</p>
+			<ul>
+				<li>Under the Practice section of the Module<br />
+					<a href="images/PacketTracer.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/PacketTracer.PNG', 'popup'); return false;">
+						<img src="images/PacketTracer.PNG" width="400" alt="packet tracer location" class="img-responsive img-responsive" /></a>
+				</li>
+
+				<li>In the Chapter Review section of the book<br />
+					<a href="images/PacketTracer2.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/PacketTracer2.PNG', 'popup'); return false;">
+						<img src="images/PacketTracer2.PNG" width="200" alt="packet tracer location" class="img-responsive img-responsive" /></a>
+				</li>
+			</ul>
+
+			<p>
+				The files needed for Packet Tracer labs are available on the Cengage Website, in Professor Paulson's OneDrive ReadOnly folder for this course, or in the WSU network drive ReadOnly folder for this course.<br />
+				You must save a copy of these files to your 
+				<code>
+					<span id="bbPath"></span>
+					<script>document.getElementById("bbPath").innerHTML = "&#92;OneDrive - MNSCU&#92;" + xClass + "&#92;";  </script>
+				</code>
+				folder.
+			<p>
+				Follow the instructions in Packet Tracer Lab 2-2 to see how a switch works.<br />
+				Note in steps 8 and 9 the &#39;Capture then Forward&#39; icon is in the &#39;Simulation Panel Play Controls&#39; to the right of the Play button.<br />
+				<a href="images/CaptureThenForward.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/CaptureThenForward.PNG', 'popup'); return false;">
+					<img src="images/CaptureThenForward.PNG" width="100" alt="capture then forward" class="img-responsive img-responsive" /></a><br />
+
+			</p>
+
+			<p>
+				(50) 14. Use the Snipping Tool to make a screen shot of your completed Lab.<br />
+				In your screen shot make sure to include the file path with your StarID, the final packet at PC1 with a green check, and the simulation panel listing the events.<br />
+				Refer to the screen shot below.<br />
+				<a href="images/PT2_2.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/PT2_2.PNG', 'popup'); return false;">
+					<img src="images/PT2_2.PNG" width="300" alt="Packet Tracer 2-2 completed" class="img-responsive img-responsive" /></a><br />
+
+
+				<!--  PgP 2/4/2018 create path using constants and current document assignment -->
+				Save the screen shot  as &quot;Ex2&quot; in your ' 
+                <code><span id="bPath"></span></code>
+				<script>document.getElementById("bPath").innerHTML = Path; </script>
+				' folder.<br />
+
+				You will be combining screen shots from several exercises at the end of this assignment, just as you did in 
+                  <a href="../Formative00/Formative00.html#PDFfileCreation" class="bg-info text-white" target="_blank">Formative00</a>-PDF File Creation. 
+			</p>
+			<hr />
+			<hr />
+		</div>
+
+		<div class="col-lg-12 text-danger">
+			<h2>Screen Shot Ex2</h2>
+			<hr />
+		</div>
+
+
+
+		<div class=" col-lg-12"><a href="#Exercise06" class="btn btn-info" data-toggle="collapse">Packet Tracer Lab 2-3</a></div>
+
+		<div id="Exercise06" class="collapse in  col-lg-12">
+
+			<p>
+				Follow the instructions in Packet Tracer Lab 2-3 to connect to a Wireless Access Point.<br />
+				Note that in steps 3,4 and 5 the values for SSID, Authentication and PSK Pass Phrase used to configure Laptop 1 have been preset in the Wireless Access Point.<br />
+				These values can be changed by clicking the Wireless Access Point, selecting Config&gt;Wireless&gt;and updating the values.<br />
+				Feel free to explore these settings, and more, once you complete this lab.<br />
+				<a href="images/WapSettings.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/WapSettings.PNG', 'popup'); return false;">
+					<img src="images/WapSettings.PNG" width="300" alt="WAP settings" class="img-responsive img-responsive" /></a><br />
+			</p>
+
+			<p>
+				Step 8 states &#39;Note that an AP acts somewhat like a hub in that all laptops receive the packet&#39;
+				<br />
+				<br />
+
+				(100) 15. Use the Snipping Tool make a screen shot representing the AP hublike behavior.<br />
+				This is done by repeating the steps 7 and 8 and paying close attention what occurs when you click the Capture then Forward button.<br />
+				Make sure your screen shot includes the Packet Tracer Title Bar with your StarId, and the appropriate icons in the simulation window.of your small network, similar to the screen in the previous exercise.<br />
+				<br />
+
+				<!--  PgP 2/4/2018 create path using constants and current document assignment -->
+				Save the screen shot  as &quot;Ex3&quot; in your ' 
+                <code><span id="akPath"></span></code>
+				<script>document.getElementById("akPath").innerHTML = Path; </script>
+				' folder.<br />
+
+				You will be combining screen shots from several exercises at the end of this assignment, just as you did in 
+                  <a href="../Formative00/Formative00.html#PDFfileCreation" class="bg-info text-white" target="_blank">Formative00</a>-PDF File Creation. 
+			</p>
+			<hr />
+		</div>
+
+		<div class="col-lg-12 text-danger">
+			<h2>Screen Shot Ex3</h2>
+			<hr />
+		</div>
+
+		<hr />
+
+		<div class=" col-lg-12"><a href="#Exercise07" class="btn btn-info" data-toggle="collapse">Packet Tracer Lab 2-4</a></div>
+
+		<div id="Exercise07" class="collapse in  col-lg-12">
+
+			<p>
+				Follow the instructions in Packet Tracer Lab 2-4 to see how a router works.<br />
+				Complete steps 1 through 6.<br />
+				Display Router1 routing table, you may need to resize the dialog box and columns to see the network numbers.
+			</p>
+
+			<p>
+				(50) 16. Use the Snipping Tool to make a screen shot of the Router1 routing table.<br />
+
+
+				<!--  PgP 2/4/2018 create path using constants and current document assignment -->
+				Save the screen shot  as &quot;Ex4&quot; in your ' 
+                <code><span id="amPath"></span></code>
+				<script>document.getElementById("amPath").innerHTML = Path; </script>
+				' folder.<br />
+
+				You will be combining screen shots from several exercises at the end of this assignment, just as you did in 
+                  <a href="../Formative00/Formative00.html#PDFfileCreation" class="bg-info text-white" target="_blank">Formative00</a>-PDF File Creation. 
+			</p>
+			<hr />
+		</div>
+
+		<div class="col-lg-12 text-danger">
+			<h2>Screen Shot Ex4</h2>
+			<hr />
+		</div>
+
+		<hr />
+
+		<div class=" col-lg-12"><a href="#Exercise08" class="btn btn-info" data-toggle="collapse">Challenge Packet Tracer Lab 2-5</a></div>
+
+		<div id="Exercise08" class="collapse in  col-lg-12">
+
+			<p>
+				Follow the instructions in Packet Tracer Lab 2-5 to communicate across a router.<br />
+				The hint states that a change is required on both PC1 and PC2.  It may be advantageous to compare PC1 settings from Lab 2-4 to PC1 settings in Lab 2-5.<br />
+				Furthermore, once you do make changes to PC1 and PC2, make sure to click inside the network diagram box to ensure the PC1 and PC2 are not greyed out, otherwise your PDU will not be delivered.<br />
+				<a href="images/ChallengeLab2_5.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/ChallengeLab2_5.PNG', 'popup'); return false;">
+					<img src="images/ChallengeLab2_5.PNG" width="400" alt="challenge lab 2-5 success" class="img-responsive img-responsive" /></a><br />
+			</p>
+
+			<p>
+				(150) 17. Briefly describe the configuration changes needed on PC1 and PC2 to allow communication across the router.<br />
+
+				<!-- Enter your answer in the VALUE field below   GROK -->
+				<input name="q17" id="q17" size="120" maxlength="120" class="form-control" value="config changes:" type="text">
+				<br />
+
+			</p>
+			<hr />
+		</div>
+
+		<hr />
+
+
+
+		<!--  From here to end difference question numbers and Summative numbering for PDF of file uploaded to D2L    -->
+
+		<div class="col-lg-12"><a href="#ExercisePDF" class="btn btn-info" data-toggle="collapse">Exercise-PDF File Creation</a></div>
+
+		<div id="ExercisePDF" class="collapse in  col-lg-12">
+			<p>
+				Use a web browser to verify that you have published your website to https://classes.winona.edu/...
+                <br />
+				Check that your name, StarID, email, class, semester, section and all of your answers are correct and visible.
+                <br />
+				From the menu choose File&gt;Print... and using &quot;Microsoft Print to PDF&quot; save a copy of this assignment as a .pdf file in your   ' 
+                 <code><span id="dPath"></span></code>
+				<script>document.getElementById("dPath").innerHTML = Path; </script>
+				' folder.<br />
+
+			</p>
+			<br />
+
+			<p>
+				(50) 18. Save your file 'WebPage.pdf' to the ' 
+                <code><span id="ePath"></span></code>
+				<script>document.getElementById("ePath").innerHTML = Path; </script>
+				' folder.<br />
+
+			</p>
+
+			<div class="text-danger">
+				<h2>WebPage.pdf</h2>
+				<hr />
+			</div>
+
+			<p>Create one .pdf (portable document format) file from the screen shots that you have taken by following these steps.</p>
+
+			<ol>
+				<li>Open File Explorer, make sure the screen shot files are properly named(Ex1, Ex2 , Ex3.. ) &nbsp; </li>
+				<li>Select all of the screen shots to be combined. </li>
+				<li>Right Click and select &#39;Print&#39; from the short-cut menu.      </li>
+				<li>In the bottom center of the &#39;Print Pictures&#39; dialog box uncheck the box &quot;Fit picture to frame&quot;</li>
+				<li>Click on &#39;Print&#39; and save the file with the name&nbsp; &quot;ScreenShots.pdf&quot; in your '
+             <code><span id="fPath"></span></code>
+					<script>document.getElementById("fPath").innerHTML = Path; </script>
+					' folder.<br />
+				</li>
+			</ol>
+
+
+			<p>
+				(50) 24. Save your file 'ScreenShots.pdf' to the ' 
+               <code><span id="gPath"></span></code>
+				<script>document.getElementById("gPath").innerHTML = Path; </script>
+				' folder.<br />
+
+			</p>
+
+			<div class="text-danger">
+				<h2>ScreenShots.pdf</h2>
+				<hr />
+			</div>
+
+
+			<p>&nbsp;</p>
+			<p>
+				Use PDFill to merge the <strong>WebPage.pdf</strong> file with the <strong>ScreenShots.pdf </strong>file, and save it as &#39;<strong>Summative02.pdf</strong>&#39; in ' 
+                 <code><span id="hPath"></span></code>
+				<script>document.getElementById("hPath").innerHTML = Path; </script>
+				' folder.<br />
+			</p>
+
+
+			<p>(50) 25. Upload your file 'Summative02.pdf' to the D2L 'Summative02' Assignment folder.</p>
+
+		</div>
+
+		<div class="col-lg-12 text-danger">
+			<h2>Summative02.pdf</h2>
+		</div>
+		<hr />
+
+
+
+
+
+		<div class="col-lg-12"><a href="#ExerciseAssignmentSubmission" class="btn btn-info" data-toggle="collapse">Exercise-Assignment Submission</a></div>
+
+		<div id="ExerciseAssignmentSubmission" class="collapse in  col-lg-12">
+			<p>
+				Use a browser to view your completed and published website at: https://classes.winona.edu/...     
+                <br />
+				Ensure that you have linked this assignment on your home page.
+                Note that your screen shots do not have to be completed to perform this step.<br>
+			</p>
+
+			(50) 26. Home Page Hyperlink<br />
+			Check and verify that this assignment is hyperlinked on your home page.<br />
+			<br />
+
+			(50) 27. Assignment submission<br />
+			Press the Submit button at the top or bottom of this page.
+                Read and follow instructions on the confirmation page.&nbsp; Correct any errors.
+		</div>
+		<hr />
+
+
+		<div class="col-lg-12">
+			<br />
+			<input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit">
+			<br />
+		</div>
+
+
+	</form>
+
+
+	<!-- Creative Commons License Info -->
+	<div id="xLicense" class=" col-lg-12 text-muted"></div>
+
+	<div id="xfooter" class=" col-lg-12 text-muted"></div>
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="../../ReadOnly/jquery-1.js"></script>
+
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="../../ReadOnly/bootstrap.js"></script>
+
+</body>
+</html>

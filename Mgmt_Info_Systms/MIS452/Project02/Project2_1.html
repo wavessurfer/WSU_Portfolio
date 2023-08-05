@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- PgP 6/15/2019 update page, added integral check web db submissions, split constants into two files, one for students, one for course -->
+    <!-- Bootstrap -->
+    <link href="../../ReadOnly/bootstrap.css" rel="stylesheet">
+
+    <!-- constant file for student firstname, lastname, starid on students' pages -->
+    <script src="../constants.js"></script>
+
+    <!-- course constant file that contains semester, class, section pages -->
+    <script src="../../ReadOnly/CourseConstants.js"></script>
+
+    <!-- model assignment file, version 1 released 2018/02/18 PgP -->
+
+    <title>MIS452 Project2 Part 1</title>
+</head>
+
+<body onload="setVariables()">
+
+    <form class="container-fluid" action="https://eprofessor.azurewebsites.net/code/ProcessFormData.asp" method="post" name="frmAssignment" id="frmAssignment">
+        <input name="InstID" id="InstID" value="00617282" type="hidden">
+
+        <h1 class=" text-center">Part 1-Computers</h1>
+
+        <!-- -start-Student, class and assignment information. Assignment hard-coded, other values from constants.js file-start -->
+        <div class="row col-lg-12">
+            <div class="col-lg-3">
+                <label class="text-primary" for="FirstName">First Name:</label>
+                <input class="form-control" name="FirstName" id="FirstName" type="text" value="default first name" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="LastName">Last Name:</label>
+                <input class="form-control" name="LastName" id="LastName" type="text" value="default last name" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="pin">StarID:</label>
+                <input class="form-control" name="pin" id="pin" type="text" value="default StarID" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="email">Email:</label>
+                <input class="form-control" name="email" id="email" type="email" value="default email address" readonly="readonly">
+            </div>
+        </div>
+
+        <div class="row col-lg-12">
+            <div class="col-lg-3">
+                <label class="text-primary" for="semester">Semester:</label>
+                <input class="form-control" name="semester" id="semester" type="text" value="default" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="class">Class:</label>
+                <input class="form-control" name="class" id="class" value="xClass" type="text" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="section">Section:</label>
+                <input class="form-control" name="section" id="section" value="default" type="text" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="assignment">Assignment:</label>
+                <input class="form-control" name="assignment" id="assignment" value="P2_1" type="text" readonly="readonly">
+            </div>
+        </div>
+        <!-- -end-Student, class and assignment information-end -->
+
+        <!-- Calculate the correct path for saving the files -->
+        <script>Path = "&#92;OneDrive - MNSCU&#92;" + xClass + "&#92;" + document.getElementById("assignment").value + "&#92;"; </script>
+
+
+        <div class="col-lg-12">
+            <br />
+            <input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit">
+            <br />
+        </div>
+
+        <div class="col-lg-12 h3 text-danger">
+            750 Points
+            <hr />
+        </div>
+
+        <!-- -start-objectives-start -->
+        <div class="col-lg-12"><a href="#Objectives" class="btn btn-info" data-toggle="collapse">Learning Objectives</a></div>
+        <div id="Objectives" class=" collapse in col-lg-12">
+
+            <!--Above this line similar except for Assignment number and title   -->
+            <ul>
+                <li>Demonstrate usage of Hyper-V</li>
+                <li>Demonstrate usage of virtual machine settings</li>
+                <li>Demonstrate ability to install and configure various operating systems</li>
+                <li>Comprehend and demonstrate importance of troubleshooting skills</li>
+            </ul>
+            <hr />
+        </div>
+
+
+
+        <div class="col-lg-12">
+
+            <p>
+                <a href="http://eprofessor.azurewebsites.net/MIS452/Project02/Project2.html" class="bg-info text-white" target="_blank">Project 2 Background Info </a>
+                <br />
+                Note: Background information details steps to setup and configure the required virtual machine software, Hyper-V, needed for this project.<br />
+                Do NOT proceed until your Hyper-V software is ready to go!
+            </p>
+            <p>
+                <a href="https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/about/" class="bg-info text-white" target="_blank">Information on Hyper-V</a> - good reference to understand capabilities and uses of Hyper-V virtual machine technology
+            </p>
+            <h3>All the files needed for this project are on the WSU network at:<br />
+                <code>\\mispgp\VirtualMachineImages\MIS452Fall2021\Project2</code>
+            </h3>
+            <hr />
+            <hr />
+
+            <h1><i>Part 1-Computers-</i></h1>
+            <p>
+                <br />
+                Note -In this section &quot;Virtual Machines&quot; folder refers to a folder your create at:<br />
+                <code>C:\MyVirtualMachines</code><br />
+                Do NOT save virtual machine files, especially .vhd, .vhdx hard drive or .iso files to your website or your OneDrive - MNSCU folders.<br />
+                These files are very large (GB) and will cause problems on those systems.<br />
+            </p>
+            <hr />
+            <p>
+                Use Hyper-V to create a new virtual machine using the DSL .iso file provided.
+            </p>
+            <p>
+                Research the internet and then apply the appropriate settings (memory, hard disk space....) as you configure the vm.
+            </p>
+            <p>
+                &nbsp;
+            </p>
+            <p>
+                (50) 1. How much RAM (in MB) did you allocate?
+             <!-- Enter your answer in the VALUE field below   GROK -->
+                <input name="q1" id="q1" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
+                <br />
+
+                (50) 2. How much space did you allocate (in GB) for the virtual hard drive?<br />
+                Note: You are probably constrained by the Hyper-V settings.<br />
+                <!-- Enter your answer in the VALUE field below   GROK -->
+                <input name="q2" id="q2" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
+                <br />
+            </p>
+
+            <p>
+                Open a browser window and try to connect to the internet. 
+                <br />
+                Make a screen shot of your DSL virtual machine showing the results of this effort.<br />
+            </p>
+            <br />
+            <hr />
+            (50) 3. Save the screen shot  as &quot;Ex3-DSL&quot; in your ' 
+                 <code><span id="bPath"></span></code>
+            <script>document.getElementById("bPath").innerHTML = Path; </script>
+            ' folder.<br />
+
+            You will be combining screen shots from several exercises at the end of this assignment, just as you did in 
+                  <a href="https://eprofessor.azurewebsites.net/Formative00/Formative00.html#PDFfileCreation" class="bg-info text-white" target="_blank">Formative00</a>-PDF File Creation. 
+             <br />
+
+        </div>
+
+        <div class="col-lg-12 text-danger">
+            <h2>Screen Shot Ex3-DSL</h2>
+            <hr />
+        </div>
+
+        <hr />
+
+        <div class="col-lg-12">
+            <h3>
+                Next explore the settings for your network adapter(s).
+            </h3>
+            <p>
+                This can be from the virtual machine you just created, or another one such as the Win98se or Windows Server 2008 vm used  during class.<br />
+                (50) 4.  What is the purpose of a Network Interface Card (NIC) or Network Adapter? :<br />
+                <!-- Enter your answer in the VALUE field below   GROK -->
+                <input name="q5" id="q5" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
+                <br />
+            </p>
+            <hr />
+            <p>Use the Snipping Tool to make a screen shot of your DSL VM settings, making sure to show the Network Adapter.</p>
+
+
+            <br />
+            (50) 5. Save the screen shot  as &quot;Ex5-NIC&quot; in your ' 
+                <code><span id="cPath"></span></code>
+            <script>document.getElementById("cPath").innerHTML = Path; </script>
+            ' folder.<br />
+
+            You will be combining screen shots from several exercises at the end of this assignment, just as you did in 
+                  <a href="https://eprofessor.azurewebsites.net/Formative00/Formative00.html#PDFfileCreation" class="bg-info text-white" target="_blank">Formative00</a>-PDF File Creation. 
+             <br />
+
+        </div>
+
+        <div class="col-lg-12 text-danger">
+            <h2>Screen Shot Ex5-NIC</h2>
+            <hr />
+        </div>
+
+        <hr />
+
+
+        <div class="col-lg-12">
+
+            <hr />
+            <p>Use the internet to find and read about &quot;using snapshots or checkpoints&quot;</p>
+            <p>
+                (50) 6. Briefly explain the purpose of a Snapshot or checkpoint:<br />
+
+                <!-- Enter your answer in the VALUE field below   GROK -->
+                <input name="q6" id="q6" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
+                <br />
+            </p>
+            <p>
+            <p>
+                Create a Windows Server 2012&nbsp; vm using the WindowsServer2012.vhdx file available at:
+                <br />
+                <code>\\mispgp\VirtuaMachineImages\MIS452Fall2021\Windows2012</code>
+            </p>
+            <p>
+                To create the vm, first download the&nbsp; .vhdx file to your laptop, in your 'Virtual Machines' folder.<br />
+            </p>
+
+            <p>Make a screen shot of your&nbsp; vm  showing the date:</p>
+
+            (50) 7. Save the screen shot  as &quot;Ex7-WS2012&quot; in your ' 
+                  <code><span id="kPath"></span></code>
+            <script>document.getElementById("kPath").innerHTML = Path; </script>
+            ' folder.<br />
+
+            You will be combining screen shots from several exercises at the end of this assignment, just as you did in 
+                  <a href="https://eprofessor.azurewebsites.net/Formative00/Formative00.html#PDFfileCreation" class="bg-info text-white" target="_blank">Formative00</a>-PDF File Creation. 
+             <br />
+
+        </div>
+
+        <div class="col-lg-12 text-danger">
+            <h2>Screen Shot Ex7-WS2012</h2>
+            <hr />
+        </div>
+
+        <div class="col-lg-12">
+
+            <p>
+                Create a Windows XP vm using the WinXPSP3.iso file available at:
+                <br />
+                <code>\\mispgp\VirtuaMachineImages\MIS452Fall2021\WinXP</code>
+            </p>
+            <p>
+                To create the WinXP vm, first download this .iso file to your laptop, in your 'Virtual Machines' folder.<br />
+                <br />
+                Make sure you set the hard drive size to at least 8GB.
+  <br />
+                If you do not plan on using this VM after 30 days from installation, a Product Key is not necessary.<br />
+                Make sure to remember your &quot;Computer Name&quot; for your WinXP VM.  Note that you can make it whatever you want.
+            </p>
+
+
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>
+                Using your WinXP vm, install Audacity.<br />
+                <a href="http://audacity.sourceforge.net/">Audacity</a> is recommended. It is a small file, about 2MB<br />
+                A copy on an .iso file is available in the folder:<br />
+                <code>\\mispgp\VirtuaMachineImages\MIS452Fall2021</code><br />
+                <br />
+                Do the Audacity installation by mounting the .iso file onto your VM by using the appropriate settings.
+  <br />
+            </p>
+            <p>&nbsp;Use the Snipping Tool and make a screen shot showing your WinXP vm running your newly installed application:</p>
+            (50) 8. Save the screen shot  as &quot;Ex8-XP&quot; in your ' 
+                 <code><span id="lPath"></span></code>
+            <script>document.getElementById("lPath").innerHTML = Path; </script>
+            ' folder.<br />
+
+            You will be combining screen shots from several exercises at the end of this assignment, just as you did in 
+                  <a href="https://eprofessor.azurewebsites.net/Formative00/Formative00.html#PDFfileCreation" class="bg-info text-white" target="_blank">Formative00</a>-PDF File Creation. 
+             <br />
+        </div>
+
+        <div class="col-lg-12 text-danger">
+            <h2>Screen Shot Ex8-XP</h2>
+            <hr />
+        </div>
+
+        <div class="col-lg-12">
+            <p>
+                Again using your WinXP vm, install, partition, and format a new 'virtual'  hard drive.<br />
+                Make sure the virtual hard drive is small, dynamic and a maximum of 102MB.<br />
+                In VMware help, search for &quot;Add a New Virtual Disk to a Virtual Machine&quot;<br />
+                In the XP vm, Go to Start&gt;Control Panel&gt; (Switch to Classic View)&gt;Administrative Tools&gt;Computer Management&gt;Disk Management<br />
+                The XP vm may need to be restarted for the vm to recognize the new hard drive.
+            </p>
+            <p>
+                <br />
+            </p>
+            <p>Make a screen shot showing the disk management console and the new hard drive installed in the WinXP vm:</p>
+            (100) 9. Save the screen shot  as &quot;Ex9-VHD&quot; in your ' 
+                  <code><span id="mPath"></span></code>
+            <script>document.getElementById("mPath").innerHTML = Path; </script>
+            ' folder.<br />
+
+            You will be combining screen shots from several exercises at the end of this assignment, just as you did in 
+                  <a href="https://eprofessor.azurewebsites.net/Formative00/Formative00.html#PDFfileCreation" class="bg-info text-white" target="_blank">Formative00</a>-PDF File Creation. 
+             <br />
+
+        </div>
+
+        <div class="col-lg-12 text-danger">
+            <h2>Screen Shot Ex9-VHD</h2>
+            <hr />
+            <hr />
+            <hr />
+        </div>
+
+
+
+
+        <!--  From here to end difference question numbers and Summative numbering for PDF of file uploaded to D2L    -->
+
+
+        <div class="col-lg-12"><a href="#ExercisePDF" class="btn btn-info" data-toggle="collapse">Exercise-PDF File Creation</a></div>
+
+        <div id="ExercisePDF" class="collapse in  col-lg-12">
+            <p>
+                Use a web browser to verify that you have published your website to https://classes.winona.edu/...
+                    <br />
+                Check that your name, StarID, email, class, semester, section and all of your answers are correct and visible.
+                    <br />
+                From the menu choose File&gt;Print... and using &quot;Microsoft Print to PDF&quot; save a copy of this assignment as a .pdf file in your   ' 
+                <code><span id="dPath"></span></code>
+                <script>document.getElementById("dPath").innerHTML = Path; </script>
+                ' folder.<br />
+            </p>
+            <br />
+
+            <p>
+                (50) 10. Save your file 'WebPage.pdf' to the ' 
+                <code><span id="ePath"></span></code>
+                <script>document.getElementById("ePath").innerHTML = Path; </script>
+                ' folder.<br />
+
+
+            </p>
+
+            <div class="text-danger">
+                <h2>WebPage.pdf</h2>
+                <hr />
+            </div>
+
+            <p>Create one .pdf (portable document format) file from the screen shots that you have taken by following these steps.</p>
+
+            <ol>
+                <li>Open File Explorer, make sure the screen shot files are properly named(Ex1, Ex2 , Ex3.. ) &nbsp; </li>
+                <li>Select all of the screen shots to be combined. </li>
+                <li>Right Click and select &#39;Print&#39; from the short-cut menu.      </li>
+                <li>In the bottom center of the &#39;Print Pictures&#39; dialog box uncheck the box &quot;Fit picture to frame&quot;</li>
+                <li>Click on &#39;Print&#39; and save the file with the name&nbsp; &quot;ScreenShots.pdf&quot; in your '
+                <code><span id="fPath"></span></code>
+                    <script>document.getElementById("fPath").innerHTML = Path; </script>
+                    ' folder.<br />
+                </li>
+            </ol>
+
+
+            <p>
+                (50) 11. Save your file 'ScreenShots.pdf' to the ' 
+                <code><span id="gPath"></span></code>
+                <script>document.getElementById("gPath").innerHTML = Path; </script>
+                ' folder.<br />
+
+            </p>
+
+            <div class="text-danger">
+                <h2>ScreenShots.pdf</h2>
+                <hr />
+            </div>
+
+
+            <p>&nbsp;</p>
+            <p>
+                Use PDFill to merge the <strong>WebPage.pdf</strong> file with the <strong>ScreenShots.pdf </strong>file, and save it as &#39;<strong>Project02_1.pdf</strong>&#39; in ' 
+                <code><span id="hPath"></span></code>
+                <script>document.getElementById("hPath").innerHTML = Path; </script>
+                ' folder.<br />
+
+            </p>
+
+
+            <p>(50) 12. Upload your file 'Project02_1.pdf' to the D2L 'Project02-1' Assignment folder.</p>
+
+            <div class="text-danger">
+                <h2>Project02_1.pdf</h2>
+            </div>
+            <hr />
+
+        </div>
+
+
+
+
+        <div class="col-lg-12"><a href="#ExerciseAssignmentSubmission" class="btn btn-info" data-toggle="collapse">Exercise-Assignment Submission</a></div>
+
+        <div id="ExerciseAssignmentSubmission" class="collapse in  col-lg-12">
+            <p>
+                Use a browser to view your completed and published website at: https://classes.winona.edu/...     
+                    <br />
+                Ensure that you have linked this assignment on your home page.
+                Note that your screen shots do not have to be completed to perform this step.<br>
+            </p>
+
+            (50) 13. Home Page Hyperlink<br />
+            Check and verify that this assignment is hyperlinked on your home page.<br />
+            <br />
+
+            (50) 14. Assignment submission<br />
+            Press the Submit button at the top or bottom of this page.
+                Read and follow instructions on the confirmation page.&nbsp; Correct any errors.
+        </div>
+        <hr />
+
+
+
+        <div class="col-lg-12">
+            <br />
+            <input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit">
+            <br />
+        </div>
+    </form>
+
+
+
+    <!-- Creative Commons License Info -->
+    <div id="xLicense" class=" col-lg-12 text-muted"></div>
+
+    <div id="xfooter" class=" col-lg-12 text-muted"></div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="../../ReadOnly/jquery-1.js"></script>
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../../ReadOnly/bootstrap.js"></script>
+
+</body>
+</html>

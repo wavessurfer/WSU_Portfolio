@@ -1,0 +1,573 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- PgP 6/15/2019 update page, added integral check web db submissions, split constants into two files, one for students, one for course -->
+	<!-- Bootstrap -->
+	<link href="../../ReadOnly/bootstrap.css" rel="stylesheet">
+
+	<!-- constant file for student firstname, lastname, starid on students' pages -->
+	<script src="../constants.js"></script>
+
+	<!-- course constant file that contains semester, class, section pages -->
+	<script src="../../ReadOnly/CourseConstants.js"></script>
+
+	<!-- model assignment file, version 1 released 2018/02/18 PgP -->
+
+	<title>MIS452Summative09</title>
+</head>
+
+<body onload="setVariables()">
+
+	<form class="container-fluid" action="https://eprofessor.azurewebsites.net/code/ProcessFormData.asp" method="post" name="frmAssignment" id="frmAssignment">
+		<input name="InstID" id="InstID" value="00617282" type="hidden">
+
+		<h1 class=" text-center">Network Security</h1>
+
+		<!-- -start-Student, class and assignment information. Assignment hard-coded, other values from constants.js file-start -->
+		<div class="row col-lg-12">
+			<div class="col-lg-3">
+				<label class="text-primary" for="FirstName">First Name:</label>
+				<input class="form-control" name="FirstName" id="FirstName" type="text" value="default first name" readonly="readonly">
+			</div>
+			<div class="col-lg-3">
+				<label class="text-primary" for="LastName">Last Name:</label>
+				<input class="form-control" name="LastName" id="LastName" type="text" value="default last name" readonly="readonly">
+			</div>
+			<div class="col-lg-3">
+				<label class="text-primary" for="pin">StarID:</label>
+				<input class="form-control" name="pin" id="pin" type="text" value="default StarID" readonly="readonly">
+			</div>
+			<div class="col-lg-3">
+				<label class="text-primary" for="email">Email:</label>
+				<input class="form-control" name="email" id="email" type="email" value="default email address" readonly="readonly">
+			</div>
+		</div>
+
+		<div class="row col-lg-12">
+			<div class="col-lg-3">
+				<label class="text-primary" for="semester">Semester:</label>
+				<input class="form-control" name="semester" id="semester" type="text" value="default" readonly="readonly">
+			</div>
+			<div class="col-lg-3">
+				<label class="text-primary" for="class">Class:</label>
+				<input class="form-control" name="class" id="class" value="xClass" type="text" readonly="readonly">
+			</div>
+			<div class="col-lg-3">
+				<label class="text-primary" for="section">Section:</label>
+				<input class="form-control" name="section" id="section" value="default" type="text" readonly="readonly">
+			</div>
+			<div class="col-lg-3">
+				<label class="text-primary" for="assignment">Assignment:</label>
+				<input class="form-control" name="assignment" id="assignment" value="Summative09" type="text" readonly="readonly">
+			</div>
+		</div>
+		<!-- -end-Student, class and assignment information-end -->
+
+		<!-- Calculate the correct path for saving the files -->
+		<script>Path = "&#92;OneDrive - MNSCU&#92;" + xClass + "&#92;" + document.getElementById("assignment").value + "&#92;"; </script>
+
+
+		<div class="col-lg-12">
+			<br />
+			<input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit">
+			<br />
+		</div>
+
+		<div class="col-lg-12 h3 text-danger">
+			1000 Points
+            <hr />
+		</div>
+
+		<!-- -start-objectives-start -->
+		<div class="col-lg-12"><a href="#Objectives" class="btn btn-info" data-toggle="collapse">Learning Objectives</a></div>
+		<div id="Objectives" class=" collapse in col-lg-12">
+
+			<!--Above this line similar except for Assignment number and title   -->
+			<ul>
+				<li>Develop a network security policy</li>
+				<li>Secure physical access to network equipment</li>
+				<li>Secure access to network data</li>
+				<li>Describe network security devices</li>
+				<li>Protect a network from malware</li>
+				<li>Use attacker's tools to find network security weaknesses</li>
+			</ul>
+
+			<hr />
+		</div>
+		<!-- -end-objectives-end -->
+
+
+		<div class=" col-lg-12"><a href="#Exercise01" class="btn btn-info" data-toggle="collapse">Questions</a></div>
+
+		<div id="Exercise01" class="collapse in  col-lg-12">
+
+			<p>
+				Think about ways for an organization to balance security and convenience for their employees.<br />
+				Note: do not only rely on the book for the answer.<br />
+				Consult LinkedIn Learning and Wikipedia.<br />
+				Look at <a href="https://grc.com/securitynow.htm" target="_blank" class="bg-info text-white">https://grc.com/securitynow.htm </a>
+			</p>
+
+
+			<p>(50) 1. Briefly explain why creating and maintaining a secure network is such a daunting task.</p>
+
+			<!-- Enter your answer in the VALUE field below   GROK -->
+			<input name="q1" id="q1" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
+			<br />
+			<hr />
+
+		</div>
+
+
+		<div class=" col-lg-12"><a href="#Exercise02" class="btn btn-info" data-toggle="collapse">Hands-On Project 9-1-Password and Lockout Policies</a></div>
+
+		<div id="Exercise02" class="collapse in  col-lg-12">
+
+			<p>
+				Read Hands-On Project 9-1<br />
+				In step 1 note that you are an administrator when you login to your WSU laptop.<br />
+				Please realize that you cannot change account policies on your laptop because they are controlled by university-wide group policies.<br />
+				<a href="images/grouppolicy.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/grouppolicy.PNG', 'popup'); return false;">
+					<img src="images/grouppolicy.PNG" width="400" alt="group policy" class="img-responsive img-responsive" /></a>
+
+				<br />
+				So you will investigate the WSU password policy settings.<br />
+
+				<a href="images/passwordpolicy.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/passwordpolicy.PNG', 'popup'); return false;">
+					<img src="images/passwordpolicy.PNG" width="400" alt="password policy" class="img-responsive img-responsive" /></a>
+			</p>
+
+			<p>
+				(50) 2. In step 3 provide the 'Security Setting' for 'Enforce password history', the number of passwords remembered.<br />
+
+				<!-- Enter your answer in the VALUE field below   GROK -->
+				<input name="q2" id="q2" size="120" maxlength="120" class="form-control" value="passwords remembered: " type="text">
+				<br />
+			</p>
+
+			<p>
+				(50) 3. In step 4 provide the 'Security Setting' for 'Maximum password age', the number of days a password can be used before changing.<br />
+
+				<!-- Enter your answer in the VALUE field below   GROK -->
+				<input name="q3" id="q3" size="120" maxlength="120" class="form-control" value="password days: " type="text">
+				<br />
+			</p>
+
+			<p>
+				(50) 4. In step 4 comment on the WSU 'Maximum password age' 'Security Setting'.
+				<br />
+				As of 2021, briefly explain why this number is so large.<br />
+
+				<!-- Enter your answer in the VALUE field below   GROK -->
+				<input name="q4" id="q4" size="120" maxlength="120" class="form-control" value="password days: " type="text">
+				<br />
+			</p>
+
+			<p>
+				(50) 5. In step 7 review the explanation for the password complexity requirements. 
+				<br />
+				Briefly comment on the reasonableness of this policy.<br />
+
+				<!-- Enter your answer in the VALUE field below   GROK -->
+				<input name="q5" id="q5" size="120" maxlength="120" class="form-control" value="password days: " type="text">
+				<br />
+
+				<a href="images/complexity.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/complexity.PNG', 'popup'); return false;">
+					<img src="images/complexity.PNG" width="400" alt="password complexity" class="img-responsive img-responsive" /></a>
+
+			</p>
+
+			<p>
+				(50) 6. In steps 8,9 and 10 review the account lockout policy.<br />
+				Briefly comment on the reasonableness of this policy.<br />
+
+				<!-- Enter your answer in the VALUE field below   GROK -->
+				<input name="q6" id="q6" size="120" maxlength="120" class="form-control" value="password days: " type="text">
+				<br />
+
+				<a href="images/lockout.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/lockout.PNG', 'popup'); return false;">
+					<img src="images/lockout.PNG" width="400" alt="lockout policy" class="img-responsive img-responsive" /></a>
+
+			</p>
+
+			<hr />
+
+		</div>
+
+
+
+		<div class=" col-lg-12"><a href="#Exercise03" class="btn btn-info" data-toggle="collapse">Hands-On Project 9-2-Windows Defender Firewall</a></div>
+
+		<div id="Exercise03" class="collapse in  col-lg-12">
+
+			<p>
+				Do Hands-On Project 9-2<br />
+				Review how to configure Windows 10 firewall.<br />
+				Please realize that because your laptop is a part of the WSU domain, that the system administrators control the firewall settings.
+			</p>
+
+			<p>
+				<a href="images/defenderfirewall.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/defenderfirewall.PNG', 'popup'); return false;">
+					<img src="images/defenderfirewall.PNG" width="400" alt="Defender firewall" class="img-responsive img-responsive" /></a>\
+			</p>
+
+			<p>
+				(50) 7. In step 7 briefly explain what is meant by 'den[ies] unsolicited attempts from outside to connect to your computer'.<br />
+
+				<!-- Enter your answer in the VALUE field below   GROK -->
+				<input name="q7" id="q7" size="120" maxlength="120" class="form-control" value="outside attempts: " type="text">
+				<br />
+			</p>
+
+
+			<p>
+				(50) 8. Read steps 8 through 15.  Read step 12 but do not add the new firewall rule.<br />
+				Briefly reflect on the number of  firewall rules-both inbound and outbound, and what this means for the WSU network security administrator(s).<br />
+				Consider how they create these rules, and the reprecussions if they deploy a rule that disrupts student, faculty or staff workflow.<br />
+
+				<!-- Enter your answer in the VALUE field below   GROK -->
+				<input name="q8" id="q8" size="120" maxlength="120" class="form-control" value="security responsibility: " type="text">
+				<br />
+			</p>
+			<hr />
+
+		</div>
+
+
+
+		<div class=" col-lg-12"><a href="#Exercise04" class="btn btn-info" data-toggle="collapse">Hands-On Project 9-3-Shields Up!</a></div>
+
+		<div id="Exercise04" class="collapse in  col-lg-12">
+
+			<p>
+				Do Hands-On Project 9-3<br />
+				Visit <a href="https://www.grc.com/shieldsup" class="bg-info" target="_blank">ShieldsUP!!</a><br />
+			</p>
+
+			<p>
+				(50) 9. In step 4 check port 139, and briefly explain why having this port open to the outside world is not a good idea.<br />
+
+				<!-- Enter your answer in the VALUE field below   GROK -->
+				<input name="q9" id="q9" size="120" maxlength="120" class="form-control" value="port 139: " type="text">
+				<br />
+			</p>
+
+			<p>
+				Perform a port scan-either Common ports or all service ports with Steve Gibson's freeware Shield's up.<br />
+				Note that if you scan all service ports can hover over the resulting graphic to view a port, and you can click on a port for more information.
+			</p>
+
+			<p>
+				(50) 10. Make a screen shot of one either scan-'Common Ports' or 'All Service Ports'.<br />
+				<a href="images/shieldsup.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/shieldsup.PNG', 'popup'); return false;">
+					<img src="images/shieldsup.PNG" width="400" alt="shields up" class="img-responsive img-responsive" /></a>
+			</p>
+
+			<p>
+				<!--  PgP 2/4/2018 create path using constants and current document assignment -->
+				Save the screen shot  as &quot;Ex1&quot; in your ' 
+                <code><span id="aqPath"></span></code>
+				<script>document.getElementById("aqPath").innerHTML = Path; </script>
+				' folder.<br />
+
+				You will be combining screen shots from several exercises at the end of this assignment, just as you did in 
+                  <a href="../Formative00/Formative00.html#PDFfileCreation" class="bg-info text-white" target="_blank">Formative00</a>-PDF File Creation. 
+			</p>
+
+			<p>
+				Complete the remaining steps.<br />
+				You do not have to perform step 6 and delete your 0.0.0.0 route.  But if you do, be very careful to record the 0.0.0.0 gateway value per step 4.<br />
+				Note: it may work better to <code>ping www.cnn.com</code> in steps 6 and 8.<br />
+			</p>
+
+			<hr />
+
+		</div>
+
+		<div class="col-lg-12 text-danger">
+			<h2>Screen Shot Ex1</h2>
+			<hr />
+			<hr />
+		</div>
+
+
+		<div class=" col-lg-12"><a href="#Exercise05" class="btn btn-info" data-toggle="collapse">Hands-On Project 9-4-Windows Security</a></div>
+
+		<div id="Exercise05" class="collapse in  col-lg-12">
+
+			<p>
+				Do Hands-On Project 9-4<br />
+				Please realize that 'Windows Defender Security Center' is now 'Windows Security'<br />
+				<a href="images/windowssecurity.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/windowssecurity.PNG', 'popup'); return false;">
+				<img src="images/windowssecurity.PNG" width="400" alt="windows security" class="img-responsive img-responsive" /></a>
+			</p>
+
+			<p>
+				(50) 11. In step 3 check to see if any action is needed.<br />
+				Briefly explain any actions that you had to take.<br />
+
+				<!-- Enter your answer in the VALUE field below   GROK -->
+				<input name="q11" id="q11" size="120" maxlength="120" class="form-control" value="security actions: " type="text">
+				<br />
+			</p>
+
+		</div>
+
+
+
+
+
+		<div class=" col-lg-12"><a href="#Exercise06" class="btn btn-info" data-toggle="collapse">Hands-On Project 9-5-NetInfo</a></div>
+
+		<div id="Exercise06" class="collapse in  col-lg-12">
+
+			<p>
+				Do Hands-On Project 9-5<br />
+				An evaluation version of NetInfo is available in the ReadOnly folder of the network drive, or Professor Paulson's ReadOnly OneDrive folder.<br />
+			</p>
+
+			<p>
+				In step 6 Verify Services.<br />
+				If you cannot find a computer, ask Professor Paulson for an ip address to scan in the classroom.<br />
+				In step 9 you will scan this address segment, and make a screen shot.
+			</p>
+
+			<p>
+				(50) 12. In step 12 write a short explanation of how NetInfo's Scanner and Services feature could help an attacker.<br />
+
+				<!-- Enter your answer in the VALUE field below   GROK -->
+				<input name="q12" id="q12" size="120" maxlength="120" class="form-control" value="attack: " type="text">
+				<br />
+			</p>
+
+			<p>
+				In step 9, when using the NetInfo Scanner tab, sort your results by 'Status' and make a screen shot of items labeled 'Host is alive'.<br />
+				If there are none, make a screen shot of the Scanner results.
+			</p>
+
+			<p>
+				(50) 13. Make a screen shot of the Scanner function per above.<br />
+				<a href="images/NetInfo.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/NetInfo.PNG', 'popup'); return false;">
+					<img src="images/NetInfo.PNG" width="400" alt="shields up" class="img-responsive img-responsive" /></a>
+			</p>
+
+			<p>
+				<!--  PgP 2/4/2018 create path using constants and current document assignment -->
+				Save the screen shot  as &quot;Ex2&quot; in your ' 
+                <code><span id="arPath"></span></code>
+				<script>document.getElementById("arPath").innerHTML = Path; </script>
+				' folder.<br />
+
+				You will be combining screen shots from several exercises at the end of this assignment, just as you did in 
+                  <a href="../Formative00/Formative00.html#PDFfileCreation" class="bg-info text-white" target="_blank">Formative00</a>-PDF File Creation. 
+			</p>
+
+			<hr />
+
+		</div>
+
+		<div class="col-lg-12 text-danger">
+			<h2>Screen Shot Ex2</h2>
+			<hr />
+			<hr />
+		</div>
+
+
+
+		<div class=" col-lg-12"><a href="#Exercise07" class="btn btn-info" data-toggle="collapse">Packet Tracer Lab 9-1-Access Control Lists</a></div>
+
+		<div id="Exercise07" class="collapse in  col-lg-12">
+
+			<p>The Packet Tracer Labs are accessible from MindTap in two ways:</p>
+			<ul>
+				<li>Under the Practice section of the Module<br />
+					<a href="../Summative09/images/PacketTracer.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/PacketTracer.PNG', 'popup'); return false;">
+						<img src="../Summative09/images/PacketTracer.PNG" width="400" alt="packet tracer location" class="img-responsive img-responsive" /></a>
+				</li>
+
+				<li>In the Chapter Review section of the book<br />
+					<a href="../Summative09/images/PacketTracer2.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/PacketTracer2.PNG', 'popup'); return false;">
+						<img src="../Summative09/images/PacketTracer2.PNG" width="200" alt="packet tracer location" class="img-responsive img-responsive" /></a>
+				</li>
+			</ul>
+
+			<p>
+				The files needed for Packet Tracer labs are available on the Cengage Website, in Professor Paulson's OneDrive ReadOnly folder for this course, or in the WSU network drive ReadOnly folder for this course.<br />
+				You must save a copy of these files to your 
+				<code>
+					<span id="bbPath"></span>
+					<script>document.getElementById("bbPath").innerHTML = "&#92;OneDrive - MNSCU&#92;" + xClass + "&#92;";  </script>
+				</code>
+				folder.
+			</p>
+
+			<p>
+				Follow the instructions in Packet Tracer Lab 9-1 to configure an access control list to prevent some PCs from access ing a network.<br />
+				When done, answer the question below.<br />
+				For background information please refer to the book.
+			</p>
+
+			<p>
+				In step 3, make sure to first click the 'Realtime' button in the lower right.
+			</p>
+
+
+			<p>
+				(100) 14. After step 15 use the Snipping Tool to make a screen shot of both the PC1 and PC2 web browsers showing that both computers can reach the webp page at 192.168.1.100.<br />
+
+
+				<!--  PgP 2/4/2018 create path using constants and current document assignment -->
+				Save the screen shot  as &quot;Ex3&quot; in your ' 
+                <code><span id="adPath"></span></code>
+				<script>document.getElementById("adPath").innerHTML = Path; </script>
+				' folder.<br />
+
+				You will be combining screen shots from several exercises at the end of this assignment, just as you did in 
+                  <a href="../Formative00/Formative00.html#PDFfileCreation" class="bg-info text-white" target="_blank">Formative00</a>-PDF File Creation. 
+			</p>
+
+		</div>
+
+		<div class="col-lg-12 text-danger">
+			<h2>Screen Shot Ex3</h2>
+			<hr />
+			<hr />
+		</div>
+
+
+
+
+
+		<!--  From here to end difference question numbers and Summative numbering for PDF of file uploaded to D2L    -->
+
+
+		<div class="col-lg-12"><a href="#ExercisePDF" class="btn btn-info" data-toggle="collapse">Exercise-PDF File Creation</a></div>
+
+		<div id="ExercisePDF" class="collapse in  col-lg-12">
+			<p>
+				Use a web browser to verify that you have published your website to https://classes.winona.edu/...
+                <br />
+				Check that your name, StarID, email, class, semester, section and all of your answers are correct and visible.
+                <br />
+				From the menu choose File&gt;Print... and using &quot;Microsoft Print to PDF&quot; save a copy of this assignment as a .pdf file in your   ' 
+                <code><span id="dPath"></span></code>
+				<script>document.getElementById("dPath").innerHTML = Path; </script>
+				' folder.
+			</p>
+
+			<p>
+				(50) 15. Save your file 'WebPage.pdf' to the ' 
+                <code><span id="ePath"></span></code>
+				<script>document.getElementById("ePath").innerHTML = Path; </script>
+				' folder.<br />
+
+
+			</p>
+
+			<div class="text-danger">
+				<h2>WebPage.pdf</h2>
+				<hr />
+			</div>
+
+			<p>Create one .pdf (portable document format) file from the screen shots that you have taken by following these steps.</p>
+
+			<ol>
+				<li>Open File Explorer, make sure the screen shot files are properly named(Ex1, Ex2 , Ex3.. ) &nbsp; </li>
+				<li>Select all of the screen shots to be combined. </li>
+				<li>Right Click and select &#39;Print&#39; from the short-cut menu.      </li>
+				<li>In the bottom center of the &#39;Print Pictures&#39; dialog box uncheck the box &quot;Fit picture to frame&quot;</li>
+				<li>Click on &#39;Print&#39; and save the file with the name&nbsp; &quot;ScreenShots.pdf&quot; in your '
+                <code><span id="fPath"></span></code>
+					<script>document.getElementById("fPath").innerHTML = Path; </script>
+					' folder.<br />
+				</li>
+			</ol>
+
+
+			<p>
+				(50) 16. Save your file 'ScreenShots.pdf' in your ' 
+                <code><span id="gPath"></span></code>
+				<script>document.getElementById("gPath").innerHTML = Path; </script>
+				' folder.<br />
+
+			</p>
+
+			<div class="text-danger">
+				<h2>ScreenShots.pdf</h2>
+				<hr />
+			</div>
+
+
+			<p>&nbsp;</p>
+			<p>
+				Use PDFill to merge the WebPage.pdf file with the ScreenShots.pdf file, and save it as &#39;Summative09.pdf&#39; in your ' 
+                <code><span id="hPath"></span></code>
+				<script>document.getElementById("hPath").innerHTML = Path; </script>
+				' folder.<br />
+
+			</p>
+
+
+			<p>(50) 17. Upload your file 'Summative09.pdf' to the D2L 'Summative09' Assignment folder.</p>
+
+		</div>
+
+		<div class="col-lg-12 text-danger">
+			<h2>Summative09.pdf</h2>
+		</div>
+		<hr />
+
+
+
+
+
+		<div class="col-lg-12"><a href="#ExerciseAssignmentSubmission" class="btn btn-info" data-toggle="collapse">Exercise-Assignment Submission</a></div>
+
+		<div id="ExerciseAssignmentSubmission" class="collapse in  col-lg-12">
+			<p>
+				Use a browser to view your completed and published website at: https://classes.winona.edu/...     
+                <br />
+				Ensure that you have linked this assignment on your home page.
+                Note that your screen shots do not have to be completed to perform this step.<br>
+			</p>
+
+			(50) 18. Home Page Hyperlink<br />
+			Check and verify that this assignment is hyperlinked on your home page.<br />
+			<br />
+
+			(50) 19. Assignment submission<br />
+			Press the Submit button at the top or bottom of this page.
+                Read and follow instructions on the confirmation page.&nbsp; Correct any errors.
+		</div>
+		<hr />
+
+
+
+		<div class="col-lg-12">
+			<br />
+			<input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit">
+			<br />
+		</div>
+
+
+	</form>
+
+
+
+	<!-- Creative Commons License Info -->
+	<div id="xLicense" class=" col-lg-12 text-muted"></div>
+
+	<div id="xfooter" class=" col-lg-12 text-muted"></div>
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="../../ReadOnly/jquery-1.js"></script>
+
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="../../ReadOnly/bootstrap.js"></script>
+
+</body>
+</html>

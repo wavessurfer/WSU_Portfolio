@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- PgP 6/15/2019 update page, added integral check web db submissions, split constants into two files, one for students, one for course -->
+	<!-- Bootstrap -->
+	<link href="../../ReadOnly/bootstrap.css" rel="stylesheet">
+
+	<!-- constant file for student firstname, lastname, starid on students' pages -->
+	<script src="../constants.js"></script>
+
+	<!-- course constant file that contains semester, class, section pages -->
+	<script src="../../ReadOnly/CourseConstants.js"></script>
+	<!-- model assignment file, version 1 released 2018/02/18 PgP -->
+
+	<title>MIS452Summative03</title>
+</head>
+
+<body onload="setVariables()">
+
+	<form class="container-fluid" action="https://eprofessor.azurewebsites.net/code/ProcessFormData.asp" method="post" name="frmAssignment" id="frmAssignment">
+		<input name="InstID" id="InstID" value="00617282" type="hidden">
+
+		<h1 class=" text-center">&nbsp;Network Topologies and Technologies</h1>
+
+		<!-- -start-Student, class and assignment information. Assignment hard-coded, other values from constants.js file-start -->
+		<div class="row col-lg-12">
+			<div class="col-lg-3">
+				<label class="text-primary" for="FirstName">First Name:</label>
+				<input class="form-control" name="FirstName" id="FirstName" type="text" value="default first name" readonly="readonly">
+			</div>
+			<div class="col-lg-3">
+				<label class="text-primary" for="LastName">Last Name:</label>
+				<input class="form-control" name="LastName" id="LastName" type="text" value="default last name" readonly="readonly">
+			</div>
+			<div class="col-lg-3">
+				<label class="text-primary" for="pin">StarID:</label>
+				<input class="form-control" name="pin" id="pin" type="text" value="default StarID" readonly="readonly">
+			</div>
+			<div class="col-lg-3">
+				<label class="text-primary" for="email">Email:</label>
+				<input class="form-control" name="email" id="email" type="email" value="default email address" readonly="readonly">
+			</div>
+		</div>
+
+		<div class="row col-lg-12">
+			<div class="col-lg-3">
+				<label class="text-primary" for="semester">Semester:</label>
+				<input class="form-control" name="semester" id="semester" type="text" value="default" readonly="readonly">
+			</div>
+			<div class="col-lg-3">
+				<label class="text-primary" for="class">Class:</label>
+				<input class="form-control" name="class" id="class" value="xClass" type="text" readonly="readonly">
+			</div>
+			<div class="col-lg-3">
+				<label class="text-primary" for="section">Section:</label>
+				<input class="form-control" name="section" id="section" value="default" type="text" readonly="readonly">
+			</div>
+			<div class="col-lg-3">
+				<label class="text-primary" for="assignment">Assignment:</label>
+				<input class="form-control" name="assignment" id="assignment" value="Summative03" type="text" readonly="readonly">
+			</div>
+		</div>
+		<!-- -end-Student, class and assignment information-end -->
+
+		<!-- Calculate the correct path for saving the files -->
+		<script>Path = "&#92;OneDrive - MNSCU&#92;" + xClass + "&#92;" + document.getElementById("assignment").value + "&#92;"; </script>
+
+
+		<div class="col-lg-12">
+			<br />
+			<input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit">
+			<br />
+		</div>
+
+		<div class="col-lg-12 h3 text-danger">
+			1100 Points
+            <hr />
+		</div>
+
+		<!-- -start-objectives-start -->
+		<div class="col-lg-12"><a href="#Objectives" class="btn btn-info" data-toggle="collapse">Learning Objectives</a></div>
+		<div id="Objectives" class=" collapse in col-lg-12">
+
+			<!--Above this line similar except for Assignment number and title   -->
+			<ul>
+				<li>Describe the primary physical networking topologies in common use</li>
+				<li>Describe the primary logical networking topologies in common use</li>
+				<li>Describe the major LAN networking technologies</li>
+				<li>Compare Wi-Fi standards</li>
+			</ul>
+
+
+			<hr />
+		</div>
+		<!-- -end-objectives-end -->
+
+
+		<div class=" col-lg-12"><a href="#Exercise01" class="btn btn-info" data-toggle="collapse">Questions</a></div>
+
+		<div id="Exercise01" class="collapse in  col-lg-12">
+			Research some esoteric but useful network concepts.
+            <p>
+				<br />
+				Note: do not only rely on the book for the answer.<br />
+				Consult LinkedIn Learning and Wikipedia.
+			</p>
+
+			<p>
+				(50) 1.What does &quot;promiscuous mode&quot; mean in relation to a Network Interface Card (NIC)?<br />
+				Briefly explain your answer.<br />
+
+				<!-- Enter your answer in the VALUE field below   GROK -->
+				<input name="q1" id="q1" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
+				<br />
+			</p>
+			<hr />
+		</div>
+
+		<hr />
+
+
+		<div class=" col-lg-12"><a href="#Exercise02" class="btn btn-info" data-toggle="collapse">Hands-On Project 3-2-Ethernet Standards</a></div>
+
+		<div id="Exercise02" class="collapse in  col-lg-12">
+
+			<p>
+				Do Hands-On Project 3-2<br />
+				Perform this in Somsen 301 or elsewhere with a fellow student or partner.<br />
+				Make sure you are both on the same network.<br />
+				Use your laptop or other computer to which you have administrative rights.<br />
+				If Professor Paulson is in Somsen 301 you can try pinging his computer, or the teaching station.<br />
+				Note that finding the Ethernet status box as described in step 3 will differ depending on your version of Windows.<br />
+				<br />
+				While pinging the other computer, record the following information, and enter it below.<br />
+			</p>
+
+			<ul>
+				<li>High speed- such as 100, 1000 Mbps</li>
+				<li>Average high speed reply time, ms</li>
+				<li>Lo speed- such as 10, 54, 100 Mbps </li>
+				<li>Average lo speed reply time, ms</li>
+			</ul>
+
+			<p>
+				(50) 2. Record high speed:<br />
+
+				<!-- Enter your answer in the VALUE field below   GROK -->
+				<input name="q2" id="q2" size="120" maxlength="120" class="form-control" value="high speed, Mbps:" type="text">
+				<br />
+
+				(50) 3. Record average high speed reply time, ms:<br />
+
+				<!-- Enter your answer in the VALUE field below   GROK -->
+				<input name="q3" id="q3" size="120" maxlength="120" class="form-control" value="high speed reply time:" type="text">
+				<br />
+
+				(50) 4. Record low speed:<br />
+
+				<!-- Enter your answer in the VALUE field below   GROK -->
+				<input name="q4" id="q4" size="120" maxlength="120" class="form-control" value="low speed:" type="text">
+				<br />
+
+				(50) 5. Record low speed reply time, ms:<br />
+
+				<!-- Enter your answer in the VALUE field below   GROK -->
+				<input name="q5" id="q5" size="120" maxlength="120" class="form-control" value="low speed reply time:" type="text">
+				<br />
+
+				<strong><em>When done return your connection speed back to Autonegotiation!</em></strong>
+		</div>
+
+		<hr />
+
+
+		<div class=" col-lg-12"><a href="#Exercise03" class="btn btn-info" data-toggle="collapse">Hands-On Project 3-3-Ethernet Frames</a></div>
+
+		<div id="Exercise03" class="collapse in  col-lg-12">
+
+			<p>
+				Do Hands-On Project 3-3 to examine the details of an Ethernet frame, preferably in Somsen 301 during class.<br />
+				You will need to work with a partner, or ask Professor Paulson.
+				You can also attempt this in another location, as long as you have permission.<br />
+				Make sure to use your WSU laptop because you have administrator access.<br />
+				Start WireShark, follow the instructions, and enter your answers to the questions in the spaces below.<br />
+
+				<a href="images/ICMP.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/ICMP.PNG', 'popup'); return false;">
+					<img src="images/ICMP.PNG" width="300" alt="icmp packet capture" class="img-responsive img-responsive" /></a><br />
+				Your values will be different.<br />
+			</p>
+
+			<p>
+				(50) 6. In step 6 examine the Ethernet II frame fields and enter the value for the Destination MAC address below:<br />
+
+				<!-- Enter your answer in the VALUE field below   GROK -->
+				<input name="q6" id="q6" size="120" maxlength="120" class="form-control" value="Dest MAC: " type="text">
+				<br />
+
+				(50) 7. In step 6 examine the Ethernet II frame fields and enter the value for the NIC manufacturer below:<br />
+
+				<!-- Enter your answer in the VALUE field below   GROK -->
+				<input name="q7" id="q7" size="120" maxlength="120" class="form-control" value="NIC manufacturer: " type="text">
+				<br />
+
+				(100) 8. In step 8 copy the text/data portion of the ICMP packet and paste it in the space below:<br />
+
+				<!-- Enter your answer in the VALUE field below   GROK -->
+				<input name="q8" id="q8" size="120" maxlength="120" class="form-control" value="data packet:" type="text">
+				<br />
+			</p>
+
+			<p>
+				(100) 9. Use the Snipping Tool to make a screen shot of your WireShark application, showing the ARP data capture packets and IP addresses, similar to the screen shot below.<br />
+				Note that your IP addresses will be different.<br />
+				<a href="images/DataCapture.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/DataCapture.PNG', 'popup'); return false;">
+					<img src="images/DataCapture.PNG" width="300" alt="data capture packet" class="img-responsive img-responsive" /></a><br />
+
+
+				<!--  PgP 2/4/2018 create path using constants and current document assignment -->
+				Save the screen shot  as &quot;Ex1&quot; in your ' 
+                <code><span id="aqPath"></span></code>
+				<script>document.getElementById("aqPath").innerHTML = Path; </script>
+				' folder.<br />
+
+				You will be combining screen shots from several exercises at the end of this assignment, just as you did in 
+                  <a href="../Formative00/Formative00.html#PDFfileCreation" class="bg-info text-white" target="_blank">Formative00</a>-PDF File Creation. 
+			</p>
+			<hr />
+
+		</div>
+
+		<div class="col-lg-12 text-danger">
+			<h2>Screen Shot Ex1</h2>
+			<hr />
+			<hr />
+		</div>
+
+
+
+		<div class=" col-lg-12"><a href="#Exercise04" class="btn btn-info" data-toggle="collapse">Packet Tracer Lab 3-1-Star Topology Network</a></div>
+
+		<div id="Exercise04" class="collapse in  col-lg-12">
+
+			<p>The Packet Tracer Labs are accessible from MindTap in two ways:</p>
+			<ul>
+				<li>Under the Practice section of the Module<br />
+					<a href="images/PacketTracer.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/PacketTracer.PNG', 'popup'); return false;">
+						<img src="images/PacketTracer.PNG" width="400" alt="packet tracer location" class="img-responsive img-responsive" /></a>
+				</li>
+
+				<li>In the Chapter Review section of the book<br />
+					<a href="images/PacketTracer2.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/PacketTracer2.PNG', 'popup'); return false;">
+						<img src="images/PacketTracer2.PNG" width="200" alt="packet tracer location" class="img-responsive img-responsive" /></a>
+				</li>
+			</ul>
+
+			<p>
+				No inital files are needed for this Packet Tracer lab.<br />
+				But you must save a copy of the file, &#39;VL3-1.pkt&#39; you create in this lab to your 
+				<code>
+					<span id="abPath"></span>
+					<script>document.getElementById("abPath").innerHTML = "&#92;OneDrive - MNSCU&#92;" + xClass + "&#92;";  </script>
+				</code>
+				folder.
+			</p>
+
+			<p>Create a physical star topology network using a hub and three stations.</p>
+
+
+			<p>
+				(50) 10. After completing step 10, use the Snipping Tool to make a screen shot of your completed Lab showing the hub and three devices.<br />
+				<br />
+				Refer to Figure 3-23 in the book.<br />
+
+				<!--  PgP 2/4/2018 create path using constants and current document assignment -->
+				Save the screen shot  as &quot;Ex2&quot; in your ' 
+                <code><span id="bPath"></span></code>
+				<script>document.getElementById("bPath").innerHTML = Path; </script>
+				' folder.<br />
+
+				You will be combining screen shots from several exercises at the end of this assignment, just as you did in 
+                  <a href="../Formative00/Formative00.html#PDFfileCreation" class="bg-info text-white" target="_blank">Formative00</a>-PDF File Creation. 
+			</p>
+			<hr />
+		</div>
+
+		<div class="col-lg-12 text-danger">
+			<h2>Screen Shot Ex2</h2>
+			<hr />
+			<hr />
+		</div>
+
+
+
+		<div class=" col-lg-12"><a href="#Exercise05" class="btn btn-info" data-toggle="collapse">Packet Tracer Lab 3-2-Ethernet Frames</a></div>
+
+		<div id="Exercise05" class="collapse in  col-lg-12">
+
+			<p>
+				Use the file VL3-1.pkt created in the previous Packet Tracer lab.<br />
+				You must save a copy of this file, and rename it &#39;VL3-2.pkt&#39; to your 
+				<code>
+					<span id="bbPath"></span>
+					<script>document.getElementById("bbPath").innerHTML = "&#92;OneDrive - MNSCU&#92;" + xClass + "&#92;";  </script>
+				</code>
+				folder.
+			</p>
+
+			<p>
+				Follow the instructions in Packet Tracer Lab 3-2 to view the details of a packet sent from one computer to another.<br />
+				Note in steps 8 and 9 the &#39;Capture then Forward&#39; icon is in the &#39;Simulation Panel Play Controls&#39; to the right of the Play button.<br />
+			</p>
+
+
+			<p>
+				In step 3, Figure 3-24, when viewing the details about the packet in the OSI Model tab, answer the following questions.
+			</p>
+
+			<p>
+				(50) 11. How many OSI layers are involved in the packet transfer?:<br />
+
+				<!-- Enter your answer in the VALUE field below   GROK -->
+				<input name="q11" id="q11" size="120" maxlength="120" class="form-control" value="number of OSI layers:" type="text">
+				<br />
+
+				(50) 12. Which OSI layers are involved in the packet transer?:<br />
+
+				<!-- Enter your answer in the VALUE field below   GROK -->
+				<input name="q12" id="q12" size="120" maxlength="120" class="form-control" value="which OSI layers?:" type="text">
+				<br />
+			</p>
+
+
+
+			<p>
+				In step 4, Figure 3-25, view the details about the Outbound PDU.<br />
+
+				(50) 13. Briefly explain why the packet must contains the MAC addresses of the sending and receiving computers:<br />
+
+				<!-- Enter your answer in the VALUE field below   GROK -->
+				<input name="q13" id="q13" size="120" maxlength="120" class="form-control" value="MAC address purpose:" type="text">
+				<br />
+
+			</p>
+
+			<p>
+				In step 5, Figure 3-25, view the details about the IP protocol.<br />
+
+				(100) 14. Briefly explain why the packet also contains the IP addresses of the sending and receiving computers.<br />
+
+				<!-- Enter your answer in the VALUE field below   GROK -->
+				<input name="q14" id="q14" size="120" maxlength="120" class="form-control" value="IP address purpose:" type="text">
+				<br />
+			</p>
+
+		</div>
+
+
+		<hr />
+
+
+
+		<!--  From here to end difference question numbers and Summative numbering for PDF of file uploaded to D2L    -->
+
+		<div class="col-lg-12"><a href="#ExercisePDF" class="btn btn-info" data-toggle="collapse">Exercise-PDF File Creation</a></div>
+
+		<div id="ExercisePDF" class="collapse in  col-lg-12">
+			<p>
+				Use a web browser to verify that you have published your website to https://classes.winona.edu/...
+                <br />
+				Check that your name, StarID, email, class, semester, section and all of your answers are correct and visible.
+                <br />
+				From the menu choose File&gt;Print... and using &quot;Microsoft Print to PDF&quot; save a copy of this assignment as a .pdf file in your   ' 
+                 <code><span id="dPath"></span></code>
+				<script>document.getElementById("dPath").innerHTML = Path; </script>
+				' folder.<br />
+
+			</p>
+			<br />
+
+			<p>
+				(50) 15. Save your file 'WebPage.pdf' to the ' 
+                <code><span id="ePath"></span></code>
+				<script>document.getElementById("ePath").innerHTML = Path; </script>
+				' folder.<br />
+
+			</p>
+
+			<div class="text-danger">
+				<h2>WebPage.pdf</h2>
+				<hr />
+			</div>
+
+			<p>Create one .pdf (portable document format) file from the screen shots that you have taken by following these steps.</p>
+
+			<ol>
+				<li>Open File Explorer, make sure the screen shot files are properly named(Ex1, Ex2 , Ex3.. ) &nbsp; </li>
+				<li>Select all of the screen shots to be combined. </li>
+				<li>Right Click and select &#39;Print&#39; from the short-cut menu.      </li>
+				<li>In the bottom center of the &#39;Print Pictures&#39; dialog box uncheck the box &quot;Fit picture to frame&quot;</li>
+				<li>Click on &#39;Print&#39; and save the file with the name&nbsp; &quot;ScreenShots.pdf&quot; in your '
+             <code><span id="fPath"></span></code>
+					<script>document.getElementById("fPath").innerHTML = Path; </script>
+					' folder.<br />
+				</li>
+			</ol>
+
+
+			<p>
+				(50) 16. Save your file 'ScreenShots.pdf' to the ' 
+               <code><span id="gPath"></span></code>
+				<script>document.getElementById("gPath").innerHTML = Path; </script>
+				' folder.<br />
+
+			</p>
+
+			<div class="text-danger">
+				<h2>ScreenShots.pdf</h2>
+				<hr />
+			</div>
+
+
+			<p>&nbsp;</p>
+			<p>
+				Use PDFill to merge the <strong>WebPage.pdf</strong> file with the <strong>ScreenShots.pdf </strong>file, and save it as &#39;<strong>Summative03.pdf</strong>&#39; in ' 
+                 <code><span id="hPath"></span></code>
+				<script>document.getElementById("hPath").innerHTML = Path; </script>
+				' folder.<br />
+			</p>
+
+
+			<p>(50) 17. Upload your file 'Summative03.pdf' to the D2L 'Summative03' Assignment folder.</p>
+
+		</div>
+
+		<div class="col-lg-12 text-danger">
+			<h2>Summative03.pdf</h2>
+		</div>
+		<hr />
+
+
+
+
+
+		<div class="col-lg-12"><a href="#ExerciseAssignmentSubmission" class="btn btn-info" data-toggle="collapse">Exercise-Assignment Submission</a></div>
+
+		<div id="ExerciseAssignmentSubmission" class="collapse in  col-lg-12">
+			<p>
+				Use a browser to view your completed and published website at: https://classes.winona.edu/...     
+                <br />
+				Ensure that you have linked this assignment on your home page.
+                Note that your screen shots do not have to be completed to perform this step.<br>
+			</p>
+
+			(50) 18. Home Page Hyperlink<br />
+			Check and verify that this assignment is hyperlinked on your home page.<br />
+			<br />
+
+			(50) 19. Assignment submission<br />
+			Press the Submit button at the top or bottom of this page.
+                Read and follow instructions on the confirmation page.&nbsp; Correct any errors.
+		</div>
+		<hr />
+
+
+		<div class="col-lg-12">
+			<br />
+			<input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit">
+			<br />
+		</div>
+
+
+	</form>
+
+
+	<!-- Creative Commons License Info -->
+	<div id="xLicense" class=" col-lg-12 text-muted"></div>
+
+	<div id="xfooter" class=" col-lg-12 text-muted"></div>
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="../../ReadOnly/jquery-1.js"></script>
+
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="../../ReadOnly/bootstrap.js"></script>
+
+</body>
+</html>

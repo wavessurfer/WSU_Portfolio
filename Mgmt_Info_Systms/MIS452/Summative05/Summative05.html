@@ -1,0 +1,728 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- PgP 6/15/2019 update page, added integral check web db submissions, split constants into two files, one for students, one for course -->
+	<!-- Bootstrap -->
+	<link href="../../ReadOnly/bootstrap.css" rel="stylesheet">
+
+	<!-- constant file for student firstname, lastname, starid on students' pages -->
+	<script src="../constants.js"></script>
+
+	<!-- course constant file that contains semester, class, section pages -->
+	<script src="../../ReadOnly/CourseConstants.js"></script>
+
+	<!-- model assignment file, version 1 released 2018/02/18 PgP -->
+
+	<title>MIS452Summative05</title>
+</head>
+
+<body onload="setVariables()">
+
+	<form class="container-fluid" action="https://eprofessor.azurewebsites.net/code/ProcessFormData.asp" method="post" name="frmAssignment" id="frmAssignment">
+		<input name="InstID" id="InstID" value="00617282" type="hidden">
+
+		<h1 class=" text-center">Network Protocols</h1>
+
+		<!-- -start-Student, class and assignment information. Assignment hard-coded, other values from constants.js file-start -->
+		<div class="row col-lg-12">
+			<div class="col-lg-3">
+				<label class="text-primary" for="FirstName">First Name:</label>
+				<input class="form-control" name="FirstName" id="FirstName" type="text" value="default first name" readonly="readonly">
+			</div>
+			<div class="col-lg-3">
+				<label class="text-primary" for="LastName">Last Name:</label>
+				<input class="form-control" name="LastName" id="LastName" type="text" value="default last name" readonly="readonly">
+			</div>
+			<div class="col-lg-3">
+				<label class="text-primary" for="pin">StarID:</label>
+				<input class="form-control" name="pin" id="pin" type="text" value="default StarID" readonly="readonly">
+			</div>
+			<div class="col-lg-3">
+				<label class="text-primary" for="email">Email:</label>
+				<input class="form-control" name="email" id="email" type="email" value="default email address" readonly="readonly">
+			</div>
+		</div>
+
+		<div class="row col-lg-12">
+			<div class="col-lg-3">
+				<label class="text-primary" for="semester">Semester:</label>
+				<input class="form-control" name="semester" id="semester" type="text" value="default" readonly="readonly">
+			</div>
+			<div class="col-lg-3">
+				<label class="text-primary" for="class">Class:</label>
+				<input class="form-control" name="class" id="class" value="xClass" type="text" readonly="readonly">
+			</div>
+			<div class="col-lg-3">
+				<label class="text-primary" for="section">Section:</label>
+				<input class="form-control" name="section" id="section" value="default" type="text" readonly="readonly">
+			</div>
+			<div class="col-lg-3">
+				<label class="text-primary" for="assignment">Assignment:</label>
+				<input class="form-control" name="assignment" id="assignment" value="Summative05" type="text" readonly="readonly">
+			</div>
+		</div>
+		<!-- -end-Student, class and assignment information-end -->
+
+		<!-- Calculate the correct path for saving the files -->
+		<script>Path = "&#92;OneDrive - MNSCU&#92;" + xClass + "&#92;" + document.getElementById("assignment").value + "&#92;"; </script>
+
+
+		<div class="col-lg-12">
+			<br />
+			<input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit">
+			<br />
+		</div>
+
+		<div class="col-lg-12 h3 text-danger">
+			1450 Points
+            <hr />
+		</div>
+
+		<!-- -start-objectives-start -->
+		<div class="col-lg-12"><a href="#Objectives" class="btn btn-info" data-toggle="collapse">Learning Objectives</a></div>
+		<div id="Objectives" class=" collapse in col-lg-12">
+
+			<!--Above this line similar except for Assignment number and title   -->
+			<ul>
+				<li>Describe the prupose of a network protocol and the layers in the TCP/IP architecture</li>
+				<li>Describe the TCP/IP Application-layer protocols</li>
+				<li>Describe the TCP/IP Transport-layer protocols</li>
+				<li>Describe the TCP/IP Internetwork-layer protocols</li>
+				<li>Describe the TCP/IP Network access-layer protocols</li>
+			</ul>
+
+
+			<hr />
+		</div>
+		<!-- -end-objectives-end -->
+
+
+		<div class=" col-lg-12"><a href="#Exercise01" class="btn btn-info" data-toggle="collapse">Questions</a></div>
+
+		<div id="Exercise01" class="collapse in  col-lg-12">
+
+
+			<p>
+				Network protocols ensure reliable and efficient data transmission across a wide assortment of global networks.<br />
+				Investigate the history of this development.<br />
+				Note: do not only rely on the book for the answer.<br />
+				Check out Wikipedia!  <a href="https://en.wikipedia.org/wiki/Internet_protocol_suite" class="bg-info text-white" target="_blank">Internet protocol suite</a>
+			</p>
+
+			<p>
+				(50) 1. What organization or person(s) is/are primarily responsible for the architecture of the Internet?
+			</p>
+			<!-- Enter your answer in the VALUE field below   GROK -->
+			<input name="q1" id="q1" size="120" maxlength="120" class="form-control" value="Internet architecture: " type="text">
+			<br />
+
+			<hr />
+
+		</div>
+
+
+		<div class=" col-lg-12"><a href="#Exercise02" class="btn btn-info" data-toggle="collapse">Hands-On Project 5-1-View TCP/IP Layers</a></div>
+
+		<div id="Exercise02" class="collapse in  col-lg-12">
+			<p>
+				Do Hands-On Project 5-1 using your laptop, in the Somsen 301 lab, connected to the HP-USB-C dock, with the following modifications.
+			</p>
+			<p>
+				In step 3 look for the Ethernet connection with a device name that contains &#39;Realtek USB GbE Family Controller&#39;.&nbsp; It may not be Ethernet 0.<br />
+				<a href="images/EthernetDevice.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/EthernetDevice.PNG', 'popup'); return false;">
+					<img src="images/EthernetDevice.PNG" width="300" alt="ethernet device" class="img-responsive img-responsive" /></a><br />
+
+			</p>
+
+			<p>
+				For step 4, write the layer for each item listed in the spaces below.<br />
+			</p>
+
+			<p>
+				Note there are two LED indicator lights on the network port.<br />
+				These lights typically indicate data activity (left light) and port speed (right light).<br />
+				The color of these lights (green, amber, off/none) can vary between manufacturers.<br />
+			</p>
+
+			<p>
+				(50) 2. What TCP/IP Layer does the NIC operate in?:<br />
+
+				<!-- Enter your answer in the VALUE field below   GROK -->
+				<input name="q2" id="q2" size="120" maxlength="120" class="form-control" value="NIC layer" type="text">
+				<br />
+
+				(50) 3. What TCP/IP Layer does the Client for Microsoft Networks operate in?:<br />
+
+				<!-- Enter your answer in the VALUE field below   GROK -->
+				<input name="q3" id="q3" size="120" maxlength="120" class="form-control" value="Microsoft network client: " type="text">
+				<br />
+
+				(50) 4. What TCP/IP Layer does File and Printer Sharing operate in?:<br />
+
+				<!-- Enter your answer in the VALUE field below   GROK -->
+				<input name="q4" id="q4" size="120" maxlength="120" class="form-control" value="File and Printer sharing: " type="text">
+				<br />
+
+				(50) 5. What TCP/IP Layer does Internet Protocol Version 4 operate in?:<br />
+
+				<!-- Enter your answer in the VALUE field below   GROK -->
+				<input name="q5" id="q5" size="120" maxlength="120" class="form-control" value="ipv4: " type="text">
+				<br />
+
+			</p>
+			<p>
+				Read steps 5 through 10, but DO NOT set a static IP address on your laptop.  That will cause you problems on the school network.<br />
+				Pay attention to the discussion of IP address, subnet mask, default gateway, and preferred DNS server, all of which are important concepts for the remainder of this course.<br />
+				Remember you can find these values on a Windows computer by opening up a command prompt and typing in <code>ipconfig/all</code><br />
+			</p>
+
+			<p>Below is the result for a Windows computer on a wired network.</p>
+
+			<pre>
+   Ethernet adapter Ethernet 4:
+
+   Connection-specific DNS Suffix  . : HomeNet
+   Description . . . . . . . . . . . : Realtek USB GbE Family Controller #2
+   Physical Address. . . . . . . . . : B0-0C-D1-7B-FE-4D
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+   IPv4 Address. . . . . . . . . . . : 192.168.3.45(Preferred)
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Lease Obtained. . . . . . . . . . : Wednesday, July 28, 2021 8:48:25 AM
+   Lease Expires . . . . . . . . . . : Friday, July 30, 2021 8:48:35 AM
+   Default Gateway . . . . . . . . . : 192.168.3.1
+   DHCP Server . . . . . . . . . . . : 192.168.3.1
+   DNS Servers . . . . . . . . . . . : 192.168.3.1
+   NetBIOS over Tcpip. . . . . . . . : Enabled
+   Connection-specific DNS Suffix Search List : HomeNet
+			</pre>
+
+			<hr />
+			<hr />
+
+		</div>
+
+
+		<div class=" col-lg-12"><a href="#Exercise03" class="btn btn-info" data-toggle="collapse">Hands-On Project 5-2-Identifying Layers in a Frame</a></div>
+
+		<div id="Exercise03" class="collapse in  col-lg-12">
+
+			<p>
+				Do Hands-On Project 5-2 to examine the details of an Ethernet frame, preferably in Somsen 301 during class.<br />
+				You can work with a partner.
+				You can also attempt this in another location, as long as you have permission.<br />
+				Make sure to use your WSU laptop because you have administrator access.<br />
+				Start WireShark, follow the instructions, and enter your answers to the questions in the spaces below.<br />
+			</p>
+			<p>
+				Make sure to select the WireShark Interface that corresponds to the Realtek USB GbE Family Controller, which is the wired connection provided by the USB-C dock.<br />
+
+				<a href="images/WireSharkInterface.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/WireSharkInterface.PNG', 'popup'); return false;">
+					<img src="images/WireSharkInterface.PNG" width="300" alt="select wireshark interface" class="img-responsive img-responsive" /></a><br />
+				Your values will be different.<br />
+				<br />
+
+
+				<a href="images/WireShark5_2.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/WireShark5_2.PNG', 'popup'); return false;">
+					<img src="images/WireShark5_2.PNG" width="300" alt="http packet capture" class="img-responsive img-responsive" /></a><br />
+				Your values will be different.<br />
+			</p>
+
+			<p>
+				(50) 6. In step 9 examine the data portion of the frame and write which layer of the TCP/IP model the HTTP protocol represents.<br />
+
+				<!-- Enter your answer in the VALUE field below   GROK -->
+				<input name="q6" id="q6" size="120" maxlength="120" class="form-control" value="http layer: " type="text">
+				<br />
+			</p>
+
+			<p>
+				(100) 7. Use the Snipping Tool to make a screen shot of your WireShark application, showing the IP, frame and data windows, similar to the screen shot above.<br />
+				Note that your IP addresses and information will be different.<br />
+
+
+				<!--  PgP 2/4/2018 create path using constants and current document assignment -->
+				Save the screen shot  as &quot;Ex1&quot; in your ' 
+                <code><span id="axqPath"></span></code>
+				<script>document.getElementById("axqPath").innerHTML = Path; </script>
+				' folder.<br />
+
+				You will be combining screen shots from several exercises at the end of this assignment, just as you did in 
+                  <a href="../Formative00/Formative00.html#PDFfileCreation" class="bg-info text-white" target="_blank">Formative00</a>-PDF File Creation. 
+			</p>
+			<hr />
+
+		</div>
+
+		<div class="col-lg-12 text-danger">
+			<h2>Screen Shot Ex1</h2>
+			<hr />
+			<hr />
+		</div>
+
+
+
+
+		<div class=" col-lg-12"><a href="#Exercise04" class="btn btn-info" data-toggle="collapse">Hands-On Project 5-3-DNS Tools</a></div>
+
+		<div id="Exercise04" class="collapse in  col-lg-12">
+
+			<p>
+				Do Hands-On Project 5-3 to learn to use DNS tools <code>ipconfig</code> and <code>nslookup</code>, preferably in Somsen 301 during class.<br />
+				You can work with a partner.
+				You can also attempt this in another location, as long as you have permission.<br />
+				Make sure to use your WSU laptop because you have administrator access.<br />
+			</p>
+
+			<p>
+				Perform steps 1 through 4.  Skip steps 5 and 6-do not modify your computer <code>hosts </code>file.
+			</p>
+
+			<p>
+				(50) 8. After step 4, copy the first uncommented (no # as the first line character) line of your hosts file and paste it below.<br />
+
+				<!-- Enter your answer in the VALUE field below   GROK -->
+				<input name="q8" id="q8" size="120" maxlength="120" class="form-control" value="hosts: " type="text">
+				<br />
+			</p>
+
+			<p>
+				Skip steps 7 and 8.<br />
+				In step 9, after typing <code>nslookup </code>and <code>www.yahoo.com</code> the message 'Non-existent domain' will appear.  Ignore it.<br />
+				Skip step 10.<br />
+				Perform step 11, paying attention to the Name: value returned for www.microsoft.com<br />
+			</p>
+
+			<p>
+				(50) 9. From step 11 copy and paste the Name: value of www.microsoft.com below.<br />
+
+				<!-- Enter your answer in the VALUE field below   GROK -->
+				<input name="q9" id="q9" size="120" maxlength="120" class="form-control" value="name: " type="text">
+				<br />
+			</p>
+		</div>
+
+
+
+		<div class=" col-lg-12"><a href="#Exercise05" class="btn btn-info" data-toggle="collapse">Hands-On Project 5-4-DHCP Clients</a></div>
+
+		<div id="Exercise05" class="collapse in  col-lg-12">
+
+			<p>
+				Do Hands-On Project 5-4 to learn to work with DHCP clients using <code>ipconfig</code>, preferably in Somsen 301 during class.<br />
+				You can work with a partner.
+				You can also attempt this in another location, as long as you have permission.<br />
+				Make sure to use your WSU laptop because you have administrator access.<br />
+			</p>
+
+			<p>
+				In step 2, your may have a different connection than Ethernet0, refer to HOP 5-1.<br />
+				In step 4, the box &#39;Obtain an IP address automatically&#39; should already be checked.<br />
+				Perform steps 5 through 8 and answer the question below.
+			</p>
+
+			<p>
+				After step 6 record the ip address of the &#39;Realtek USB GbE Family Controller&#39; - which is the USB-C dock in Somsen 301.<br />
+				In step 7, after running the command <code>ipconfig /renew</code> again note the ip address of the Controller.<br />
+				(50) 10. After running the renew command in step 7 did the Controller ip address change?<br />
+
+				<!-- Enter your answer in the VALUE field below   GROK -->
+				<input name="q10" id="q10" size="120" maxlength="120" class="form-control" value="ip address change?: " type="text">
+				<br />
+			</p>
+
+		</div>
+
+
+
+
+
+		<div class=" col-lg-12"><a href="#Exercise06" class="btn btn-info" data-toggle="collapse">Hands-On Project 5-5-Internetwork Layer</a></div>
+
+		<div id="Exercise06" class="collapse in  col-lg-12">
+
+			<p>
+				Do Hands-On Project 5-5 to learn to work with the Internnetwork layer using Wireshark, preferably in Somsen 301 during class.<br />
+				You can work with a partner.
+				You can also attempt this in another location, as long as you have permission.<br />
+				Make sure to use your WSU laptop because you have administrator access.<br />
+			</p>
+
+			<p>
+				In step 2, remember to select the proper interface.  You may have a different connection than Ethernet0, refer to HOP 5-1.<br />
+				In step 6 record the Version, Time to Live, Protocol and Checksum values below.
+			</p>
+
+			<p>
+				(100) 11. Record step 6 values below:<br />
+
+				<!-- Enter your answer in the VALUE field below   GROK -->
+				<input name="q11" id="q11" size="120" maxlength="120" class="form-control" value="version:  ,TTL:  , Protocol:  , Checksum: " type="text">
+				<br />
+			</p>
+
+			<p>
+				Perform steps 7 through 9 to complete the exercise.
+			</p>
+
+		</div>
+
+
+
+		<div class=" col-lg-12"><a href="#Exercise07" class="btn btn-info" data-toggle="collapse">Hands-On Project 5-6-ARP and ICMP Packets</a></div>
+
+		<div id="Exercise07" class="collapse in  col-lg-12">
+
+			<p>
+				Do Hands-On Project 5-6 to learn to work with Wireshark to capture &#39;tracert&#39; packets, preferably in Somsen 301 during class.<br />
+				You can work with a partner.
+				You can also attempt this in another location, as long as you have permission.<br />
+				Make sure to use your WSU laptop because you have administrator access.<br />
+			</p>
+
+			<p>
+				In step 3, remember to select the proper interface.  You may have a different connection than Ethernet0, refer to HOP 5-1.<br />
+				In step 12 pay special attention to the TTL pattern mentioned.  The Command Prompt window will display a table, with a row for each hop.  You can see the TTL pattern in the WireShark capture window.
+			</p>
+
+			<p>
+				(100) 12. Record the IP address for <code>books.tomsho.com</code> after completing step 12-by examining both the Windows command prompt window and the WireShark data capture window.<br />
+
+				<!-- Enter your answer in the VALUE field below   GROK -->
+				<input name="q12" id="q12" size="120" maxlength="120" class="form-control" value="IP address books.tomsho.com: " type="text">
+				<br />
+			</p>
+
+		</div>
+
+
+		<div class=" col-lg-12"><a href="#Exercise08" class="btn btn-info" data-toggle="collapse">Hands-On Project 5-7-The ARP command</a></div>
+
+		<div id="Exercise08" class="collapse in  col-lg-12">
+
+			<p>
+				Do Hands-On Project 5-7 to learn the purpose of the arp cache, preferably in Somsen 301 during class.<br />
+				You can work with a partner.
+				You can also attempt this in another location, as long as you have permission.<br />
+				Make sure to use your WSU laptop because you have administrator access.<br />
+			</p>
+
+			<p>
+				Skip step 5.<br />
+				In step 4, the box &#39;Obtain an IP address automatically&#39; should already be checked.<br />
+				Perform steps 5 through 8 and answer the question below.
+			</p>
+
+			<p>
+				In step 6 you may encounter a &#39;Request timed out.&#39; message.  If so, try pinging www.winona.edu or www.cnn.com.<br />
+				After step 6, write the ip address for the website you pinged in the space below.<br />
+				Note: this exercise may not work on your computer, in that case enter &#39;not working&#39;.
+			</p>
+
+			<p>
+				(50) 13. www.xxx.com ip address?<br />
+
+				<!-- Enter your answer in the VALUE field below   GROK -->
+				<input name="q13" id="q13" size="120" maxlength="120" class="form-control" value="ip address?: " type="text">
+				<br />
+			</p>
+
+		</div>
+
+
+
+		<div class=" col-lg-12"><a href="#Exercise09" class="btn btn-info" data-toggle="collapse">Hands-On Project 5-8-The netstat command</a></div>
+
+		<div id="Exercise09" class="collapse in  col-lg-12">
+
+			<p>
+				Do Hands-On Project 5-8 to use the <code>netstat</code> program to view IP protocol status and statistics, preferably in Somsen 301 during class.<br />
+				You can work with a partner.
+				You can also attempt this in another location, as long as you have permission.<br />
+				Make sure to use your WSU laptop because you have administrator access.<br />
+			</p>
+
+			<p>
+				Perform all the steps.
+			</p>
+
+			<p>
+				After step 8 make a screen shot of at least the first 6 lines of the IPv4 Route Table.<br />
+
+				<p>
+					(100) 14. Use the Snipping Tool to make a screen shot of the command prompt Route Table.<br />
+
+
+					<!--  PgP 2/4/2018 create path using constants and current document assignment -->
+					Save the screen shot  as &quot;Ex2&quot; in your ' 
+                <code><span id="aqqPath"></span></code>
+					<script>document.getElementById("aqqPath").innerHTML = Path; </script>
+					' folder.<br />
+
+					You will be combining screen shots from several exercises at the end of this assignment, just as you did in 
+                  <a href="../Formative00/Formative00.html#PDFfileCreation" class="bg-info text-white" target="_blank">Formative00</a>-PDF File Creation. 
+				</p>
+			<hr />
+
+		</div>
+
+		<div class="col-lg-12 text-danger">
+			<h2>Screen Shot Ex2</h2>
+			<hr />
+			<hr />
+		</div>
+
+
+		<div class=" col-lg-12"><a href="#Exercise10" class="btn btn-info" data-toggle="collapse">Hands-On Project 5-9-NIC properties</a></div>
+
+		<div id="Exercise10" class="collapse in  col-lg-12">
+
+			<p>
+				Do Hands-On Project 5-9 to examine the NIC properties on your laptop, preferably in Somsen 301 during class.<br />
+				You can work with a partner.
+				You can also attempt this in another location, as long as you have permission.<br />
+				Make sure to use your WSU laptop because you have administrator access.<br />
+			</p>
+
+			<p>
+				In step 2 remember that your connection may be different than Ethernet0.<br />
+				In step 3 enter your MAC/physical address below.<br />
+			</p>
+
+			<p>
+				(50) 15. MAC/physical address?<br />
+
+				<!-- Enter your answer in the VALUE field below   GROK -->
+				<input name="q15" id="q15" size="120" maxlength="120" class="form-control" value="MAC address?: " type="text">
+				<br />
+			</p>
+
+			<p>
+				In step 9 browse to <a class="bg-info" href="https://www.coffer.com/mac_find" target="_blank">www.coffer.com/mac_find</a> to lookup the MAC/physical address vendor.  Write your answer below.<br />
+				<p>
+					(50) 16. MAC address vendor?<br />
+
+					<!-- Enter your answer in the VALUE field below   GROK -->
+					<input name="q16" id="q16" size="120" maxlength="120" class="form-control" value="MAC vendor?: " type="text">
+					<br />
+				</p>
+
+		</div>
+
+
+
+		<div class=" col-lg-12"><a href="#Exercise11" class="btn btn-info" data-toggle="collapse">Packet Tracer Lab 5-2-Viewing HTTP packets</a></div>
+
+		<div id="Exercise11" class="collapse in  col-lg-12">
+
+			<p>The Packet Tracer Labs are accessible from MindTap in two ways:</p>
+			<ul>
+				<li>Under the Practice section of the Module<br />
+					<a href="images/PacketTracer.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/PacketTracer.PNG', 'popup'); return false;">
+						<img src="images/PacketTracer.PNG" width="400" alt="packet tracer location" class="img-responsive img-responsive" /></a>
+				</li>
+
+				<li>In the Chapter Review section of the book<br />
+					<a href="images/PacketTracer2.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/PacketTracer2.PNG', 'popup'); return false;">
+						<img src="images/PacketTracer2.PNG" width="200" alt="packet tracer location" class="img-responsive img-responsive" /></a>
+				</li>
+			</ul>
+
+			<p>
+				The files needed for Packet Tracer labs are available on the Cengage Website, in Professor Paulson's OneDrive ReadOnly folder for this course, or in the WSU network drive ReadOnly folder for this course.<br />
+				You must save a copy of these files to your 
+				<code>
+					<span id="bbPath"></span>
+					<script>document.getElementById("bbPath").innerHTML = "&#92;OneDrive - MNSCU&#92;" + xClass + "&#92;";  </script>
+				</code>
+				folder.
+			</p>
+
+			<p>
+				Follow the instructions in Packet Tracer Lab 5-2 to learn how to identify the TCP/IP layers in an HTTP packet.<br />
+				When done, answer the questions below.<br />
+				For background information please refer to the book.
+			</p>
+
+			<p>
+				<a href="images/PacketTracerHTTP.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/PacketTracerHTTP.PNG', 'popup'); return false;">
+					<img src="images/PacketTracerHTTP.PNG" width="200" alt="packet tracer location" class="img-responsive img-responsive" /></a>
+			</p>
+
+			<p>
+				(50) 17. In step 7, what layer of TCP/IP model does the EthernetII section represent?<br />
+				<!-- Enter your answer in the VALUE field below   GROK -->
+				<input name="q17" id="q17" size="120" maxlength="120" class="form-control" value="EthernetII layer: " type="text">
+				<br />
+
+			</p>
+
+
+			<p>
+				(50)  18. In step 8, what layer of TCP/IP model does the IP section represent?
+                <br />
+
+				<!-- Enter your answer in the VALUE field below   GROK -->
+				<input name="q18" id="q18" size="120" maxlength="120" class="form-control" value="IP layer:  " type="text">
+				<br />
+
+				<br />
+			</p>
+
+			<p>
+				(50) 19. In step 9, what layer of TCP/IP model does the TCP section represent?<br />
+
+				<!-- Enter your answer in the VALUE field below   GROK -->
+				<input name="q19" id="q19" size="120" maxlength="120" class="form-control" value="TCP layer:" type="text">
+				<br />
+
+			</p>
+
+			<p>
+				(50) 20. In step 10, what layer of TCP/IP model does the HTTP section represent?<br />
+
+				<!-- Enter your answer in the VALUE field below   GROK -->
+				<input name="q20" id="q20" size="120" maxlength="120" class="form-control" value="HTTP layer:" type="text">
+			</p>
+
+
+			<hr />
+
+		</div>
+
+
+
+
+		<!--  From here to end difference question numbers and Summative numbering for PDF of file uploaded to D2L    -->
+
+
+		<div class="col-lg-12"><a href="#ExercisePDF" class="btn btn-info" data-toggle="collapse">Exercise-PDF File Creation</a></div>
+
+		<div id="ExercisePDF" class="collapse in  col-lg-12">
+			<p>
+				Use a web browser to verify that you have published your website to https://classes.winona.edu/...
+                <br />
+				Check that your name, StarID, email, class, semester, section and all of your answers are correct and visible.
+                <br />
+				From the menu choose File&gt;Print... and using &quot;Microsoft Print to PDF&quot; save a copy of this assignment as a .pdf file in your   ' 
+                <code><span id="dPath"></span></code>
+				<script>document.getElementById("dPath").innerHTML = Path; </script>
+				' folder.
+			</p>
+
+			<p>
+				(50) 21. Save your file 'WebPage.pdf' to the ' 
+                <code><span id="ePath"></span></code>
+				<script>document.getElementById("ePath").innerHTML = Path; </script>
+				' folder.<br />
+
+
+			</p>
+
+			<div class="text-danger">
+				<h2>WebPage.pdf</h2>
+				<hr />
+			</div>
+
+			<p>Create one .pdf (portable document format) file from the screen shots that you have taken by following these steps.</p>
+
+			<ol>
+				<li>Open File Explorer, make sure the screen shot files are properly named(Ex1, Ex2 , Ex3.. ) &nbsp; </li>
+				<li>Select all of the screen shots to be combined. </li>
+				<li>Right Click and select &#39;Print&#39; from the short-cut menu.      </li>
+				<li>In the bottom center of the &#39;Print Pictures&#39; dialog box uncheck the box &quot;Fit picture to frame&quot;</li>
+				<li>Click on &#39;Print&#39; and save the file with the name&nbsp; &quot;ScreenShots.pdf&quot; in your '
+                <code><span id="fPath"></span></code>
+					<script>document.getElementById("fPath").innerHTML = Path; </script>
+					' folder.<br />
+				</li>
+			</ol>
+
+
+			<p>
+				(50) 22. Save your file 'ScreenShots.pdf' in your ' 
+                <code><span id="gPath"></span></code>
+				<script>document.getElementById("gPath").innerHTML = Path; </script>
+				' folder.<br />
+
+			</p>
+
+			<div class="text-danger">
+				<h2>ScreenShots.pdf</h2>
+				<hr />
+			</div>
+
+
+			<p>&nbsp;</p>
+			<p>
+				Use PDFill to merge the WebPage.pdf file with the ScreenShots.pdf file, and save it as &#39;Summative05.pdf&#39; in your ' 
+                <code><span id="hPath"></span></code>
+				<script>document.getElementById("hPath").innerHTML = Path; </script>
+				' folder.<br />
+
+			</p>
+
+
+			<p>(50) 23. Upload your file 'Summative05.pdf' to the D2L 'Summative05' Assignment folder.</p>
+
+		</div>
+
+		<div class="col-lg-12 text-danger">
+			<h2>Summative05.pdf</h2>
+		</div>
+		<hr />
+
+
+
+
+
+		<div class="col-lg-12"><a href="#ExerciseAssignmentSubmission" class="btn btn-info" data-toggle="collapse">Exercise-Assignment Submission</a></div>
+
+		<div id="ExerciseAssignmentSubmission" class="collapse in  col-lg-12">
+			<p>
+				Use a browser to view your completed and published website at: https://classes.winona.edu/...     
+                <br />
+				Ensure that you have linked this assignment on your home page.
+                Note that your screen shots do not have to be completed to perform this step.<br>
+			</p>
+
+			(50) 24. Home Page Hyperlink<br />
+			Check and verify that this assignment is hyperlinked on your home page.<br />
+			<br />
+
+			(50) 25. Assignment submission<br />
+			Press the Submit button at the top or bottom of this page.
+                Read and follow instructions on the confirmation page.&nbsp; Correct any errors.
+		</div>
+		<hr />
+
+
+
+		<div class="col-lg-12">
+			<br />
+			<input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit">
+			<br />
+		</div>
+
+
+	</form>
+
+
+
+	<!-- Creative Commons License Info -->
+	<div id="xLicense" class=" col-lg-12 text-muted"></div>
+
+	<div id="xfooter" class=" col-lg-12 text-muted"></div>
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="../../ReadOnly/jquery-1.js"></script>
+
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="../../ReadOnly/bootstrap.js"></script>
+
+</body>
+</html>

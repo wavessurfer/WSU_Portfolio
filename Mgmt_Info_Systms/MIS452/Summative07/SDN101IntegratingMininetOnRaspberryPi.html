@@ -1,0 +1,437 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head profile="http://gmpg.org/xfn/11">
+    <script type="text/javascript" src="SDN101IntegratingMininetOnRaspberryPi_files/shares.json"></script>
+    <script type="text/javascript" src="SDN101IntegratingMininetOnRaspberryPi_files/300lo.json"></script>
+    <script type="text/javascript" src="SDN101IntegratingMininetOnRaspberryPi_files/_ate.config_resp"></script>
+    <title>SDN 101: Integrating Mininet on Raspberry Pi</title>
+    <link href="http://configure-terminal.com/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="coverage" content="worldwide">
+    <meta name="distribution" content="global">
+    <meta name="allow-search" content="yes">
+    <link rel="stylesheet" type="text/css" href="SDN101IntegratingMininetOnRaspberryPi_files/style.css" media="screen">
+    <link rel="stylesheet" href="SDN101IntegratingMininetOnRaspberryPi_files/layout.css" type="text/css">
+    <link rel="stylesheet" href="SDN101IntegratingMininetOnRaspberryPi_files/template.css" type="text/css">
+    <link rel="stylesheet" href="SDN101IntegratingMininetOnRaspberryPi_files/style3.css" type="text/css">
+
+    <!-- This site is optimized with the Yoast SEO plugin v3.1.2 - https://yoast.com/wordpress/plugins/seo/ -->
+    <meta name="description" content="How to install and run OpenFlow switches on a Raspberry Pi using Mininet&nbsp; Mininet is a network emulator that can create and emulate an entire">
+    <meta name="robots" content="noodp">
+    <meta name="keywords" content="academy, mininet, openflow, ras, sdn">
+    <link rel="canonical" href="http://pakiti.com/sdn-101-integrating-mininet-on-raspberry-pi/">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="SDN 101: Integrating Mininet on Raspberry Pi">
+    <meta property="og:description" content="How to install and run OpenFlow switches on a Raspberry Pi using Mininet&nbsp; Mininet is a network emulator that can create and emulate an entire">
+    <meta property="og:url" content="http://pakiti.com/sdn-101-integrating-mininet-on-raspberry-pi/">
+    <meta property="og:site_name" content="pakiti.com">
+    <meta property="article:tag" content="academy">
+    <meta property="article:tag" content="Mininet">
+    <meta property="article:tag" content="OpenFlow">
+    <meta property="article:tag" content="ras">
+    <meta property="article:tag" content="SDN">
+    <meta property="article:section" content="Mininet">
+    <meta property="article:published_time" content="2015-11-16T07:15:58+00:00">
+    <meta property="og:image" content="http://pakiti.com/wp-content/uploads/2015/11/Integrating-Mininet-on-Raspberry-Pi.jpg">
+    <meta property="og:image:width" content="573">
+    <meta property="og:image:height" content="214">
+    <!-- / Yoast SEO plugin. -->
+
+    <link rel="alternate" type="application/rss+xml" title="pakiti.com » SDN 101: Integrating Mininet on Raspberry Pi Comments Feed" href="http://pakiti.com/sdn-101-integrating-mininet-on-raspberry-pi/feed/">
+
+
+
+
+    <link rel="stylesheet" id="wordpress-popular-posts-css" href="SDN101IntegratingMininetOnRaspberryPi_files/wpp.css" type="text/css" media="all">
+    <link rel="https://api.w.org/" href="http://pakiti.com/wp-json/">
+    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://pakiti.com/xmlrpc.php?rsd">
+    <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://pakiti.com/wp-includes/wlwmanifest.xml">
+    <meta name="generator" content="WordPress 4.4.18">
+    <link rel="shortlink" href="http://pakiti.com/?p=478">
+    <link rel="alternate" type="application/json+oembed" href="http://pakiti.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fpakiti.com%2Fsdn-101-integrating-mininet-on-raspberry-pi%2F">
+    <link rel="alternate" type="text/xml+oembed" href="http://pakiti.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fpakiti.com%2Fsdn-101-integrating-mininet-on-raspberry-pi%2F&amp;format=xml">
+
+
+
+    <script type="text/javascript" src="SDN101IntegratingMininetOnRaspberryPi_files/loader.js" async=""></script>
+
+    <link rel="stylesheet" href="SDN101IntegratingMininetOnRaspberryPi_files/vertical-m.css">
+
+    <style type="text/css">
+        .related_post_title {
+        }
+
+        ul.related_post {
+        }
+
+            ul.related_post li {
+            }
+
+                ul.related_post li a {
+                }
+
+                ul.related_post li img {
+                }
+    </style>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--Width of template -->
+    <style type="text/css">
+        .main {
+            width: 910px;
+            margin: 0 auto;
+        }
+    </style>
+
+    <meta http-equiv="content-language" content="ll-cc">
+
+
+
+
+    <script charset="utf-8" src="SDN101IntegratingMininetOnRaspberryPi_files/button.js"></script>
+
+
+
+
+</head>
+<body id="bd" class="fs3 FF style3">
+
+
+    <ul class="no-display">
+        <li><a href="#" title="Skip to content"></a></li>
+    </ul>
+    <div id="bg-wrap-left" class="main">
+        <div id="bg-wrap-right" class="main">
+            <!-- MAIN NAVIGATION -->
+            <div id="gk-content-wrapper" class="main">
+                <!-- NAV -->
+                <div id="gk-nav" class="clearfix">
+                    <!-- NAV menu -->
+                    <nav>
+			<ul id="navMain" class="active"><li id="menu-item-142" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-142"><a href="http://pakiti.com/">Home</a></li>
+<li id="menu-item-338" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-338"><a href="http://pakiti.com/hp-sdn-links/">HP SDN Links</a></li>
+<li id="menu-item-143" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-143"><a href="http://pakiti.com/about/">About Us</a></li>
+<li id="menu-item-144" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-144"><a href="http://pakiti.com/contact-us/">Contact Us</a></li>
+</ul>  
+			</nav>
+                </div>
+                <!-- HEADER -->
+
+                <!-- MAIN CONTAINER -->
+
+                <div class="article-content">
+
+
+                    <br />
+
+
+                    <script type="text/javascript" src="SDN101IntegratingMininetOnRaspberryPi_files/addthis_widget.js"></script>
+                </div>
+
+
+                <div class="post-478 post type-post status-publish format-standard has-post-thumbnail hentry category-mininet category-openflow-sdn category-sdn tag-academy tag-mininet tag-openflow tag-ras tag-sdn">
+
+
+                    <h1 class="title"><a href="http://pakiti.com/sdn-101-integrating-mininet-on-raspberry-pi/" rel="bookmark" title="SDN 101: Integrating Mininet on Raspberry Pi">SDN 101: Integrating Mininet on Raspberry Pi</a></h1>
+
+                    <p class="post-meta">
+                        <span class="small">Posted by</span> <span class="post-author"><a href="http://pakiti.com/author/admin/" title="Posts by David Bombal" rel="author">David Bombal</a></span>
+                        <span class="small">in</span> <span class="post-category"><a href="http://pakiti.com/category/sdn/mininet/" rel="category tag">Mininet</a>, <a href="http://pakiti.com/category/sdn/openflow-sdn/" rel="category tag">openflow</a>, <a href="http://pakiti.com/category/sdn/" rel="category tag">SDN</a></span>
+                    </p>
+
+                    <div class="entry">
+                        <h3>How to install and run OpenFlow switches on a Raspberry Pi using Mininet</h3>
+                        <p>
+                            <a href="http://pakiti.com/wp-content/uploads/2015/11/install-and-run-OpenFlow-switches-on-a-Raspberry-Pi-using-Mininet.jpg">
+                                <img style="width: 620px; height: 450px; display: block; margin-left: auto; margin-right: auto;" src="SDN101IntegratingMininetOnRaspberryPi_files/install-and-run-OpenFlow-switches-on-a-Raspberry-Pi-using-Mi.jpg" alt="install-and-run-OpenFlow-switches-on-a-Raspberry-Pi-using-Mininet" width="1239" height="900"></a>
+                        </p>
+                        <p>
+                            Mininet is a network emulator that can create and emulate an entire 
+OpenFlow network locally on your PC, or in this case, a Raspberry Pi. 
+This is similar in concept to network emulators such as GNS3. Mininet 
+may even be added to GNS3 in the future.
+                        </p>
+                        <p>
+                            Mininet allows you to create different topologies consisting of 
+OpenFlow switches and hosts (end devices). Topologies can vary from a 
+single switch to more complicated topologies consisting of multiple 
+switches and multiple links. The virtualized switches and hosts act like
+ real devices and you can send traffic from between hosts and then view 
+the flows on the switches. In addition, applications such as iperf can 
+be used to measure performance on the network.
+                        </p>
+                        <p>
+                            Network topologies are created by using the command “sudo mn”. 
+Various options can be used such as “–topo=linear,4”. This creates a 
+network consisting of 4 switches connected back-to-back in a linear 
+fashion and each having a single host connected to it.
+                        </p>
+                        <p>
+                            Mininet can be downloaded as a virtual machine that be run within 
+VirtualBox, VMware workstation, ESXi or Parallels (easiest way).
+                        </p>
+                        <p>In this blog entry, I am going to show you another easy way to install Mininet using a Raspberry Pi:</p>
+                        <p><strong>Step 1:</strong> On your Raspberry Pi, clone Mininet from github:</p>
+                        <blockquote class="jive-quote">
+                            <p><strong><span style="font-size: 10.0pt; font-family: 'Courier New'; color: black;" lang="EN-US">pi@raspberrypi1 ~ $ <strong>sudo git clone git://github.com/mininet/mininet.git</strong></span></strong></p>
+                        </blockquote>
+                        <p><strong>Step 2:</strong> Go to the util directory:</p>
+                        <blockquote class="jive-quote">
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New'; color: black;" lang="EN-US">pi@raspberrypi1 ~ $ <strong>cd mininet/util/</strong></span></p>
+                        </blockquote>
+                        <p><strong>Step 3:</strong> Run the install.sh script using either of these options:</p>
+                        <p><strong>Option 1:</strong> Basic Install:</p>
+                        <blockquote class="jive-quote">
+                            <p><strong><span style="font-size: 10.0pt; font-family: 'Courier New'; color: black;" lang="EN-US">pi@raspberrypi1 ~/mininet/util $ <strong>sudo ./install.sh -fnv</strong></span></strong></p>
+                        </blockquote>
+                        <p><strong>Option 2:</strong> Install everything:</p>
+                        <blockquote class="jive-quote">
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New'; color: black;" lang="EN-US">pi@raspberrypi1 ~/mininet/util $ <strong>sudo ./install.sh -a </strong></span></p>
+                        </blockquote>
+                        <p><strong>Step 4:</strong> Coffee</p>
+                        <p><em>The script will install Mininet … now is a good time for a coffee break (especially if you used the -a option).</em></p>
+                        <p><em>Result: Done! Mininet is now installed.</em></p>
+                        <p>Test: To test the setup, start a basic Mininet topology using the “sudo mn” command:</p>
+                        <blockquote class="jive-quote">
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">pi@raspberrypi1 ~ $ <strong>sudo mn</strong></span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">*** Creating network</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">*** Adding controller</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">*** Adding hosts:</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">h1 h2</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">*** Adding switches:</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">s1</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">*** Adding links:</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">(h1, s1) (h2, s1)</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">*** Configuring hosts</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">h1 h2</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">*** Starting controller</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">c0</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">*** Starting 1 switches</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">s1 …</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">*** Starting CLI:</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">mininet&gt;</span></p>
+                        </blockquote>
+                        <div name="alert" class="jive_macro_alert jive_text_macro" alert="success" __default_attr="success">
+                            <p>Result: This creates a topology consisting of a single switch and two hosts.</p>
+                        </div>
+                        <p><span lang="EN-US">To test connectivity between the hosts, use the “pingall” command:</span></p>
+                        <blockquote class="jive-quote">
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">mininet&gt; <strong>pingall</strong></span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">*** Ping: testing ping reachability</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">h1 -&gt; h2</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">h2 -&gt; h1</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">*** Results: 0% dropped (2/2 received)</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">mininet&gt;</span></p>
+                        </blockquote>
+                        <p><strong>Result:</strong> Pings succeed.</p>
+                        <p>To close Mininet, use the “exit” command:</p>
+                        <blockquote class="jive-quote">
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">mininet&gt; <strong>exit</strong></span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">*** Stopping 1 controllers</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">c0</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">*** Stopping 2 links</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">..</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">*** Stopping 1 switches</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">s1</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">*** Stopping 2 hosts</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">h1 h2</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">*** Done</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">completed in 108.673 seconds</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">pi@raspberrypi1 ~ </span><span style="font-family: 'Courier New'; font-size: 10pt; line-height: 1.5; background-color: transparent;">$</span></p>
+                        </blockquote>
+                        <p>It is good practice to clean up Mininet once you exit using the “sudo mn -c” command:</p>
+                        <blockquote class="jive-quote">
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">pi@raspberrypi1 ~ $ <strong>sudo mn -c</strong></span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">*** Removing excess controllers/ofprotocols/ofdatapaths/pings/noxes</span></p>
+                            <p>
+                                <span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">killall
+ controller ofprotocol ofdatapath ping nox_core lt-nox_core 
+ovs-openflowd ovs-controller udpbwtest mnexec ivs 2&gt; /dev/null</span>
+                            </p>
+                            <p>
+                                <span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">killall
+ -9 controller ofprotocol ofdatapath ping nox_core lt-nox_core 
+ovs-openflowd ovs-controller udpbwtest mnexec ivs 2&gt; /dev/null</span>
+                            </p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">pkill -9 -f “sudo mnexec”</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">*** Removing junk from /tmp</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">rm -f /tmp/vconn* /tmp/vlogs* /tmp/*.out /tmp/*.log</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">*** Removing old X11 tunnels</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">*** Removing excess kernel datapaths</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">ps ax | egrep -o ‘dp[0-9]+’ | sed ‘s/dp/nl:/’</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">***&nbsp; Removing OVS datapaths</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">ovs-vsctl –timeout=1 list-br</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">ovs-vsctl –timeout=1 list-br</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">*** Removing all links of the pattern foo-ethX</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">ip link show | egrep -o ‘([-_.[:alnum:]]+-eth[[:digit:]]+)’</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">ip link show</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">*** Killing stale mininet node processes</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">pkill -9 -f mininet:</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">*** Shutting down stale tunnels</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">pkill -9 -f Tunnel=Ethernet</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">pkill -9 -f .ssh/mn</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">rm -f ~/.ssh/mn/*</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">*** Cleanup complete.</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">pi@raspberrypi1 ~ $</span></p>
+                        </blockquote>
+                        <p>To create a bigger topology consisting of 4 switches, use the following command:</p>
+                        <blockquote class="jive-quote">
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">pi@raspberrypi1 ~ $ <strong>sudo mn –topo=linear,4</strong></span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">*** Creating network</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">*** Adding controller</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">*** Adding hosts:</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">h1 h2 h3 h4</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">*** Adding switches:</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">s1 s2 s3 s4</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">*** Adding links:</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">(h1, s1) (h2, s2) (h3, s3) (h4, s4) (s2, s1) (s3, s2) (s4, s3)</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">*** Configuring hosts</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">h1 h2 h3 h4</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">*** Starting controller</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">c0</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">*** Starting 4 switches</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">s1 s2 s3 s4 …</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">*** Starting CLI:</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">mininet&gt;</span></p>
+                        </blockquote>
+                        <div name="alert" class="jive_macro_alert jive_text_macro" alert="success" __default_attr="success">
+                            <p>Result: A topology consisting of 4 switches each having a single host connected to them is created.</p>
+                        </div>
+                        <p>Connectivity between hosts can be tested once again using the pingall command:</p>
+                        <blockquote class="jive-quote">
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">mininet&gt; <strong>pingall</strong></span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">*** Ping: testing ping reachability</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">h1 -&gt; h2 h3 h4</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">h2 -&gt; h1 h3 h4</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">h3 -&gt; h1 h2 h4</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">h4 -&gt; h1 h2 h3</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">*** Results: 0% dropped (12/12 received)</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">mininet&gt;</span></p>
+                        </blockquote>
+                        <p>
+                            Result: Pings succeed. 
+                        </p>
+                        <p>
+                            *** End of Exercise ***
+                        </p>
+                        <p>
+                            ***&nbsp;&nbsp; Items below can be done on your own&nbsp;&nbsp; ***
+                        </p>
+                        <hr />
+                        <p>&nbsp;</p>
+                        <hr />
+                        <p>
+                            Mininet can also be integrated with external controllers like OpenDayLight (ODL), ONOS, HP VAN SDN Controller and 
+others.
+                        </p>
+                        <p>
+                            To integrate with an external controller, use the –controller option (In this case, the controller is running on a server with IP address 
+192.168.56.100):
+                        </p>
+                        <blockquote class="jive-quote">
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">pi@raspberrypi1 ~ $ <strong>sudo mn –controller=remote,ip=192.168.56.100 –topo=linear,4</strong></span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">*** Creating network</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">*** Adding controller</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">*** Adding hosts:</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">h1 h2 h3 h4</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">*** Adding switches:</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">s1 s2 s3 s4</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">*** Adding links:</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">(h1, s1) (h2, s2) (h3, s3) (h4, s4) (s2, s1) (s3, s2) (s4, s3)</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">*** Configuring hosts</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">h1 h2 h3 h4</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">*** Starting controller</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">c0</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">*** Starting 4 switches</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">s1 s2 s3 s4 …</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">*** Starting CLI:</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">mininet&gt; <strong>pingall</strong></span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">*** Ping: testing ping reachability</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">h1 -&gt; h2 h3 h4</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">h2 -&gt; h1 h3 h4</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">h3 -&gt; h1 h2 h4</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">h4 -&gt; h1 h2 h3</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">*** Res</span><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">ults: 0% dropped (12/12 received)</span></p>
+                            <p><span style="font-size: 10.0pt; font-family: 'Courier New';" lang="EN-US">mininet&gt; </span></p>
+                        </blockquote>
+                        <p>View using OpenDaylight (ODL):</p>
+                        <p>
+                            <a href="http://pakiti.com/wp-content/uploads/2015/11/OpenD.png">
+                                <img style="width: 620px; height: 356px; display: block; margin-left: auto; margin-right: auto;" src="SDN101IntegratingMininetOnRaspberryPi_files/OpenD.png" alt="OpenD" width="1141" height="655"></a>
+                        </p>
+                        <p>Or using the ONOS controller:</p>
+                        <p>
+                            <a href="http://pakiti.com/wp-content/uploads/2015/11/Open-Networking.png">
+                                <img style="width: 620px; height: 424px; display: block; margin-left: auto; margin-right: auto;" src="SDN101IntegratingMininetOnRaspberryPi_files/Open-Networking.png" alt="Open Networking" width="789" height="539"></a>
+                        </p>
+                        <p>&nbsp;</p>
+                        <p>&nbsp;</p>
+                        <p>
+                            <span>If you want more information, have a look at my SDN and OpenFlow courses on the GNS3 academy </span>
+                            <br>
+                            <a target="_blank" rel="nofollow" href="http://academy.gns3.com/">http://academy.gns3.com</a><span> or&nbsp; visit the official Mininet site: </span>
+                            <br>
+                            <a target="_blank" rel="nofollow" href="http://mininet.org/">http://mininet.org/</a>
+                        </p>
+                        <p>—</p>
+                        <p>Make sure to check out Davids Courses in GNS3 Academy (and watch out for his upcoming SDN / Openflow Course soon!):</p>
+
+
+                        <br>
+                    </div>
+
+
+
+                    <table class="bio" border="0">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="clearfix">
+                                        <div class="pic">
+                                            <img src="SDN101IntegratingMininetOnRaspberryPi_files/David-Bombal.png" alt="">
+                                        </div>
+                                        <div style="float: left; width: 700px; text-align: justify; font-size: 12px;">
+                                            <h3>About <a href="http://pakiti.com/author/admin/" title="Posts by David Bombal" rel="author">David Bombal</a>:</h3>
+                                            <p>
+                                                These days I am involved in some exciting SDN and 
+OpenFlow projects involving the HP VAN SDN Controller, HP ProVision and 
+HP Comware switches. 
+
+These new developments in the networking world combine my passions of 
+networking and application development. 
+
+I hope to write some interesting blog entries on these exiting topics.
+
+I am both a Cisco CCIE #11023 and HP MASE as well as a Cisco Certified 
+Systems Instructor (CCSI #22787) and Certified HP Instructor. I have 
+been training networking courses for well over 10 years teaching on a 
+wide range of topics including routing and switching, VoIP, OpenFlow and
+ SDN. I have delivered instructor led courses all over the world.
+
+I started working with Cisco Unified Communications Manager when it was 
+still called Cisco Call Manager and have been deploying, troubleshooting
+ and teaching Unified Communications products since version 3.0.
+
+I have developed various network utilities such as the VPN Config 
+Generator and others to help engineers in their day to day jobs. I also 
+develop software, training materials, EBooks, videos and other products 
+which are used throughout the world.
+
+I have designed, implemented and managed networks ranging from single 
+sites to those that span 50 countries.
+                                            </p>
+
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <br>
+                    <br>
+</body>
+</html>
