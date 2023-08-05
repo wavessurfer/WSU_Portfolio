@@ -1,0 +1,5 @@
+201, Toyota, Camry, 1985, VRX-6224
+302, Chevrolet, Chevette, 1980, SM-1243
+103, Honda, Civic, 1993, RSS-8839
+544, Ford, Mustang, 1966, AZU-4852
+345, Dodge, Neon, 1996, LLC-0674
