@@ -1,0 +1,374 @@
+﻿<!doctype html>
+<html lang="en">
+
+<head>
+    <title>IOT07</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- PgP 7/11/2019 summative assignment for Raspberry Pi, Arduino Uno, micro:bit -->
+    <!-- Bootstrap -->
+    <link href="../../ReadOnly/bootstrap.css" rel="stylesheet">
+
+    <!-- constant file for student firstname, lastname, starid on students' pages -->
+    <script src="../constants.js"></script>
+
+    <!-- course constant file that contains semester, class, section pages -->
+    <script src="../../ReadOnly/CourseConstants.js"></script>
+
+</head>
+
+<body onload="setVariables()">
+    <form class="container-fluid" action="https://eprofessor.azurewebsites.net/code/ProcessFormData.asp" method="post" name="frmAssignment" id="frmAssignment">
+
+        <input name="InstID" type="hidden" id="InstID" value="00617282">
+
+        <h1 class="text-center">Zenmap on a Raspberry Pi</h1>
+
+
+        <!-- -start-Student, class and assignment information. Assignment hard-coded, other values from constants.js file-start -->
+        <div class="row col-lg-12">
+            <div class="col-lg-3">
+                <label class="text-primary" for="FirstName">First Name:</label>
+                <input class="form-control" name="FirstName" id="FirstName" type="text" value="default first name" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="LastName">Last Name:</label>
+                <input class="form-control" name="LastName" id="LastName" type="text" value="default last name" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="pin">StarID:</label>
+                <input class="form-control" name="pin" id="pin" type="text" value="default StarID" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="email">Email:</label>
+                <input class="form-control" name="email" id="email" type="email" value="default email address" readonly="readonly">
+            </div>
+        </div>
+
+        <div class="row col-lg-12">
+            <div class="col-lg-3">
+                <label class="text-primary" for="semester">Semester:</label>
+                <input class="form-control" name="semester" id="semester" type="text" value="default" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="class">Class:</label>
+                <input class="form-control" name="class" id="class" value="xClass" type="text" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="section">Section:</label>
+                <input class="form-control" name="section" id="section" value="default" type="text" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="assignment">Assignment:</label>
+                <input class="form-control" name="assignment" id="assignment" value="IOT07" type="text" readonly="readonly">
+            </div>
+        </div>
+        <!-- -end-Student, class and assignment information-end -->
+        <br />
+
+        <!-- Calculate the correct path for saving the files -->
+        <script>Path = "&#92;OneDrive - MNSCU&#92;" + xClass + "&#92;" + document.getElementById("assignment").value + "&#92;"; </script>
+
+
+        <div class="col-lg-12">
+            <br />
+            <input class=" text-danger btn-block btn-lg" type="submit" name="Submit" value="SUBMIT -once you have completed this assignment- SUBMIT"><br />
+        </div>
+
+        <div class="h3 text-danger col-lg-12">
+            100 Points<hr />
+        </div>
+
+
+        <div class="col-lg-12"><a href="#Objectives" class="btn btn-info" data-toggle="collapse">Learning Objectives</a></div>
+        <div id="Objectives" class=" collapse in col-lg-12">
+
+
+            <p>
+                These instructions will show you how to run Zenmap on a Raspberry Pi.<br />
+                This software is a GUI for nmap, a network security scanner.<br />
+                <br />
+
+                More information on <a href="https://nmap.org/zenmap/" class="bg-info text-white" target="_blank">Zenmap</a> is available online.<br />
+
+                Being able to use this software will enable you to understand network operations and security issues.
+            </p>
+            <p>After completing this assignment you will be able to:</p>
+            <ol>
+                <li>Discuss uses of Zenmap on a Raspberry Pi</li>
+                <li>Run Zenmap</li>
+                <li>Conduct basic network security scans on the WSU guest network</li>
+            </ol>
+            <hr />
+        </div>
+
+
+
+        <div class="col-lg-12"><a href="#Overview" class="btn btn-info" data-toggle="collapse">Assignment Overview</a></div>
+
+        <div id="Overview" class="collapse in  col-lg-12">
+            This assignment reviews basic computer concepts that you will need in this course and throughout your career.
+            <br />
+            <p>
+                You are expected to have a working knowledge of SBC hardware and software.<br />
+                If you do not understand how to use an item, perform a Google Search, 
+                refer to the <a href="https://learn.winona.edu/WSU_Technology_Knowledge_Base" class="bg-info text-white" target="_blank">WSU Technology Knowledge Base</a>,&nbsp; ask a teaching assistant, or ask the instructor.
+            </p>
+
+            <hr />
+        </div>
+
+        <!--Exercise 1-->
+
+        <div class="col-lg-12"><a href="#Exercise01" class="btn btn-info" data-toggle="collapse">Exercise 1-Run Zenmap as SU</a><a href="#Exercise01"></a></div>
+
+        <div id="Exercise01" class="collapse in  col-lg-12">
+            <ol>
+                <li>These steps are performed on the Raspberry Pi.</li>
+                <li>Locate and right-click Zenmap in the RPi menu under &#39;Internet&#39;, then select &#39;Properites&#39;</li>
+                <li>Select the Desktop Entry tab, and add sudo to the front of the Command: statement
+                    <p>
+                        <a href="images/ZenmapProperties.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/ZenmapProperties.PNG', 'popup'); return false;">
+                            <img src="images/ZenmapProperties.PNG" width="300" alt="ZenMap start settings" class="img-responsive img-responsive" /></a>Start Zenmap as SU<br />
+                    </p>
+                </li>
+                <li>Click OK </li>
+                <li>From the menu select Internet&gt;Zenmap to start it<br /></li>
+                <li>Note-you can also select Internet&gt;Zenmap(as root) to start Zenmap<br /></li>
+
+            </ol>
+            <hr />
+        </div>
+
+
+
+        <!--Exercise 2-->
+
+        <div class="col-lg-12"><a href="#Exercise02" class="btn btn-info" data-toggle="collapse">Exercise 2-Run Zenmap</a></div>
+
+        <div id="Exercise02" class="collapse in  col-lg-12">
+
+            <p>ref: <a href="https://nmap.org/book/zenmap.html" class="bg-info text-white" target="_blank">Zenmap User&#39;s Guide</a></p>
+
+            <ol>
+                <li>These steps are performed on your Raspberry Pi.</li>
+
+                <li>Find the IP address of your Raspberry Pi</li>
+
+
+                <li>Assuming an IP address of 10.20.85.xxx, enter the following into the Zenmap &#39;Target:&#39;<br />
+                    <code>10.20.85.0/24</code><br />
+                    This will allow you to scan the subnet.
+                    <p>
+                        <a href="images/ZenmapScan.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/ZenmapScan.PNG', 'popup'); return false;">
+                            <img src="images/ZenmapScan.PNG" width="400" alt="WaveMon functions" class="img-responsive img-responsive" /></a>Scan Settings<br />
+                    </p>
+                </li>
+
+                <li>From the &#39;Profile:&#39; list choose and run various scans by pressing the Scan button.<br />
+                    Review the results.
+                </li>
+
+            </ol>
+            <hr />
+        </div>
+
+
+
+
+        <!--Exercise 3-->
+
+
+        <div class="col-lg-12"><a href="#Exercise03" class="btn btn-info" data-toggle="collapse">Exercise 3-Screenshot</a></div>
+
+        <div id="Exercise03" class="collapse in  col-lg-12">
+
+            <p>Run an &#39;Intense scan&#39; of your WSU Guest subnet and take a screenshot of the results to document your work.<br />
+                Note: this can be done using the Snipping Tool if you are running VNC, or use the <code>scrot</code> command if you are connected to the Raspberry Pi with a keyboard and mouse.
+            </p>
+
+            <ol>
+                <li>On the Raspberry Pi, position the browser window next to your name on the desktop.</li>
+
+                <li>Take a screenshot.
+                    <p>
+                        <a href="images/SampleScan.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/SampleScan.PNG', 'popup'); return false;">
+                            <img src="images/SampleScan.PNG" width="400" alt="ZenMap sample scan" class="img-responsive img-responsive" /></a>Sample Scan <br />
+                    </p>
+
+
+                </li>
+
+                <li>If on your laptop save the screenshot  as &quot;IOT07&quot; in your ' 
+             <code><span id="abPath"></span></code>
+                    <script>document.getElementById("abPath").innerHTML = Path; </script>
+                    ' folder.<br />
+
+            </ol>
+            <hr />
+        </div>
+
+
+        <div class="col-lg-12 text-danger">
+            <h2>Screenshot IOT07</h2>
+            <hr />
+        </div>
+
+
+
+        <div class="col-lg-12"><a href="#UploadScreenShot" class="btn btn-info" data-toggle="collapse">Upload Screenshot</a></div>
+
+        <div id="UploadScreenShot" class="collapse in  col-lg-12">
+            <p>
+                Submit to the appropriate D2L Assignment folder a screenshot that documents your work.<br />
+            </p>
+            <br />
+        </div>
+
+        <div class="col-lg-12 text-primary">
+            <p>
+                (50) 1. Upload your screenshot to the &#39;IOT07&#39; D2L Assignment Folder.
+            </p>
+            <hr />
+        </div>
+
+
+
+
+		<!--Exercise 4-->
+
+		<div class="col-lg-12"><a href="#Exercise04" class="btn btn-info" data-toggle="collapse">Exercise 4-Reflections</a></div>
+
+		<div id="Exercise04" class="collapse in  col-lg-12">
+
+			<p>
+				Based on your experience in this exercise, consider the value of Zenmap/nmap for organizations, especially the Information Technology staff.<br />
+				Think about what type of problems a Raspberry Pi equipped network scanner could solve, and whether it could be cost-effective.<br />
+				Businesses are deploying IoT 'solutions'-how can ZenMap equipped Raspberry Pis support or automate these efforts?<br />
+				<br />
+				References:<br />
+				Zenmap: <a class="bg-info text-white" href="https://nmap.org/zenmap/" target="_blank">Zenmap</a><br />
+
+				Zenmap:&nbsp; <a class="bg-info text-white" href="https://nmap.org/book/zenmap.html" target="_blank">Users&#39; Guide </a><br />
+
+				W3Schools   <a href="https://www.w3schools.com/cybersecurity/cybersecurity_mapping_port_scanning.php" class="bg-info text-white" target="_blank">Zenmap</a><br />
+
+                Nmap Pi: <a href="https://www.cyberpiprojects.com/nmap-pi" class="bg-info text-white" target="_blank">Ethical Hacking</a><br />
+
+                Nmap Scan: <a href="nmapscan.pdf" class="bg-info text-white" target="_blank" >Instructions</a>
+
+			</p>
+			<p>
+				&nbsp;</p>
+
+			<div class="col-lg-12 text-primary">
+				(20) 2. Reflections-value<br />
+				List a specific problem that a low-cost network scanner could solve.<br />
+
+				<!-- Enter your answer in the VALUE field below   GROK -->
+				<input class="form-control" name="q2" type="text" id="q2" value="specific problem:">
+				<hr />
+			</div>
+
+			<hr />
+
+
+			<div class="col-lg-12 text-primary">
+				(20) 3. Reflections-content<br />
+				Research the internet on the topic of Ethical Hacking.<br />	
+                Why would an organization&#39;s security expert use nmap to scan their own organization&#39;s network?<br />
+                Hint:  <a href="https://medium.com/@dandobusiness/a-guide-to-ethical-hacking-understanding-nmap-7aea71f65554" class="bg-info text-white" target="_blank"  >Nmap</a>
+                
+				<!-- Enter your answer in the VALUE field below   GROK -->
+				
+				<input class="form-control" name="q3" type="text" id="q3" value="scan own network:">
+				<hr />
+			</div>
+			<hr />
+
+
+
+		</div>
+
+
+
+
+
+
+
+
+		<div class="col-lg-12"><a href="#ExerciseSubmit" class="btn btn-info" data-toggle="collapse">Submit Assignment</a></div>
+
+
+		<div class="col-lg-12">
+			<p>
+				When all tasks are completed press the Submit button.
+			</p>
+			<hr />
+		</div>
+
+		<div class="col-lg-12 text-primary">
+			(10) 4. Assignment submission<br />
+
+			<!-- Enter your answer in the VALUE field below   GROK -->
+			<input class="form-control" name="q4" type="text" id="q4" value="I have completed all the exercises, and uploaded my screenshot to the D2L Assignment folder IOT07.">
+			<hr />
+		</div>
+
+
+
+
+
+		<hr />
+
+
+		<hr />
+
+		<div class="col-lg-12">
+			<p>
+				Congratulations! You have used Zenmap, a network security scanner, on a Raspberry Pi single board computer.                
+			</p>
+			<hr />
+		</div>
+
+
+
+
+		<div class="col-lg-12 text-danger text-center">
+			<h2>-- WHEN DONE --<br />
+				SHUTDOWN THE RASPBERRY PI<br />
+				TURN OFF THE POWER<br />
+			</h2>
+		</div>
+		<hr />
+
+
+		<div class=" col-lg-12">
+			<br />
+			<input class=" text-danger btn-block btn-lg" type="submit" name="Submit" value="SUBMIT -once you have completed this assignment- SUBMIT">
+			<br />
+		</div>
+
+	</form>
+
+	<!-- Creative Commons License Info -->
+	<div id="xLicense" class=" col-lg-12 text-muted"></div>
+
+	<div id="xfooter" class=" col-lg-12 text-muted"></div>
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="../../ReadOnly/jquery-1.js"></script>
+
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="../../ReadOnly/bootstrap.js"></script>
+
+
+</body>
+</html>
+
+
+
+
+
