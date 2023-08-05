@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- PgP 6/15/2019 update page, added integral check web db submissions, split constants into two files, one for students, one for course -->
+	<!-- Bootstrap -->
+	<link href="../../ReadOnly/bootstrap.css" rel="stylesheet">
+
+	<!-- constant file for student firstname, lastname, starid on students' pages -->
+	<script src="../constants.js"></script>
+
+	<!-- course constant file that contains semester, class, section pages -->
+	<script src="../../ReadOnly/CourseConstants.js"></script>
+
+	<!-- model assignment file, version 1 released 2018/02/18 PgP -->
+
+	<title>MIS452Summative11</title>
+</head>
+
+<body onload="setVariables()">
+
+	<form class="container-fluid" action="https://eprofessor.azurewebsites.net/code/ProcessFormData.asp" method="post" name="frmAssignment" id="frmAssignment">
+		<input name="InstID" id="InstID" value="00617282" type="hidden">
+
+		<h1 class=" text-center">Network Operating Systems</h1>
+
+		<!-- -start-Student, class and assignment information. Assignment hard-coded, other values from constants.js file-start -->
+		<div class="row col-lg-12">
+			<div class="col-lg-3">
+				<label class="text-primary" for="FirstName">First Name:</label>
+				<input class="form-control" name="FirstName" id="FirstName" type="text" value="default first name" readonly="readonly">
+			</div>
+			<div class="col-lg-3">
+				<label class="text-primary" for="LastName">Last Name:</label>
+				<input class="form-control" name="LastName" id="LastName" type="text" value="default last name" readonly="readonly">
+			</div>
+			<div class="col-lg-3">
+				<label class="text-primary" for="pin">StarID:</label>
+				<input class="form-control" name="pin" id="pin" type="text" value="default StarID" readonly="readonly">
+			</div>
+			<div class="col-lg-3">
+				<label class="text-primary" for="email">Email:</label>
+				<input class="form-control" name="email" id="email" type="email" value="default email address" readonly="readonly">
+			</div>
+		</div>
+
+		<div class="row col-lg-12">
+			<div class="col-lg-3">
+				<label class="text-primary" for="semester">Semester:</label>
+				<input class="form-control" name="semester" id="semester" type="text" value="default" readonly="readonly">
+			</div>
+			<div class="col-lg-3">
+				<label class="text-primary" for="class">Class:</label>
+				<input class="form-control" name="class" id="class" value="xClass" type="text" readonly="readonly">
+			</div>
+			<div class="col-lg-3">
+				<label class="text-primary" for="section">Section:</label>
+				<input class="form-control" name="section" id="section" value="default" type="text" readonly="readonly">
+			</div>
+			<div class="col-lg-3">
+				<label class="text-primary" for="assignment">Assignment:</label>
+				<input class="form-control" name="assignment" id="assignment" value="Summative11" type="text" readonly="readonly">
+			</div>
+		</div>
+		<!-- -end-Student, class and assignment information-end -->
+
+		<!-- Calculate the correct path for saving the files -->
+		<script>Path = "&#92;OneDrive - MNSCU&#92;" + xClass + "&#92;" + document.getElementById("assignment").value + "&#92;"; </script>
+
+
+		<div class="col-lg-12">
+			<br />
+			<input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit">
+			<br />
+		</div>
+
+		<div class="col-lg-12 h3 text-danger">
+			600 Points
+            <hr />
+		</div>
+
+		<!-- -start-objectives-start -->
+		<div class="col-lg-12"><a href="#Objectives" class="btn btn-info" data-toggle="collapse">Learning Objectives</a></div>
+		<div id="Objectives" class=" collapse in col-lg-12">
+
+			<!--Above this line similar except for Assignment number and title   -->
+			<ul>
+				<li>Explain the major components of an operating system</li>
+				<li>Describe and compare the client and server operating systems</li>
+				<li>Describe the components or virtualization and virtualization products</li>
+				<li>Plan for an operating system installation and perform postinstallation tasks</li>
+			</ul>
+
+
+			<hr />
+		</div>
+		<!-- -end-objectives-end -->
+
+
+		<div class=" col-lg-12"><a href="#Exercise01" class="btn btn-info" data-toggle="collapse">Questions</a></div>
+
+		<div id="Exercise01" class="collapse in  col-lg-12">
+
+
+            <p>
+                What benefit are hardware virtualization (and simulation) tools to an organization?<br />
+                Note: do not only rely on the book for the answer.<br />
+                Consult LinkedIn Learning and Wikipedia- <a class="bg-info text-white" href="https://en.wikipedia.org/wiki/Hardware_virtualization" target="_blank">Hardware virtualization</a>.
+            </p>
+
+
+            <p>(50) 1. Briefly explain the importance of a virtual machine in managing and maintaining a Windows Server 2019 or similar environment.</p>
+
+            <!-- Enter your answer in the VALUE field below   GROK -->
+            <input name="q1" id="q1" size="120" maxlength="120" class="form-control" value="virtualization/simulation benefit(s): " type="text">
+            <br />
+
+			<hr />
+
+		</div>
+
+
+		<div class=" col-lg-12"><a href="#Exercise02" class="btn btn-info" data-toggle="collapse">Hands-On Project 11-1-Windows File System via CLI</a></div>
+
+		<div id="Exercise02" class="collapse in  col-lg-12">
+			<p>
+				Do Hands-On Project 11-1 using your laptop, in the Somsen 301 lab, connected to the HP-USB-C dock, with the following modifications.<br />
+				In step 2 login as yourself.<br />
+				Perform all of the steps to learn about some of the most frequently used CLI-Command Line Interface commands.<br />
+				Note: in addition to the CLI, you may also want to investigate PowerShell
+			</p>
+
+			<p>
+				(50) 2. Briefly explain the benefit of a network administrator learning to use the CLI:<br />
+
+				<!-- Enter your answer in the VALUE field below   GROK -->
+				<input name="q2" id="q2" size="120" maxlength="120" class="form-control" value="cli benefit: " type="text">
+				<br />
+			</p>
+
+
+
+			<hr />
+			<hr />
+
+		</div>
+
+
+		<div class=" col-lg-12"><a href="#Exercise03" class="btn btn-info" data-toggle="collapse">Hands-On Project 11-2-Linux/RPi File System</a></div>
+
+		<div id="Exercise03" class="collapse in  col-lg-12">
+
+			<p>
+				Do Hands-On Project 5-2 to learm more about the Linux file system.<br />
+				You will do this on a Raspberry Pi in Somsen 301.<br />
+				The Raspbian Operating System is based on the <a class="bg-info text-white" href="https://www.debian.org/" target="_blank">Linux Debian</a> distribution.<br />
+				You can work with a partner.
+			</p>
+
+			<p>
+				The Linux GUI and some Debian system utilities will be different than the Fedora distribution discussed in the book.<br />
+				The Debian 'File Manager' is the equivalent of the Fedora 'Files'.<br />
+
+				<a href="images/fileManager.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/fileManager.PNG', 'popup'); return false;">
+					<img src="images/fileManager.PNG" width="300" alt="file manager" class="img-responsive img-responsive" /></a><br />
+				Your values will be different.<br />
+				<br />
+
+				In step 5, open the Terminal program by clicking the black icon in the top toolbar, fourth from left.<br />
+				In step  12 type <code>mousepad newfile</code> to open a Notepad like editor.<br />
+				In step 13 type 'exit' not 'q' to quit.<br />
+				Hint: in Debian type 'help' at the CLI to get a full list of the available commands.<br />
+			</p>
+
+			<p>
+
+				(50) 3. Provide a command to return you to the home directory in Debian, no matter where you are.<br />
+
+				<!-- Enter your answer in the VALUE field below   GROK -->
+				<input name="q3" id="q3" size="120" maxlength="120" class="form-control" value="go to home: " type="text">
+				<br />
+			</p>
+
+		</div>
+
+
+
+		<div class=" col-lg-12"><a href="#Exercise04" class="btn btn-info" data-toggle="collapse">Hands-On Project 11-3-Windows Task Manager</a></div>
+
+		<div id="Exercise04" class="collapse in  col-lg-12">
+
+			<p>
+				Do Hands-On Project 11-3 to learn to use the Windows Task Manager to view running processes, services and performance.<br />
+				You can work with a partner.
+			</p>
+
+			<p>
+				In step 4, you can also click the 'Details' tab, then right-click any column and select 'CPU time'.<br />
+				In step 5 please note there are lots of columns listed, and 'command line' is about half way down.<br />
+			</p>
+
+			<p>
+				(50) 4. Write your answer to step 12, the difference between the CPU and the CPU Time columns, in the space below.<br />
+
+				<!-- Enter your answer in the VALUE field below   GROK -->
+				<input name="q4" id="q4" size="120" maxlength="120" class="form-control" value="cpu vs cpu time: " type="text">
+				<br />
+			</p>
+
+		</div>
+
+
+
+		<div class=" col-lg-12"><a href="#Exercise05" class="btn btn-info" data-toggle="collapse">Hands-On Project 11-4-Linux/RPi Processes</a></div>
+
+		<div id="Exercise05" class="collapse in  col-lg-12">
+
+			<p>
+				Do Hands-On Project 5-4 to view processes running in Debian Linux on a Raspberry Pi in Somsen 301.<br />
+				You can work with a partner.<br />
+			</p>
+
+			<p>
+				In step 1 start your Raspberry Pi.<br />
+				In step 2, click the Raspberry icon in the upper-left corner, click 'Accessories' then click 'Task Manager'.  This does not have all the same features as mentioned in steps 3 and 4, but you will still get a good idea of what is happening on the device.<br />
+				In step 5, click the Internet icon in the top toolbar to start the 'Chromium' browser and view changes to CPU utilization.<br />
+				In step 6, click the fourth icon from the left in the top toolbar to open a terminal window.<br />				
+			</p>
+
+			<p>
+				In step 7 review the information displayed after entering the 'top' command.<br />
+
+				(50) 5. Use the Snipping Tool to make a screen shot of the Terminal window displaying the results of the top command.<br />
+				Make sure to include at least the top 10 rows.<br />
+
+
+				<!--  PgP 2/4/2018 create path using constants and current document assignment -->
+				Save the screen shot  as &quot;Ex1&quot; in your ' 
+                <code><span id="axqPath"></span></code>
+				<script>document.getElementById("axqPath").innerHTML = Path; </script>
+				' folder.<br />
+
+				You will be combining screen shots from several exercises at the end of this assignment, just as you did in 
+                  <a href="../Formative00/Formative00.html#PDFfileCreation" class="bg-info text-white" target="_blank">Formative00</a>-PDF File Creation. 
+			</p>
+			<hr />
+
+
+		<div class="col-lg-12 text-danger">
+			<h2>Screen Shot Ex1</h2>
+			<hr />
+			<hr />
+		</div>
+
+
+		</div>
+
+
+
+
+
+		<div class=" col-lg-12"><a href="#Exercise06" class="btn btn-info" data-toggle="collapse">Hands-On Project 11-5-Drive Mapping</a></div>
+
+		<div id="Exercise06" class="collapse in  col-lg-12">
+
+			<p>
+				Do Hands-On Project 11-5 to map a drive letter to a folder Professor Paulson created on a network server.<br />
+				You can work with a partner.
+				You can also attempt this from an off-campus location, as long as you establish a Cisco AnyConnect vpn connection.<br />
+				Make sure to use your WSU laptop.<br />
+			</p>
+
+			<p>
+				Read the project, and then map one of your laptop drive letters (likely one such as X:, Y: or Z:) to the unc path: <code>\\mispgp\MIS452fall2021</code> <br />
+			</p>
+
+
+			<p>
+				After step 14, open Windows File Explorer and make a screen shot of the mapped drive.<br />
+				You should see a Readme.txt file, feel free to open and read it.<br />
+
+				<p>
+					(100) 6. Use the Snipping Tool to make a screen shot of the command prompt Route Table.<br />
+
+
+					<!--  PgP 2/4/2018 create path using constants and current document assignment -->
+					Save the screen shot  as &quot;Ex2&quot; in your ' 
+                <code><span id="aqqPath"></span></code>
+					<script>document.getElementById("aqqPath").innerHTML = Path; </script>
+					' folder.<br />
+
+					You will be combining screen shots from several exercises at the end of this assignment, just as you did in 
+                  <a href="../Formative00/Formative00.html#PDFfileCreation" class="bg-info text-white" target="_blank">Formative00</a>-PDF File Creation. 
+				</p>
+			<hr />
+
+		</div>
+
+		<div class="col-lg-12 text-danger">
+			<h2>Screen Shot Ex2</h2>
+			<hr />
+			<hr />
+		</div>
+
+
+
+
+		<div class=" col-lg-12"><a href="#Exercise11" class="btn btn-info" data-toggle="collapse">Packet Tracer Lab 5-2-Viewing HTTP packets</a></div>
+
+		<div id="Exercise11" class="collapse in  col-lg-12">
+
+			<p>There are no Packet Tracer Labs for this chapter.</p>
+
+		</div>
+
+
+
+
+		<!--  From here to end difference question numbers and Summative numbering for PDF of file uploaded to D2L    -->
+
+
+		<div class="col-lg-12"><a href="#ExercisePDF" class="btn btn-info" data-toggle="collapse">Exercise-PDF File Creation</a></div>
+
+		<div id="ExercisePDF" class="collapse in  col-lg-12">
+			<p>
+				Use a web browser to verify that you have published your website to https://classes.winona.edu/...
+                <br />
+				Check that your name, StarID, email, class, semester, section and all of your answers are correct and visible.
+                <br />
+				From the menu choose File&gt;Print... and using &quot;Microsoft Print to PDF&quot; save a copy of this assignment as a .pdf file in your   ' 
+                <code><span id="dPath"></span></code>
+				<script>document.getElementById("dPath").innerHTML = Path; </script>
+				' folder.
+			</p>
+
+			<p>
+				(50) 7. Save your file 'WebPage.pdf' to the ' 
+                <code><span id="ePath"></span></code>
+				<script>document.getElementById("ePath").innerHTML = Path; </script>
+				' folder.<br />
+
+
+			</p>
+
+			<div class="text-danger">
+				<h2>WebPage.pdf</h2>
+				<hr />
+			</div>
+
+			<p>Create one .pdf (portable document format) file from the screen shots that you have taken by following these steps.</p>
+
+			<ol>
+				<li>Open File Explorer, make sure the screen shot files are properly named(Ex1, Ex2 , Ex3.. ) &nbsp; </li>
+				<li>Select all of the screen shots to be combined. </li>
+				<li>Right Click and select &#39;Print&#39; from the short-cut menu.      </li>
+				<li>In the bottom center of the &#39;Print Pictures&#39; dialog box uncheck the box &quot;Fit picture to frame&quot;</li>
+				<li>Click on &#39;Print&#39; and save the file with the name&nbsp; &quot;ScreenShots.pdf&quot; in your '
+                <code><span id="fPath"></span></code>
+					<script>document.getElementById("fPath").innerHTML = Path; </script>
+					' folder.<br />
+				</li>
+			</ol>
+
+
+			<p>
+				(50) 8. Save your file 'ScreenShots.pdf' in your ' 
+                <code><span id="gPath"></span></code>
+				<script>document.getElementById("gPath").innerHTML = Path; </script>
+				' folder.<br />
+
+			</p>
+
+			<div class="text-danger">
+				<h2>ScreenShots.pdf</h2>
+				<hr />
+			</div>
+
+
+			<p>&nbsp;</p>
+			<p>
+				Use PDFill to merge the WebPage.pdf file with the ScreenShots.pdf file, and save it as &#39;Summative07.pdf&#39; in your ' 
+                <code><span id="hPath"></span></code>
+				<script>document.getElementById("hPath").innerHTML = Path; </script>
+				' folder.<br />
+
+			</p>
+
+
+			<p>(50) 9. Upload your file 'Summative11.pdf' to the D2L 'Summative07' Assignment folder.</p>
+
+		</div>
+
+		<div class="col-lg-12 text-danger">
+			<h2>Summative11.pdf</h2>
+		</div>
+		<hr />
+
+
+
+
+
+		<div class="col-lg-12"><a href="#ExerciseAssignmentSubmission" class="btn btn-info" data-toggle="collapse">Exercise-Assignment Submission</a></div>
+
+		<div id="ExerciseAssignmentSubmission" class="collapse in  col-lg-12">
+			<p>
+				Use a browser to view your completed and published website at: https://classes.winona.edu/...     
+                <br />
+				Ensure that you have linked this assignment on your home page.
+                Note that your screen shots do not have to be completed to perform this step.<br>
+			</p>
+
+			(50) 10. Home Page Hyperlink<br />
+			Check and verify that this assignment is hyperlinked on your home page.<br />
+			<br />
+
+			(50) 11. Assignment submission<br />
+			Press the Submit button at the top or bottom of this page.
+                Read and follow instructions on the confirmation page.&nbsp; Correct any errors.
+		</div>
+		<hr />
+
+
+
+		<div class="col-lg-12">
+			<br />
+			<input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit">
+			<br />
+		</div>
+
+
+	</form>
+
+
+
+	<!-- Creative Commons License Info -->
+	<div id="xLicense" class=" col-lg-12 text-muted"></div>
+
+	<div id="xfooter" class=" col-lg-12 text-muted"></div>
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="../../ReadOnly/jquery-1.js"></script>
+
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="../../ReadOnly/bootstrap.js"></script>
+
+</body>
+</html>

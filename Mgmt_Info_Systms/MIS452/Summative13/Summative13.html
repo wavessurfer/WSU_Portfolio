@@ -1,0 +1,553 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- PgP 6/15/2019 update page, added integral check web db submissions, split constants into two files, one for students, one for course -->
+	<!-- Bootstrap -->
+	<link href="../../ReadOnly/bootstrap.css" rel="stylesheet">
+
+	<!-- constant file for student firstname, lastname, starid on students' pages -->
+	<script src="../constants.js"></script>
+
+	<!-- course constant file that contains semester, class, section pages -->
+	<script src="../../ReadOnly/CourseConstants.js"></script>
+
+	<!-- model assignment file, version 1 released 2018/02/18 PgP -->
+
+	<title>MIS452Summative13</title>
+</head>
+
+<body onload="setVariables()">
+
+	<form class="container-fluid" action="https://eprofessor.azurewebsites.net/code/ProcessFormData.asp" method="post" name="frmAssignment" id="frmAssignment">
+		<input name="InstID" id="InstID" value="00617282" type="hidden">
+
+		<h1 class=" text-center">Internet of Things</h1>
+
+		<!-- -start-Student, class and assignment information. Assignment hard-coded, other values from constants.js file-start -->
+		<div class="row col-lg-12">
+			<div class="col-lg-3">
+				<label class="text-primary" for="FirstName">First Name:</label>
+				<input class="form-control" name="FirstName" id="FirstName" type="text" value="default first name" readonly="readonly">
+			</div>
+			<div class="col-lg-3">
+				<label class="text-primary" for="LastName">Last Name:</label>
+				<input class="form-control" name="LastName" id="LastName" type="text" value="default last name" readonly="readonly">
+			</div>
+			<div class="col-lg-3">
+				<label class="text-primary" for="pin">StarID:</label>
+				<input class="form-control" name="pin" id="pin" type="text" value="default StarID" readonly="readonly">
+			</div>
+			<div class="col-lg-3">
+				<label class="text-primary" for="email">Email:</label>
+				<input class="form-control" name="email" id="email" type="email" value="default email address" readonly="readonly">
+			</div>
+		</div>
+
+		<div class="row col-lg-12">
+			<div class="col-lg-3">
+				<label class="text-primary" for="semester">Semester:</label>
+				<input class="form-control" name="semester" id="semester" type="text" value="default" readonly="readonly">
+			</div>
+			<div class="col-lg-3">
+				<label class="text-primary" for="class">Class:</label>
+				<input class="form-control" name="class" id="class" value="xClass" type="text" readonly="readonly">
+			</div>
+			<div class="col-lg-3">
+				<label class="text-primary" for="section">Section:</label>
+				<input class="form-control" name="section" id="section" value="default" type="text" readonly="readonly">
+			</div>
+			<div class="col-lg-3">
+				<label class="text-primary" for="assignment">Assignment:</label>
+				<input class="form-control" name="assignment" id="assignment" value="Summative13" type="text" readonly="readonly">
+			</div>
+		</div>
+		<!-- -end-Student, class and assignment information-end -->
+
+		<!-- Calculate the correct path for saving the files -->
+		<script>Path = "&#92;OneDrive - MNSCU&#92;" + xClass + "&#92;" + document.getElementById("assignment").value + "&#92;"; </script>
+
+
+		<div class="col-lg-12">
+			<br />
+			<input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit">
+			<br />
+		</div>
+
+		<div class="col-lg-12 h3 text-danger">
+			900 Points
+            <hr />
+		</div>
+
+		<!-- -start-objectives-start -->
+		<div class="col-lg-12"><a href="#Objectives" class="btn btn-info" data-toggle="collapse">Learning Objectives</a></div>
+		<div id="Objectives" class=" collapse in col-lg-12">
+
+			<!--Above this line similar except for Assignment number and title   -->
+			<ul>
+				<li>Define the Internet of Things and list use cases</li>
+				<li>Describe IoT technologies</li>
+				<li>Discuss a variety of IoT devices</li>
+				<li>Work with DIY IoT devices</li>
+			</ul>
+
+			<hr />
+		</div>
+		<!-- -end-objectives-end -->
+
+
+		<div class=" col-lg-12"><a href="#Exercise01" class="btn btn-info" data-toggle="collapse">Questions</a></div>
+
+		<div id="Exercise01" class="collapse in  col-lg-12">
+
+			<p>
+				Internet of Things-a new industry?<br />
+				Note: do not only rely on the book for the answer.<br />
+				Consult LinkedIn Learning and <a class="bg-info text-white" href="https://en.wikipedia.org/wiki/Internet_of_things">Wikipedia</a>.
+			</p>
+
+			<p>
+				(50) 1. Reflect on what you have learned in the networking course-the concepts and also the experience of working with and setting up IoT devices like the Raspberry Pi.<br />
+				Think about this in terms of any industry-banking, finance, manufacturing, healthcare...<br />
+				Is the Internet of Things a 'new industry' or is it going to be a 'new way' to disrupt a lot of existing industires?<br />
+				Are organizations ready for the Internet of Things?<br />
+				Are you ready for IoT?
+			</p>
+
+			<!-- Enter your answer in the VALUE field below   GROK -->
+			<input name="q1" id="q1" size="120" maxlength="120" class="form-control" value="IoT: " type="text">
+			<br />
+			<hr />
+
+		</div>
+
+
+		<div class=" col-lg-12"><a href="#Exercise02" class="btn btn-info" data-toggle="collapse">Hands-On Project 13-1-Tinkercad Circuit</a></div>
+
+		<div id="Exercise02" class="collapse in  col-lg-12">
+
+			<p>
+				Read Hands-On Project 13-1<br />
+				Create a free Tinkercad account at <a href="https://www.tinkercad.com" class="bg-info text-white" target="_blank">https://www.tinkercad.com</a><br />
+
+				Create the circuit as described and make sure it works.<br />
+				After finishing step 10, go back to step 7 and modify the circuit as described so that the exclamation point does not appear next to the LED due to excessive current.<br />
+				Experiment with placing various resistors in the circuit.
+			</p>
+
+			<p>
+				(50) 2. After resolving the excessive current problem, make a screenshot showing the modified circuit.<br />
+			</p>
+
+			<p>
+				<!--  PgP 2/4/2018 create path using constants and current document assignment -->
+				Save the screen shot  as &quot;Ex1&quot; in your ' 
+                <code><span id="brPath"></span></code>
+				<script>document.getElementById("brPath").innerHTML = Path; </script>
+				' folder.<br />
+
+				You will be combining screen shots from several exercises at the end of this assignment, just as you did in 
+                  <a href="../Formative00/Formative00.html#PDFfileCreation" class="bg-info text-white" target="_blank">Formative00</a>-PDF File Creation. 
+			</p>
+
+			<hr />
+
+		</div>
+
+		<div class="col-lg-12 text-danger">
+			<h2>Screen Shot Ex1</h2>
+			<hr />
+			<hr />
+		</div>
+
+
+
+
+		<div class=" col-lg-12"><a href="#Exercise03" class="btn btn-info" data-toggle="collapse">Hands-On Project 13-2-Modifying a Circuit</a></div>
+
+		<div id="Exercise03" class="collapse in  col-lg-12">
+
+			<p>
+				Do Hands-On Project 13-2<br />
+				Note how the tone changes as you change the tone frequency in step 7.<br />
+				Reflect on the addition of the piezo buzzer to the circuit design.
+			</p>
+
+
+			<p>
+				(50) 3. How does adding a sensor or actuator that affects other senses improve the design of the circuit?<br />
+				Consider uses of this circuit in the design of a product like an alarm clock or a warning device.<br />
+
+				<!-- Enter your answer in the VALUE field below   GROK -->
+				<input name="q3" id="q3" size="120" maxlength="120" class="form-control" value="sensor stimulation: " type="text">
+				<br />
+			</p>
+
+			<hr />
+
+		</div>
+
+
+
+		<div class=" col-lg-12"><a href="#Exercise03" class="btn btn-info" data-toggle="collapse">Hands-On Project 13-3-Adding Input Devices to a Circuit</a></div>
+
+		<div id="Exercise04" class="collapse in  col-lg-12">
+
+			<p>
+				Do Hands-On Project 13-3<br />
+				Below is the code that is needed for step 5.
+
+			</p>
+
+				<pre>
+// C++ code
+//
+int dacValue=0;
+void setup()
+{
+  Serial.begin(9600);
+  pinMode(4,OUTPUT);
+  pinMode(13, OUTPUT);
+  pinMode(A1, INPUT);
+}
+
+void loop()
+{
+  dacValue= analogRead(A1);
+  Serial.println(dacValue);
+  if(dacValue >= 650) {
+    tone(4,2000);
+    digitalWrite(13, HIGH);
+  } else  {
+    digitalWrite(13, LOW);
+    noTone(4);
+  }
+     
+}
+
+				</pre>
+			<p>
+
+				In step 6, the Serial Monitor is available when the code window is open, click 'Serial Monitor' in the bottom right to open or close it.<br />
+				<a href="images/SerialMonitor.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/SerialMonitor.PNG', 'popup'); return false;">
+					<img src="images/SerialMonitor.PNG" width="200" alt="serial monitor" class="img-responsive img-responsive" /></a>
+
+			</p>
+
+			<p>
+				In step 6 and 7, please realize that you first start the simulation, then click the photoresistor for the slider to appear:<br />
+
+				<a href="images/slider.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/slider.PNG', 'popup'); return false;">
+					<img src="images/slider.PNG" width="200" alt="serial monitor" class="img-responsive img-responsive" /></a>
+
+			</p>
+
+			<p>
+				Reflect on the author's comments in step 8.<br />
+				Simple circuits like the one in this project can automate hundreds or thousands of daily tasks, reducing the need for human action.<br />
+				Furthermore, numerous factory and industrial processes can be controlled with this technology.
+			</p>
+
+			<p>
+				Review the concept of the '<a class="bg-info text-white" href="https://en.wikipedia.org/wiki/Fourth_Industrial_Revolution#Smart_factory" target="_blank">Smart Factory</a>'.<br />
+			</p>
+
+
+			<p>
+				(100) 4. Briefly state a benefit of IoT technology in a 'Smart Factory'.r />
+
+				<!-- Enter your answer in the VALUE field below   GROK -->
+				<input name="q4" id="q4" size="120" maxlength="120" class="form-control" value="smart factory: " type="text">
+				<br />
+			</p>
+
+			<hr />
+
+		</div>
+
+
+		<div class=" col-lg-12"><a href="#Exercise05" class="btn btn-info" data-toggle="collapse">Hands-On Project 13-X-RGB Light Control</a></div>
+
+		<div id="Exercise05" class="collapse in  col-lg-12">
+
+			<p>
+				Use Tinkercad to create a circuit to control an RGB light.<br />
+				Below is an image of the components needed.<br />
+				The RGB light has four inputs- one ground, and one each for controlling the Red, Green and Blue light.<br />
+				You will need several pieces of another component.<br />
+
+				<a href="images/RGB.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/RGB.PNG', 'popup'); return false;">
+					<img src="images/RGB.PNG" width="200" alt="RGB circuit components" class="img-responsive img-responsive" /></a>
+				<br />
+
+			</p>
+
+			<p>Hint-read this <a class="bg-info text-white" href="https://learn.adafruit.com/rgb-led-strips/usage">RGB LED strips guide</a> from Adafruit.</p>
+
+
+			<p>
+				Wire up the circuit, and write the code that separately varies the Red, Green and Blue cirucit.<br />
+				One idea is to sinusoidally vary each circuit, and have them out of phase by 120 degrees.<br />
+			</p>
+
+			<p>(200) 5. Make a screen shot of your completed circuit and the corresponding code.</p>
+
+			<p>
+				<!--  PgP 2/4/2018 create path using constants and current document assignment -->
+				Save the screen shot  as &quot;Ex2&quot; in your ' 
+                <code><span id="srPath"></span></code>
+				<script>document.getElementById("srPath").innerHTML = Path; </script>
+				' folder.<br />
+
+				You will be combining screen shots from several exercises at the end of this assignment, just as you did in 
+                  <a href="../Formative00/Formative00.html#PDFfileCreation" class="bg-info text-white" target="_blank">Formative00</a>-PDF File Creation. 
+			</p>
+
+			<hr />
+
+		</div>
+
+		<div class="col-lg-12 text-danger">
+			<h2>Screen Shot Ex2</h2>
+			<hr />
+			<hr />
+		</div>
+
+
+
+
+
+
+
+
+		<div class=" col-lg-12"><a href="#Exercise06" class="btn btn-info" data-toggle="collapse">Packet Tracer Lab-13-1-Home Automation</a></div>
+
+		<div id="Exercise06" class="collapse in  col-lg-12">
+
+			<p>The Packet Tracer Labs are accessible from MindTap in two ways:</p>
+			<ul>
+				<li>Under the Practice section of the Module<br />
+					<a href="images/PacketTracer.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/PacketTracer.PNG', 'popup'); return false;">
+						<img src="images/PacketTracer.PNG" width="400" alt="packet tracer location" class="img-responsive img-responsive" /></a>
+				</li>
+
+				<li>In the Chapter Review section of the book<br />
+					<a href="images/PacketTracer2.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/PacketTracer2.PNG', 'popup'); return false;">
+						<img src="images/PacketTracer2.PNG" width="200" alt="packet tracer location" class="img-responsive img-responsive" /></a>
+				</li>
+			</ul>
+
+			<p>
+				The files needed for Packet Tracer labs are available on the Cengage Website, in Professor Paulson's OneDrive ReadOnly folder for this course, or in the WSU network drive ReadOnly folder for this course.<br />
+				You must save a copy of these files to your 
+				<code>
+					<span id="bbPath"></span>
+					<script>document.getElementById("bbPath").innerHTML = "&#92;OneDrive - MNSCU&#92;" + xClass + "&#92;";  </script>
+				</code>
+				folder.
+			</p>
+
+			<p>
+				Do Hands-On Project 13-1 and experiment with home automation devices on a home network.<br />
+				When done, turn the light on and open the door.
+			</p>
+
+			<code>PgP 8/18/2021-per author, something wrong with lab, password will not work.  Skip this lab, you will recieve credit.</code>
+
+
+			<p>
+				(50) 6. Make a screen shot of Packet Tracer showing the light on and door open.
+			</p>
+
+			<p>
+				<!--  PgP 2/4/2018 create path using constants and current document assignment -->
+				Save the screen shot  as &quot;Ex3&quot; in your ' 
+                <code><span id="arPath"></span></code>
+				<script>document.getElementById("arPath").innerHTML = Path; </script>
+				' folder.<br />
+
+				You will be combining screen shots from several exercises at the end of this assignment, just as you did in 
+                  <a href="../Formative00/Formative00.html#PDFfileCreation" class="bg-info text-white" target="_blank">Formative00</a>-PDF File Creation. 
+			</p>
+
+			<hr />
+
+		</div>
+
+		<div class="col-lg-12 text-danger">
+			<h2>Screen Shot Ex3</h2>
+			<hr />
+			<hr />
+		</div>
+
+
+
+		<div class=" col-lg-12"><a href="#Exercise07" class="btn btn-info" data-toggle="collapse">Packet Tracer Lab-13-2-Virtual Home Automation Project</a></div>
+
+		<div id="Exercise07" class="collapse in  col-lg-12">
+
+			<p>
+				Do Hands-On Project 13-2 and create a virtual home automation project.
+			</p>
+
+
+			<p>
+				After step 21, make sure the Tablet PC web browser is open, and position it next to the completed Packet Tracer diagram showing the gateway, furnace, ac, thermostat and tablet.
+			</p>
+
+			<p>
+				(100) 7. Make a screen shot showing the devices and the browser window depicting the home automation website.<br />
+
+				<!--  PgP 2/4/2018 create path using constants and current document assignment -->
+				Save the screen shot  as &quot;Ex4&quot; in your ' 
+                <code><span id="adPath"></span></code>
+				<script>document.getElementById("adPath").innerHTML = Path; </script>
+				' folder.<br />
+
+				You will be combining screen shots from several exercises at the end of this assignment, just as you did in 
+                  <a href="../Formative00/Formative00.html#PDFfileCreation" class="bg-info text-white" target="_blank">Formative00</a>-PDF File Creation. 
+			</p>
+
+		</div>
+
+		<div class="col-lg-12 text-danger">
+			<h2>Screen Shot Ex4</h2>
+			<hr />
+			<hr />
+		</div>
+
+
+
+
+
+
+		<!--  From here to end difference question numbers and Summative numbering for PDF of file uploaded to D2L    -->
+
+
+		<div class="col-lg-12"><a href="#ExercisePDF" class="btn btn-info" data-toggle="collapse">Exercise-PDF File Creation</a></div>
+
+		<div id="ExercisePDF" class="collapse in  col-lg-12">
+			<p>
+				Use a web browser to verify that you have published your website to https://classes.winona.edu/...
+                <br />
+				Check that your name, StarID, email, class, semester, section and all of your answers are correct and visible.
+                <br />
+				From the menu choose File&gt;Print... and using &quot;Microsoft Print to PDF&quot; save a copy of this assignment as a .pdf file in your   ' 
+                <code><span id="dPath"></span></code>
+				<script>document.getElementById("dPath").innerHTML = Path; </script>
+				' folder.
+			</p>
+
+			<p>
+				(50) 8. Save your file 'WebPage.pdf' to the ' 
+                <code><span id="ePath"></span></code>
+				<script>document.getElementById("ePath").innerHTML = Path; </script>
+				' folder.<br />
+
+
+			</p>
+
+			<div class="text-danger">
+				<h2>WebPage.pdf</h2>
+				<hr />
+			</div>
+
+			<p>Create one .pdf (portable document format) file from the screen shots that you have taken by following these steps.</p>
+
+			<ol>
+				<li>Open File Explorer, make sure the screen shot files are properly named(Ex1, Ex2 , Ex3.. ) &nbsp; </li>
+				<li>Select all of the screen shots to be combined. </li>
+				<li>Right Click and select &#39;Print&#39; from the short-cut menu.      </li>
+				<li>In the bottom center of the &#39;Print Pictures&#39; dialog box uncheck the box &quot;Fit picture to frame&quot;</li>
+				<li>Click on &#39;Print&#39; and save the file with the name&nbsp; &quot;ScreenShots.pdf&quot; in your '
+                <code><span id="fPath"></span></code>
+					<script>document.getElementById("fPath").innerHTML = Path; </script>
+					' folder.<br />
+				</li>
+			</ol>
+
+
+			<p>
+				(50) 9. Save your file 'ScreenShots.pdf' in your ' 
+                <code><span id="gPath"></span></code>
+				<script>document.getElementById("gPath").innerHTML = Path; </script>
+				' folder.<br />
+
+			</p>
+
+			<div class="text-danger">
+				<h2>ScreenShots.pdf</h2>
+				<hr />
+			</div>
+
+
+			<p>&nbsp;</p>
+			<p>
+				Use PDFill to merge the WebPage.pdf file with the ScreenShots.pdf file, and save it as &#39;Summative13.pdf&#39; in your ' 
+                <code><span id="hPath"></span></code>
+				<script>document.getElementById("hPath").innerHTML = Path; </script>
+				' folder.<br />
+
+			</p>
+
+
+			<p>(50) 10. Upload your file 'Summative13.pdf' to the D2L 'Summative13' Assignment folder.</p>
+
+		</div>
+
+		<div class="col-lg-12 text-danger">
+			<h2>Summative13.pdf</h2>
+		</div>
+		<hr />
+
+
+
+
+		<div class="col-lg-12"><a href="#ExerciseAssignmentSubmission" class="btn btn-info" data-toggle="collapse">Exercise-Assignment Submission</a></div>
+
+		<div id="ExerciseAssignmentSubmission" class="collapse in  col-lg-12">
+			<p>
+				Use a browser to view your completed and published website at: https://classes.winona.edu/...     
+                <br />
+				Ensure that you have linked this assignment on your home page.
+                Note that your screen shots do not have to be completed to perform this step.<br>
+			</p>
+
+			(50) 11. Home Page Hyperlink<br />
+			Check and verify that this assignment is hyperlinked on your home page.<br />
+			<br />
+
+			(50) 12. Assignment submission<br />
+			Press the Submit button at the top or bottom of this page.
+                Read and follow instructions on the confirmation page.&nbsp; Correct any errors.
+		</div>
+		<hr />
+
+
+		<div class="col-lg-12">
+			<br />
+			<input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit">
+			<br />
+		</div>
+
+
+	</form>
+
+
+
+	<!-- Creative Commons License Info -->
+	<div id="xLicense" class=" col-lg-12 text-muted"></div>
+
+	<div id="xfooter" class=" col-lg-12 text-muted"></div>
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="../../ReadOnly/jquery-1.js"></script>
+
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="../../ReadOnly/bootstrap.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,9 @@
+mtbf 500 hours
+sdev 100 hours  
++/- 3 sigma 
+range 200 to 800 hours
+means ? 
+
+sdev 10 hours
+range 470 to 530 hours
+

@@ -1,0 +1,452 @@
+﻿<!doctype html>
+<html lang="en">
+
+<head>
+    <title>u02 micro:Bit</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- PgP 7/11/2019 summative assignment for Raspberry Pi, Arduino Uno, micro:bit -->
+    <!-- Bootstrap -->
+    <link href="../../ReadOnly/bootstrap.css" rel="stylesheet">
+
+    <!-- constant file for student firstname, lastname, starid on students' pages -->
+    <script src="../constants.js"></script>
+
+    <!-- course constant file that contains semester, class, section pages -->
+    <script src="../../ReadOnly/CourseConstants.js"></script>
+
+</head>
+
+<body onload="setVariables()">
+    <form class="container-fluid" action="https://eprofessor.azurewebsites.net/code/ProcessFormData.asp" method="post" name="frmAssignment" id="frmAssignment">
+
+        <input name="InstID" type="hidden" id="InstID" value="00617282">
+
+        <h1 class="text-center">Programming a micro:bit</h1>
+
+
+        <!-- -start-Student, class and assignment information. Assignment hard-coded, other values from constants.js file-start -->
+        <div class="row col-lg-12">
+            <div class="col-lg-3">
+                <label class="text-primary" for="FirstName">First Name:</label>
+                <input class="form-control" name="FirstName" id="FirstName" type="text" value="default first name" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="LastName">Last Name:</label>
+                <input class="form-control" name="LastName" id="LastName" type="text" value="default last name" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="pin">StarID:</label>
+                <input class="form-control" name="pin" id="pin" type="text" value="default StarID" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="email">Email:</label>
+                <input class="form-control" name="email" id="email" type="email" value="default email address" readonly="readonly">
+            </div>
+        </div>
+
+        <div class="row col-lg-12">
+            <div class="col-lg-3">
+                <label class="text-primary" for="semester">Semester:</label>
+                <input class="form-control" name="semester" id="semester" type="text" value="default" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="class">Class:</label>
+                <input class="form-control" name="class" id="class" value="xClass" type="text" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="section">Section:</label>
+                <input class="form-control" name="section" id="section" value="default" type="text" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="assignment">Assignment:</label>
+                <input class="form-control" name="assignment" id="assignment" value="u02" type="text" readonly="readonly">
+            </div>
+        </div>
+        <!-- -end-Student, class and assignment information-end -->
+        <br />
+
+        <!-- Calculate the correct path for saving the files -->
+        <script>Path = "&#92;OneDrive - MNSCU&#92;" + xClass + "&#92;" + document.getElementById("assignment").value + "&#92;"; </script>
+
+
+        <div class="col-lg-12">
+            <br />
+            <input class=" text-danger btn-block btn-lg" type="submit" name="Submit" value="SUBMIT -once you have completed this assignment- SUBMIT"><br />
+        </div>
+
+        <div class="h3 text-danger col-lg-12">
+            100 Points<hr />
+        </div>
+
+
+        <div class="col-lg-12"><a href="#Objectives" class="btn btn-info" data-toggle="collapse">Learning Objectives</a></div>
+        <div id="Objectives" class=" collapse in col-lg-12">
+
+            <p>
+					<img src="images/MicrobitLogo.png"  alt="micro:bit" class="img-responsive img-responsive" /><br /><br />
+
+                <abbr title="split screen synched"><a href="images/microbit-hardware-access.jpg" class="img-responsive img-rounded" target="popup" onclick="window.open('images/microbit-hardware-access.jpg', 'popup'); return false;">
+                    <img src="images/microbit-hardware-access.jpg" width="400" alt="micro:bit" class="img-responsive img-responsive" /></a></abbr>micro:bit Features
+            </p>
+
+
+            <p>
+                These instructions will show you how to create 
+                and upload programs into a <a href="https://en.wikipedia.org/wiki/Micro_Bit" class="bg-info text-white" target="_blank">micro:bit microcontroller</a>.<br />
+                Microcontrollers are becoming common-they control automobile engines and subsystems. <a href="https://www.elprocus.com/different-microcontrollers-used-in-automobiles/" class="bg-info text-white" target="_blank">Examples</a>.<br />
+                And they will provide substantial cost savings in automobiles, like <a href="https://evannex.com/blogs/news/tesla-designs-a-new-wiring-architecture-that-could-greatly-streamline-production" class="bg-info text-white" target="_blank">Teslas</a>.<br />
+                In later assignments you will continue working with and experiencing the capabilities of the micro:bit.
+            </p>
+            <p>After completing this assignment you will be able to:</p>
+            <ol>
+                <li>Obtain, modify or create a program</li>
+                <li>Connect a computer to the micro:bit</li>
+                <li>Upload the program to the micro:bit</li>
+                <li>Test and debug the program</li>
+                <li>Upload a screen shot to D2L</li>
+            </ol>
+            <hr />
+        </div>
+
+
+
+        <div class="col-lg-12"><a href="#Overview" class="btn btn-info" data-toggle="collapse">Assignment Overview</a></div>
+
+        <div id="Overview" class="collapse in  col-lg-12">
+            This assignment reviews basic computer concepts that you will need in this course and throughout your career.<br />
+            For this assignment, you will install the Mu&nbsp; code editor onto your laptop.<br />
+            Note there is also a Mu editor available for Windows and Macs.<br />
+            You will learn to work with  Mu and upload programs to the micro:bit.<br />
+            And you will modify and debug these programs.
+            <p>
+                You are expected to have a working knowledge of microcontroller hardware and software.<br />
+                If you do not understand how to use an item, perform a Google Search, 
+                refer to the <a href="https://learn.winona.edu/WSU_Technology_Knowledge_Base" class="bg-info text-white" target="_blank">WSU Technology Knowledge Base</a>,&nbsp; ask a teaching assistant, or ask the instructor.
+            </p>
+            <hr />
+            <p>
+                Note: if the micro:bit is acting up, it may need to have the firmware updated.<br />
+                Instructions to update the micro:bit firmware can be found here: <a href="https://microbit.org/guide/firmware/" class="bg-info text-white" target="_blank">Update Firmware</a><br />
+                Current firmware Interface Version: 0253<br />
+            </p>
+            <hr />
+
+        </div>
+
+        <!--Exercise 1-->
+
+        <div class="col-lg-12"><a href="#Exercise01" class="btn btn-info" data-toggle="collapse">Exercise 1-Mu Editor</a></div>
+
+        <div id="Exercise01" class="collapse in  col-lg-12">
+
+            <p>
+                The programs that run on an micro:bit can be created on many devices-a laptop or Raspberry Pi.<br />
+                In this exercise you will install the Mu code editor onto a computer.<br />
+                Mu is an editor used to program in microPython.
+            </p>
+            <ol>
+
+                <li>The micro:bit is connected to the USB-C dock, your laptop connects to the micro:bit once you connect to the USB-C dock.</li>
+                <li>You may notice that with your laptop connected to the USB-C dock a message appears on the micro:bit screen.<br />
+                    This is not a problem, the micro:bit is running a program that was uploaded previously.
+                </li>
+                <li><a href="https://codewith.mu/en/download" class="bg-info text-white" target="_blank">Visit this url</a> to download and install Mu to your laptop.
+                </li>
+
+
+                <li>On your laptop, start mu.<br />
+                    If a &#39;Select Mode&#39; window appears, choose &#39;BBC micro:bit&#39;, then press OK.<br />
+                    <p>
+                        <abbr title="split screen synched"><a href="images/StartMu.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/StartMu.PNG', 'popup'); return false;">
+                            <img src="images/StartMu.PNG" width="300" alt="Mu Mode" class="img-responsive img-responsive" /></a></abbr> Mu Mode
+                    </p>
+                </li>
+
+
+                <li>This is what the mu editor looks like in micro:bit Mode, with a simple program.<br />
+                    <p>
+                        <a href="images/MuSet.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/MuSet.PNG', 'popup'); return false;">
+                            <img src="images/MuSet.PNG" width="300" alt="Mu Editor" class="img-responsive img-responsive" /></a>Mu Code Editor
+                    </p>
+                </li>
+
+            </ol>
+
+            <hr />
+
+            <p>
+                Before proceeding, make sure that you have already uploaded / published this assignment to your course website.<br />
+                Then you will be able to view the remaining instructions and copy code from the assignment while viewing it in a web browser.
+            </p>
+
+            <hr />
+        </div>
+
+
+
+        <!--Exercise 2-->
+
+        <div class="col-lg-12"><a href="#Exercise02" class="btn btn-info" data-toggle="collapse">Exercise 2-Create Program</a></div>
+
+        <div id="Exercise02" class="collapse in  col-lg-12">
+
+            <p>
+                Create a simple program to scroll a message across the micro:bit.<br />
+            </p>
+
+            <ol>
+
+                <li>On your computer, browse to the following url:<br />
+                    <a href="https://microbit-micropython.readthedocs.io/en/latest/tutorials/hello.html" class="bg-info text-white" target="_blank">Scroll Message: https://microbit-micropython.readthedocs.io/en/latest/tutorials/hello.html</a>
+                    <br />
+                    This page explains how to create a program that scrolls a message across the micro:bit.<br />
+                </li>
+
+                <li>After reading the page, you can easily modify the code in order to make it display other text.<br />
+                </li>
+
+                <li>Below is code that will display another message.<br />
+                    Copy it, and paste it into the Mu editor.<br />
+                    Then make use of the toolbar buttons, such as &#39;Check&#39;, to verify your code before you flash (upload) the code to the micro:bit.<br />
+                    <pre>
+ # &lt;-- this is a comment
+
+# Write your code below :-)
+
+from microbit import *   # import entire micro:bit library
+
+display.scroll("WELCOME TO MIS!")
+</pre>
+                </li>
+
+                <li>Save the program as <strong>u02.py</strong> in the default location,                   
+                    <strong>&#39;C:\Users\&lt;StarID&gt;\mu_code&#39;</strong>
+                </li>
+
+                <li>On the micro:bit press the &#39;Reset&#39; button to make a program run again.
+                </li>
+
+            </ol>
+            <hr />
+        </div>
+
+        <!--Exercise 3-->
+
+        <div class="col-lg-12"><a href="#Exercise03" class="btn btn-info" data-toggle="collapse">Exercise 3-Test and Debug</a></div>
+
+        <div id="Exercise03" class="collapse in  col-lg-12">
+            <p>
+                Next you are given a program that does not work, which means something is wrong with the code.<br />
+                Note that there can be multiple problems!<br />
+                Use your trouble-shooting skills to diagnose and repair the code.<br />
+                Hint: remember to 
+                &#39;Check&#39; your code.
+            </p>
+
+            <p>
+                Another hint: make use of the function syntax.<br />
+                
+                    <a href="images/SyntaxChecker.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/SyntaxChecker.PNG', 'popup'); return false;">
+                        <img src="images/SyntaxChecker.PNG" width="300" alt="Syntax Checker" class="img-responsive img-responsive" /></a>Syntax Checker
+                
+            </p>
+
+            <p>
+                And another hint: if you try to flash a program that does not work, an error message will scroll on the micro:bit.<br />
+                This message may be lengthy, and possibly hard to read.
+            </p>
+
+            <hr />
+
+            <ol>
+                <li>Copy the code below, and paste it into the mu editor:<br />
+
+                    <pre>
+# Your Name Here
+# Your Class Here
+# Today's Date Here
+# u02
+
+from microbit import *
+
+display.scroll("WELCOME TO MIS!")
+
+while True:
+    if button_a.is_prssed():
+        display.show(Image.HAPPY)
+    elif button_b.is_pressed():
+        display.scroll("I love coding!",delay=100,wait=True,loop=False, monospace=False)
+    else:
+        display.show(Image.SAD)
+
+display.clear()
+</pre>
+                    <br />
+                </li>
+
+                <li>Save the program as <strong>u02X.py</strong> in the default folder.
+                </li>
+
+                <li>Use your trouble-shooting skills to make the program function properly:<br />
+                    When button A is pressed, a Happy Face appears on the micro:bit<br />
+                    When button B is pressed, the message 
+                    &#39;I love coding!&#39; scrolls on the micro:bit<br />
+                    When no button is pressed, a Sad Face appears on the micro:bit
+                </li>
+
+                <li>Modify the program as required so that is works.<br />
+                    <strong>There are errors in the code!</strong>
+                </li>
+
+                <li>When you think the program is ready, flash the micro:bit and try it out.<br />
+                </li>
+            </ol>
+            <hr />
+        </div>
+
+
+
+
+		<!--Exercise 4-->
+
+		<div class="col-lg-12"><a href="#Exercise04" class="btn btn-info" data-toggle="collapse">Exercise 4-Document Work</a></div>
+
+		<div id="Exercise04" class="collapse in  col-lg-12">
+
+			<ol>
+
+				<li>Use the Snipping Tool to make a screen shot of the micro:bit IDE.<br />
+					Make sure your name, class, assignment and date is visible in your program comments.
+				</li>
+				<li>
+
+				<!--  PgP 2/4/2018 create path using constants and current document assignment -->
+				Save the screenshot  as &quot;u02&quot; in your ' 
+                <code><span id="abPath"></span></code>
+				<script>document.getElementById("abPath").innerHTML = Path </script>
+				' folder.<br />
+
+				</li>
+				<li>
+					<p>
+						Your screen shot will look something like this:<br />
+						<a href="images/PythonCode.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/PythonCode.PNG', 'popup'); return false;">
+							<img src="images/PythonCode.PNG" width="300" alt="screenshot format" class="img-responsive img-responsive" /></a>Screenshot Format<br />
+					</p>
+				</li>
+			</ol>
+			<hr />
+		</div>
+
+
+
+
+
+
+		<div class="col-lg-12"><a href="#UploadScreenShot" class="btn btn-info" data-toggle="collapse">Upload Screenshot</a></div>
+
+		<div id="UploadScreenShot" class="collapse in  col-lg-12">
+			<p>
+				Upload a screenshot of your work to the appropriate D2L Assignment folder.<br />
+			</p>
+		</div>
+
+		<div class="col-lg-12 text-primary">
+			<p>
+				(70) 1. Use a web browser to <a href="https://winona.learn.minnstate.edu/" class="bg-info text-white" target="_blank">login to D2L</a>.<br />
+				Upload your screenshot to the &#39;u02&#39; D2L Assignment Folder.
+
+				<!--  PgP 2/4/2018 create path using constants and current document assignment -->
+				Save the screen shot  as &quot;u02&quot; in your ' 
+                <code><span id="aPath"></span></code>
+				<script>document.getElementById("aPath").innerHTML = Path </script>
+				' folder.<br />
+
+			</p>
+
+			<div class="col-lg-12 text-danger">
+				<h2>Screenshot u02</h2>
+				<hr />
+			</div>
+		</div>
+
+		<!--Exercise 5-->
+
+		<div class="col-lg-12"><a href="#Exercise05" class="btn btn-info" data-toggle="collapse">Exercise 5-Reflection</a></div>
+
+		<div id="Exercise05" class="collapse in  col-lg-12">
+
+			<p>
+				Browse to the <a href="https://codewith.mu/en/tutorials/" class="bg-info text-white" target="_blank">micro:bit Tutorials page</a>.<br />
+                Examine the available tutorials.<br />
+                Choose a tutorial of interest to you and read it.
+			</p>
+			<p>
+				Based on your experience in this exercise and the tutorial you reviewed, develop a brief statement about the value of microcontrollers as an automation tool for simple tasks in organizations.<br />
+				Think about what type of problems these devices could solve, and would it be effective?<br />
+				Consider the learning curve to program these devices.
+			</p>
+
+			<div class="col-lg-12 text-primary">
+				(20) 2. Reflections<br />
+				<!-- Enter your answer in the VALUE field below   GROK -->
+				<input class="form-control" name="q2" type="text" id="q2" value="value of microcontrollers:">
+				<hr />
+			</div>
+
+			<hr />
+
+			<hr />
+		</div>
+
+
+
+		<div class="col-lg-12"><a href="#ExerciseSubmit" class="btn btn-info" data-toggle="collapse">Submit Assignment</a></div>
+
+		<div id="ExerciseSubmit" class="collapse in  col-lg-12">
+
+
+			<div class="col-lg-12">
+				<p>
+					When all tasks are completed press the Submit button.
+				</p>
+				<hr />
+			</div>
+
+			<div class="col-lg-12 text-primary">
+				(10) 3. Assignment submission<br />
+				<!-- Enter your answer in the VALUE field below   GROK -->
+				<input class="form-control" name="q3" type="text" id="q3" readonly="readonly" value="I have completed all the exercises, and uploaded my screenshot to the D2L Assignment folder u02.">
+				<hr />
+			</div>
+		</div>
+
+
+		<hr />
+		<hr />
+
+
+		<div class=" col-lg-12">
+			<br />
+			<input class=" text-danger btn-block btn-lg" type="submit" name="Submit" value="SUBMIT -once you have completed this assignment- SUBMIT">
+			<br />
+		</div>
+
+	</form>
+
+	<!-- Creative Commons License Info -->
+	<div id="xLicense" class=" col-lg-12 text-muted"></div>
+
+	<div id="xfooter" class=" col-lg-12 text-muted"></div>
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="../../ReadOnly/jquery-1.js"></script>
+
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="../../ReadOnly/bootstrap.js"></script>
+
+</body>
+</html>
