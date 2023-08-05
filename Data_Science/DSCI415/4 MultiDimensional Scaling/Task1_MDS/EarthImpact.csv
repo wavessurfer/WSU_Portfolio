@@ -1,0 +1,182 @@
+﻿CraterName,Location,Continent,Latitude,Longitude,Diameter_km,Age_MillionYears,Exposed,Drilled,TargetRock
+Ames,"Oklahoma, U.S.A.",North America,N 36° 15',W 98° 12',16,470,N,Y,M
+Avak,"Alaska, U.S.A.",North America,N 71° 15',W 156° 38',12,46,N,Y,S
+Barringer,"Arizona, U.S.A.",North America,N 35° 2',W 111° 1',1.18,0.049,Y,Y,S
+Beaverhead,"Montana, U.S.A.",North America,N 44° 36',W 113° 0',60,600,Y,N,M
+Brent,"Ontario, Canada",North America,N 46° 5',W 78° 29',3.8,452,N,Y,C
+Calvin,"Michigan, USA",North America,N 41° 50',W 85° 57',8.5,450,N,Y,S
+Carswell,"Saskatchewan, Canada",North America,N 58° 27',W 109° 30',39,115,Y,Y,M
+Charlevoix,"Quebec, Canada",North America,N 47° 32',W 70° 18',54,342,Y,Y,M
+Chesapeake Bay,"Virginia, U.S.A.",North America,N 37° 17',W 76° 1',40,35.5,N,Y,M
+Chicxulub,"Yucatan, Mexico",North America,N 21° 20',W 89° 30',150,64.98,N,Y,M
+Clearwater East,"Quebec, Canada",North America,N 56° 5',W 74° 7',26,460,Y,Y,M
+Clearwater West,"Quebec, Canada",North America,N 56° 13',W 74° 30',36,290,Y,Y,M
+Cloud Creek,"Wyoming, USA",North America,N 43° 7',W 106° 45',7,190,N,Y,S
+Couture,"Quebec, Canada",North America,N 60° 8',W 75° 20',8,430,Y,N,C
+Crooked Creek,"Missouri, U.S.A.",North America,N 37° 50',W 91° 23',7,320,Y,N,S
+Decaturville,"Missouri, U.S.A.",North America,N 37° 54',W 92° 43',6,300,Y,Y,M
+Deep Bay,"Saskatchewan, Canada",North America,N 56° 24',W 102° 59',13,99,N,Y,C
+Des Plaines,"Illinois, U.S.A.",North America,N 42° 3',W 87° 52',8,280,N,Y,S
+Eagle Butte,"Alberta, Canada",North America,N 49° 42',W 110° 30',10,65,N,Y,S
+Elbow,"Saskatchewan, Canada",North America,N 50° 59',W 106° 43',8,395,N,Y,S
+Flynn Creek,"Tennessee, U.S.A.",North America,N 36° 17',W 85° 40',3.8,360,Y,Y,S
+Glasford,"Illinois, U.S.A.",North America,N 40° 36',W 89° 47',4,430,N,Y,S
+Glover Bluff,"Wisconsin, U.S.A.",North America,N 43° 58',W 89° 32',8,500,Y,Y,S
+Gow,"Saskatchewan, Canada",North America,N 56° 27',W 104° 29',5,250,Y,N,C
+Haughton,"Nunavut, Canada",North America,N 75° 22',W 89° 41',23,39,Y,N,S
+Haviland,"Kansas, U.S.A.",North America,N 37° 35',W 99° 10',0.01,0.001,Y,N,S
+Holleford,"Ontario, Canada",North America,N 44° 28',W 76° 38',2.35,550,N,Y,C
+Ile Rouleau,"Quebec, Canada",North America,N 50° 41',W 73° 53',4,300,Y,N,S
+Kentland,"Indiana, U.S.A.",North America,N 40° 45',W 87° 24',13,97,Y,Y,S
+La Moinerie,"Quebec, Canada",North America,N 57° 26',W 66° 37',8,400,Y,N,C
+Manicouagan,"Quebec, Canada",North America,N 51° 23',W 68° 42',85,214,Y,Y,M
+Manson,"Iowa, U.S.A.",North America,N 42° 35',W 94° 33',35,73.8,N,Y,M
+Maple Creek,"Saskatchewan, Canada",North America,N 49° 48',W 109° 6',6,75,N,Y,S
+Marquez,"Texas, U.S.A.",North America,N 31° 17',W 96° 18',12.7,58,N,Y,S
+Middlesboro,"Kentucky, U.S.A.",North America,N 36° 37',W 83° 44',6,300,Y,Y,S
+Mistastin,"Newfoundland/Labrador, Canada",North America,N 55° 53',W 63° 18',28,36.4,Y,N,C
+Montagnais,"Nova Scotia, Canada",North America,N 42° 53',W 64° 13',45,50.5,N,Y,S
+Newporte,"North Dakota, U.S.A.",North America,N 48° 58',W 101° 58',3.2,500,N,Y,M
+New Quebec,"Quebec, Canada",North America,N 61° 17',W 73° 40',3.44,1.4,Y,N,C
+Nicholson,"NWT, Canada",North America,N 62° 40',W 102° 41',12.5,400,N,N,M
+Odessa,"Texas, U.S.A.",North America,N 31° 45',W 102° 29',0.16,0.0635,Y,Y,S
+Pilot,"NWT, Canada",North America,N 60° 17',W 111° 1',6,445,Y,N,C
+Presqu'ile,"Quebec, Canada",North America,N 49° 43',W 74° 48',24,500,Y,N,C
+Red Wing,"North Dakota, U.S.A.",North America,N 47° 36',W 103° 33',9,200,N,Y,S
+Saint Martin,"Manitoba, Canada",North America,N 51° 47',W 98° 32',40,220,N,Y,M
+Santa Fe,"New Mexico , U.S.A.",North America,N 35° 45',W 105° 56',9.5,1200,N,N,M
+Serpent Mound,"Ohio, U.S.A.",North America,N 39° 2',W 83° 24',8,320,Y,Y,S
+Sierra Madera,"Texas, U.S.A.",North America,N 30° 36',W 102° 55',13,100,Y,Y,S
+Slate Islands,"Ontario, Canada",North America,N 48° 40',W 87° 0',30,450,Y,N,C
+Steen River,"Alberta, Canada",North America,N 59° 30',W 117° 38',25,91,N,Y,M
+Sudbury,"Ontario, Canada",North America,N 46° 36',W 81° 11',130,1850,Y,Y,C
+Tunnunik (formerly Prince Albert),"Victoria Island, Arctic Canada",North America,N 72° 28',W 113° 58',25,340,Y,N,S
+Upheaval Dome,"Utah, U.S.A.",North America,N 38° 26',W 109° 54',10,170,Y,Y,S
+Viewfield,"Saskatchewan, Canada",North America,N 49° 35',W 103° 4',2.5,190,N,Y,S
+Wanapitei,"Ontario, Canada",North America,N 46° 45',W 80° 45',7.5,37.2,N,N,C
+Wells Creek,"Tennessee, U.S.A.",North America,N 36° 23',W 87° 40',12,200,Y,Y,S
+West Hawk,"Manitoba, Canada",North America,N 49° 46',W 95° 11',2.44,351,N,Y,C
+Wetumpka,"Alabama, U.S.A.",North America,N 32° 31',W 86° 10',6.5,81,Y,Y,M
+Whitecourt,"Alberta, Canada",North America,N 54° 00',W 115° 36',0.04,0.0011,Y,N,S
+Araguainha,Brazil,South America,S 16° 47',W 52° 59',40,254.7,Y,N,M
+Campo Del Cielo,Argentina,South America,S 27° 38',W 61° 42',0.05,0.004,Y,Y,M
+Carancas,Peru,South America,S 16° 40',W 69° 03',0.0135,0.000007,Y,N,S
+Colônia,Brazil,South America,S 23° 52',W 46° 43',3.6,20.5,Y,Y,M
+Monturaqui,Chile,South America,S 23° 56',W 68° 17',0.46,1,Y,N,C
+Riachão Ring,Brazil,South America,S 7° 43',W 46° 39',4.5,200,Y,N,S
+Rio Cuarto,Argentina,South America,S 32° 52',W 64° 14',4.5,0.1,Y,N,M
+Santa Marta,Brazil,South America,S 10°10',W45° 15',10,83,Y,N,M
+Serra da Cangalha,Brazil,South America,S 8° 5',W 46° 52',12,300,Y,Y,S
+Vargeão Dome,Brazil,South America,S 26° 50',W 52° 07',12,70,Y,N,M
+Boltysh,Ukraine,Europe,N 48° 45',E 32° 10',24,65.17,N,N,C
+Dellen,Sweden,Europe,N 61° 48',E 16° 48',19,89,Y,N,C
+Dobele,Latvia,Europe,N 56° 35',E 23° 15',4.5,290,N,Y,S
+Gardnos,Norway,Europe,N 60° 39',E 9° 0',5,500,Y,N,C
+Granby,Sweden,Europe,N 58° 25',E 14° 56',3,470,N,Y,M
+Hummeln,Sweden,Europe,N 57°22',E 16° 15',1.2,445,Y,N,C
+Ilumetsä,Estonia,Europe,N 57° 58',E 27° 25',0.08,0.0066,Y,Y,S
+Ilyinets,Ukraine,Europe,N 49° 7',E 29° 6',8.5,378,N,Y,M
+Iso-Naakkima,Finland,Europe,N 62° 11',E 27° 9',3,1000,N,Y,S
+Kaalijärv,Estonia,Europe,N 58° 24',E 22° 40',0.11,0.004,Y,N,S
+Kärdla,Estonia,Europe,N 59° 1',E 22° 46',7,455,N,Y,M
+Keurusselkä,Finland,Europe,N 62° 8',E 24° 36',30,1800,Y,N,C
+Lappajärvi,Finland,Europe,N 63° 12',E 23° 42',23,76.2,Y,Y,M
+Lockne,Sweden,Europe,N 63° 0',E 14° 49',7.5,458,Y,Y,M
+Logoisk,Belarus,Europe,N 54° 12',E 27° 48',15,42.3,N,Y,M
+Lumparn,Finland,Europe,N 60° 9',E 20° 6',9,1000,N,Y,M
+Målingen,Sweden,Europe,N 62°55',E 14°33',1,458,Y,Y,M
+Mien,Sweden,Europe,N 56° 25',E 14° 52',9,121,Y,Y,C
+Mizarai,Lithuania,Europe,N 54° 1',E 23° 54',5,500,N,Y,C
+Mjølnir,Norway,Europe,N 73° 48',E 29° 40',40,142,N,Y,S
+Morasko,Poland,Europe,N 52° 29',E 16° 54',0.1,0.01,Y,N,S
+Obolon',Ukraine,Europe,N 49° 35',E 32° 55',20,169,N,Y,M
+Ries,Germany,Europe,N 48° 53',E 10° 37',24,15.1,Y,Y,M
+Ritland,Norway,Europe,N 59° 14',E 6° 26',2.7,520,Y,N,C
+Rochechouart,France,Europe,N 45° 50',E 0° 56',23,201,Y,N,C
+Rotmistrovka,Ukraine,Europe,N 49° 0',E 32° 0',2.7,120,N,Y,C
+Sääksjärvi,Finland,Europe,N 61° 24',E 22° 24',6,560,Y,Y,M
+Siljan,Sweden,Europe,N 61° 2',E 14° 52',52,376.8,Y,Y,M
+Söderfjärden,Finland,Europe,N 63° 2',E 21° 35',6.6,600,N,Y,C
+Steinheim,Germany,Europe,N 48° 41',E 10° 4',3.8,15,Y,Y,S
+Suvasvesi N,Finland,Europe,N 62° 42',E 28° 10',4,1000,N,Y,C
+Suvasvesi S,Finland,Europe,N 62°36',E 28° 13',3.8,250,N,N,C
+Ternovka,Ukraine,Europe,N 48° 08',E 33° 31',11,280,N,Y,C
+Tvären,Sweden,Europe,N 58° 46',E 17° 25',2,455,N,Y,M
+Vepriai,Lithuania,Europe,N 55° 5',E 24° 35',8,160,N,Y,S
+Zapadnaya,Ukraine,Europe,N 49° 44',E 29° 0',3.2,165,N,Y,C
+Zeleny Gai,Ukraine,Europe,N 48° 4',E 32° 45',3.5,80,N,Y,C
+Beyenchime-Salaatin,Russia,Asia,N 71° 0',E 121° 40',8,40,Y,N,S
+Bigach,Kazakhstan,Asia,N 48° 34',E 82° 1',8,5,Y,Y,M
+Chiyli,Kazakhstan,Asia,N 49° 10',E 57° 51',5.5,46,Y,Y,S
+Chukcha,Russia,Asia,N 75° 42',E 97° 48',6,70,Y,Y,M
+Dhala,India,Asia,N 25°18',E 78° 8',11,1900,Y,N,M
+El'gygytgyn,Russia,Asia,N 67° 30',E 172° 5',18,3.5,Y,N,C
+Gusev,Russia,Asia,N 48° 26',E 40° 32',3,49,N,Y,S
+Jänisjärvi,Russia,Asia,N 61° 58',E 30° 55',14,700,Y,N,C-Ms
+Jebel Waqf as Suwwan,Jordan,Asia,N 31° 03',E 36° 48',5.5,46.5,Y,N,S
+Kaluga,Russia,Asia,N 54° 30',E 36° 12',15,380,N,Y,M
+Kamensk,Russia,Asia,N 48° 21',E 40° 30',25,49,N,Y,S
+Kara,Russia,Asia,N 69° 6',E 64° 9',65,70.3,N,Y,M
+Kara-Kul,Tajikistan,Asia,N 39° 1',E 73° 27',52,5,Y,N,C
+Karla,Russia,Asia,N 54° 55',E 48° 2',10,5,Y,Y,S
+Kursk,Russia,Asia,N 51° 42',E 36° 0',6,250,N,Y,M
+Logancha,Russia,Asia,N 65° 31',E 95° 56',20,40,N,N,M
+Lonar,India,Asia,N 19° 58',E 76° 31',1.83,0.052,Y,Y,C
+Macha,Russia,Asia,N 60° 6',E 117° 35',0.3,0.007,Y,N,S
+Mishina Gora,Russia,Asia,N 58° 43',E 28° 3',2.5,300,Y,Y,M
+Popigai,Russia,Asia,N 71° 39',E 111° 11',90,35.7,Y,Y,M
+Puchezh-Katunki,Russia,Asia,N 56° 58',E 43° 43',40,167,N,Y,M
+Ragozinka,Russia,Asia,N 58° 44',E 61° 48',9,46,N,Y,M
+Saqqar,Saudi Arabia,Asia,N 29°35',E 38° 42',34,240,N,Y,S
+Shunak,Kazakhstan,Asia,N 47° 12',E 72° 42',2.8,45,Y,Y,C
+Sikhote Alin,Russia,Asia,N 46° 7',E 134° 40',0.02,0.000067,Y,N,C
+Sobolev,Russia,Asia,N 46° 18',E 137° 52',0.05,0.001,Y,Y,M
+Tabun-Khara-Obo,Mongolia,Asia,N 44° 07',E 109° 39',1.3,150,Y,N,C
+Wabar,Saudi Arabia,Asia,N 21° 30',E 50° 28',0.11,0.00014,Y,Y,S
+Xiuyan,China,Asia,N 40° 21',E 123° 27',1.8,0.05,Y,Y,M
+Zhamanshin,Kazakhstan,Asia,N 48° 24',E 60° 58',14,0.9,Y,Y,M
+Amguid,Algeria,Africa,N 26° 5',E 4° 23',0.45,0.1,Y,N,S
+Aorounga,Chad,Africa,N 19° 6',E 19° 15',12.6,345,Y,N,S
+Aouelloul,Mauritania,Africa,N 20° 15',W 12° 41',0.39,3,Y,N,S
+Bosumtwi,Ghana,Africa,N 6° 30',W 1° 25',10.5,1.07,Y,N,C-Ms
+B.P. Structure,Libya,Africa,N 25° 19',E 24° 20',2,120,Y,N,S
+Gweni-Fada,Chad,Africa,N 17° 25',E 21° 45',14,345,Y,N,S
+Kalkkop,South Africa,Africa,S 32° 43',E 24° 26',0.64,0.25,Y,Y,S
+Kgagodi,Botswana,Africa,S 22° 29',E 27° 35',3.5,180,Y,Y,S
+Luizi,DRCongo,Africa,S 10° 10',E 28° 00',17,573,Y,N,S
+Morokweng,South Africa,Africa,S 26° 28',E 23° 32',70,145,N,Y,C
+Oasis,Libya,Africa,N 24° 35',E 24° 24',18,120,Y,N,S
+Ouarkziz,Algeria,Africa,N 29° 0',W 7° 33',3.5,70,Y,N,S
+Roter Kamm,Namibia,Africa,S 27° 46',E 16° 18',2.5,3.7,Y,N,C
+Talemzane,Algeria,Africa,N 33° 19',E 4° 2',1.75,3,N,Y,S
+Tenoumer,Mauritania,Africa,N 22° 55',W 10° 24',1.9,0.0214,Y,N,M
+Tin Bider,Algeria,Africa,N 27° 36',E 5° 7',6,70,Y,N,S
+Tswaing (formerly Pretoria Saltpan),South Africa,Africa,S 25° 24',E 28° 5',1.13,0.22,Y,Y,C
+Vredefort,South Africa,Africa,S 27° 0',E 27° 30',160,2023,Y,Y,M
+Acraman,South Australia,Australia,S 32° 1',E 135° 27',90,290,Y,N,C
+Amelia Creek,Northern Territory,Australia,S 20° 55',E 134° 50',20,1120,Y,N,M
+Boxhole,Northern Territory,Australia,S 22° 37',E 135° 12',0.17,0.0054,Y,N,C
+Connolly Basin,Western Australia,Australia,S 23° 32',E 124° 45',9,60,Y,N,S
+Crawford,South Australia,Australia,S 34° 43',E 139° 2',8.5,35,Y,N,C-Ms
+Dalgaranga,Western Australia,Australia,S 27° 38',E 117° 17',0.02,0.27,Y,N,C
+Flaxman,South Australia,Australia,S 34° 37',E 139° 4',10,35,Y,N,C-Ms
+Foelsche,Northern Territory,Australia,S 16° 40',E 136° 47',6,545,Y,N,M
+Glikson,Western Australia,Australia,S 23° 59',E 121° 34',19,508,Y,N,M
+Goat Paddock,Western Australia,Australia,S 18° 20',E 126° 40',5.1,50,Y,N,S
+Gosses Bluff,Northern Territory,Australia,S 23° 49',E 132° 19',22,142.5,Y,Y,S
+Goyder,Northern Territory,Australia,S 13° 28',E 135° 2',3,1400,Y,N,S
+Henbury,Northern Territory,Australia,S 24° 34',E 133° 8',0.15,0.0042,Y,N,S
+Kelly West,Northern Territory,Australia,S 19° 56',E 133° 57',10,550,N,N,C-Ms
+Lawn Hill,Queensland,Australia,S 18° 40',E 138° 39',18,515,Y,N,M
+Liverpool,Northern Territory,Australia,S 12° 24',E 134° 3',1.6,150,Y,N,S
+Matt Wilson,Northern Territory,Australia,S 15° 30',E 131° 11',7.5,1402,Y,N,S
+Mount Toondina,South Australia,Australia,S 27° 57',E 135° 22',4,110,Y,N,S
+Piccaninny,Western Australia,Australia,S 17° 32',E 128° 25',7,360,Y,N,S
+Shoemaker,Western Australia,Australia,S 25° 52',E 120° 53',30,1630,Y,N,M
+Spider,Western Australia,Australia,S 16° 44',E 126° 5',13,570,Y,N,S
+Strangways,Northern Territory,Australia,S 15° 12',E 133° 35',25,646,Y,N,M
+Tookoonooka,Queensland,Australia,S 27° 7',E 142° 50',55,128,N,Y,M
+Veevers,Western Australia,Australia,S 22° 58',E 125° 22',0.08,1,Y,N,S
+Wolfe Creek,Western Australia,Australia,S 19° 10',E 127° 48',0.87,0.3,Y,N,S
+Woodleigh,Western Australia,Australia,S 26° 3',E 114° 39',40,364,N,Y,M
+Yarrabubba,Western Australia,Australia,S 27° 10',E 118° 50',30,2000,Y,N,C
