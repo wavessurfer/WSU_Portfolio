@@ -1,0 +1,187 @@
+.wrap { width:100%; clear:both; }
+.main { max-width:1200px; margin:0 auto; /*position:relative;*/ }
+.static { position:static; }
+.column { overflow:hidden; float:left; }
+.gk-mass { clear:both; margin-bottom:10px; }
+.main .inner { padding:10px; }
+.main .inner.ctop { padding-top:0; }
+.main .inner.cbottom { padding-bottom:0; }
+.main .inner.cleft { padding-left:0; }
+.main .inner.cright { padding-right:0; }
+#gk-mainbody { float:left; }
+#gk-current-content, #gk-main { float:right;/* margin-bottom:20px; */}
+#gk-right { float:right; }
+#gk-footer { clear:both; }
+.article_column { float:left; position:relative; }
+.cols1 .article_column { width:100%; }
+.cols2 .article_column { width:50%; }
+.cols3 .article_column { width:33.33%; }
+.cols4 .article_column { width:25%; }
+.cols5 .article_column { width:20%; }
+.gk-box { float:left; overflow:hidden; }
+
+
+.contentheading {
+    clear: both;
+    font-size: 250%;
+    line-height: normal;
+    margin: 10px 0 0;
+    overflow: hidden;
+    padding-bottom: 5px;
+}
+.article-content {
+    margin: 0 -25px;
+    padding: 10px 25px 0;
+}
+.article-content p {
+    margin: 10px 0;
+}
+.article-content td {
+    font-size: 100%;
+    padding: 6px;
+}
+.article-content ul li {
+    list-style-image: url("../images/bullet.gif");
+    list-style-position: inside;
+}
+
+
+
+
+
+ol.styled {
+  font-size: 14px;
+  color: #fff;
+  font-weight: bold;
+  list-style-type:none;
+  counter-reset:item;
+  padding-left:25px;
+}
+
+ol.styled li {
+  padding: 6px 0 2px 12px;
+  background: url('../images/list-number-bg.png') no-repeat 1px 1px;
+  counter-increment:item;
+  margin: 10px 0;
+}
+
+ol.styled li:before {
+  content:counter(item, decimal) " ";
+  font-family: verdana;
+  letter-spacing: -2px;
+}
+
+ol.styled li.double:before {
+  content:counter(item, decimal) " ";
+  position: relative;
+  left: -5px;
+}
+
+ol.styled li.double p {
+  margin-left: 15px;
+}
+
+ol.styled li p {
+  font-size: 13px;
+  font-weight: normal;
+  text-align: left;
+  color: #656565;
+  margin-left: 25px;
+  display: inline;
+  vertical-align: middle;
+}
+
+ol.styled li .subcategory  {
+  list-style-position:inside; list-style-image: url('../images/bullet.gif');
+  margin-left: 35px;
+  /* background-color:#FE8232; */
+}
+ol.styled li .subcategory2  {
+  list-style-position:inside; list-style-image: url('../images/bullet.gif');
+  margin-left: 65px;
+}
+ol.styled li ul li p {
+  font-size: 13px;
+  font-weight: normal;
+  text-align: left;
+  color: #656565;
+  margin-left: 0;
+  display: inline;
+  vertical-align: middle;
+}
+
+ol.styled li ul {
+  color: #F9F9F9;
+  margin-left: 56px;
+}
+
+ol.styled li ul li {
+  padding: 2px 0 2px 12px;
+  background-image: none;
+  counter-reset:item;
+  counter-increment: none;
+  margin: 10px 0;
+  text-indent: -33px;
+}
+
+ol.styled li.double ul li p {
+  font-size: 13px;
+  font-weight: normal;
+  text-align: left;
+  color: #656565;
+  margin-left: 0;
+  display: inline;
+  vertical-align: middle;
+}
+
+ol.styled li.double ul {
+  color: #F9F9F9;
+  margin-left: 56px;
+}
+
+ol.styled li.double ul li {
+  padding: 2px 0 2px 12px;
+  background-image: none;
+  counter-reset:item;
+  counter-increment: none;
+  margin: 10px 0;
+  text-indent: -33px;
+}
+.secondline {
+  padding-left: 21px;
+  margin-top: 0 !important;
+  display: inline-block !important;
+}
+.secondline2 {
+  padding-left: 13px;
+  margin-top: 0 !important;
+  display: inline-block !important;
+}
+
+
+
+/* FOOTER */
+#home-footer{margin:15px 0;padding:10px 0 0 16px;font-size:11px;line-height:13px;border-top:#eaeaea 2px solid;}
+#home-footer{z-index:20;}
+
+
+/* CSS3 layout START*/
+#gk-subnav { border-radius: 0 0 4px 4px; -moz-border-radius:0 0 4px 4px; -webkit-border-radius:0 0 4px 4px; }
+.vm_main_info div.lf,
+#component_wrap,
+.moduletable,
+#system-message dd.message ul,
+#system-message dd.error ul,
+#system-message dd.notice ul { border-radius: 4px; -moz-border-radius: 4px; -webkit-border-radius: 4px; }
+.moduletable > h3,
+.moduletable_text > h3,
+.moduletable_menu > h3 {
+	border-radius: 6px 6px 0 0; -moz-border-radius: 6px 6px 0 0; -webkit-border-radius: 6px 6px 0 0;
+}
+.moduletable.color3 > h3 {
+	border-radius: 3px 3px 0 0; -moz-border-radius: 3px 3px 0 0; -webkit-border-radius: 3px 3px 0 0;
+}
+#style_switcher3:hover,
+#t3_logo:hover { opacity: 0.75; }
+
+/* CSS3 layout END*/
